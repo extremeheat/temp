@@ -13,7 +13,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
         node-version: [14.x]
         
     runs-on: ${{ matrix.os }}
@@ -31,15 +31,23 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: dist-dat-${{ matrix.os }}
+        name: dist-${{ matrix.os }}
         path: |
           *.dat
-  debug:
+#   debug:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Debug Action
+#       uses: hmarr/debug-action@v1.0.0
+  release:
+    needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Debug Action
-      uses: hmarr/debug-action@v1.0.0
-
-          
+      - name: Download artefacts
+        uses: actions/download-artifact@v2
+        with:
+          path: dists
+      - name: Display structure of downloaded files
+        run: ls -R
           
 
