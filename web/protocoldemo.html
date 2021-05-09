@@ -1,0 +1,3032 @@
+
+
+<style>
+body{font-family:sans-serif;}
+td{padding:8px;}
+table {
+  width: 100%;
+}
+tr{
+  width:100%;
+}
+td{
+  /*border-top:1px solid gray;*/
+  border-bottom:1px solid #E0E0E0;
+}
+.field-name { font-weight:bold;}
+.fake{font-weight:normal;font-style:italic;}
+</style>
+<table class='table'>
+</table><hr/><table class='table'>
+</table><hr/><table class='table'>
+</table><hr/><table class='table'>
+</table><hr/><table class='table'>
+</table><hr/><table class='table'>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>varint32</td><td>varint</td><td>0</td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>bool</td><td>native</td><td>0</td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>zigzag32</td><td>native</td><td>0</td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>zigzag64</td><td>native</td><td>0</td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>uuid</td><td>native</td><td>0</td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>byterot</td><td>native</td><td>0</td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>MapInfo</td><td>native</td><td>0</td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>nbt</td><td>native</td><td>0</td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>BehaviourPackInfos length</td><td>li16</td><td>0</td></tr>
+<tr><td class='field-name'>BehaviourPackInfos <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>uuid</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>version</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>size</td><td>lu64</td><td>0</td></tr>
+<tr><td class='field-name'>content_key</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>sub_pack_name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>content_identity</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>has_scripts</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>TexturePackInfos length</td><td>li16</td><td>0</td></tr>
+<tr><td class='field-name'>TexturePackInfos <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>uuid</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>version</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>size</td><td>lu64</td><td>0</td></tr>
+<tr><td class='field-name'>content_key</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>sub_pack_name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>content_identity</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>has_scripts</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>rtx_enabled</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>ResourcePackIdVersions length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>ResourcePackIdVersions <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>uuid</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>version</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>name</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>ResourcePackIds length</td><td>li16</td><td>0</td></tr>
+<tr><td class='field-name'>ResourcePackIds <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table><hr/><table class='table'>
+<tr><td>Experiment </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>enabled</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>Experiments length</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>Experiments <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>GameMode</td><td>zigzag32 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>survival</td></tr>
+  <tr><td>1</td><td>creative</td></tr>
+  <tr><td>2</td><td>adventure</td></tr>
+  <tr><td>3</td><td>survival_spectator</td></tr>
+  <tr><td>4</td><td>creative_spectator</td></tr>
+  <tr><td>5</td><td>fallback</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>GameRule </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>type</td><td>varint <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>1</td><td>bool</td></tr>
+  <tr><td>2</td><td>int</td></tr>
+  <tr><td>3</td><td>float</td></tr>
+</table></td></tr>
+<tr><td>if value <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is bool</span></td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is int</span></td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is float</span></td><td>lf32</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>GameRules length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>GameRules <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table><hr/><table class='table'>
+<tr><td>Blob </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>hash</td><td>lu64</td><td>0</td></tr>
+<tr><td class='field-name'>payload</td><td>ByteArray</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>BlockPalette length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>BlockPalette <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>state</td><td>nbt</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>Itemstates length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>Itemstates <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>runtime_id</td><td>li16</td><td>0</td></tr>
+<tr><td class='field-name'>component_based</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>ItemExtraDataWithBlockingTick </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>has_nbt</td><td>lu16 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>false</td></tr>
+  <tr><td>65535</td><td>true</td></tr>
+</table></td></tr>
+<tr><td>if nbt <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td><span class='fake'>is true</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>version</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>nbt</td><td>lnbt</td><td>0</td></tr>
+</table></td></tr>
+<tr><td class='field-name'><span class='fake'>default</span></td><td>void</td><td>0</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>can_place_on length</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>can_place_on <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+<tr><td class='field-name'>can_destroy length</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>can_destroy <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+<tr><td class='field-name'>blocking_tick</td><td>li64</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>ItemExtraDataWithoutBlockingTick </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>has_nbt</td><td>lu16 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>false</td></tr>
+  <tr><td>65535</td><td>true</td></tr>
+</table></td></tr>
+<tr><td>if nbt <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td><span class='fake'>is true</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>version</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>nbt</td><td>lnbt</td><td>0</td></tr>
+</table></td></tr>
+<tr><td class='field-name'><span class='fake'>default</span></td><td>void</td><td>0</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>can_place_on length</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>can_place_on <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+<tr><td class='field-name'>can_destroy length</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>can_destroy <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>ItemLegacy </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>network_id</td><td>zigzag32</td><td>0</td></tr>
+<tr><td>if network_id <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is 0</span></td><td>void</td><td>0</td></tr>
+<tr><td><span class='fake'>default</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>count</td><td>lu16</td><td>0</td></tr>
+<tr><td class='field-name'>metadata</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>block_runtime_id</td><td>zigzag32</td><td>0</td></tr>
+<tr><td>if extra <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is 355</span></td><td>["encapsulated", { "lengthType": "varint", "type": "ItemExtraDataWithBlockingTick" }]</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>default</span></td><td>["encapsulated", { "lengthType": "varint", "type": "ItemExtraDataWithoutBlockingTick" }]</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>Item </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>network_id</td><td>zigzag32</td><td>0</td></tr>
+<tr><td>if network_id <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is 0</span></td><td>void</td><td>0</td></tr>
+<tr><td><span class='fake'>default</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>count</td><td>lu16</td><td>0</td></tr>
+<tr><td class='field-name'>metadata</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>has_stack_id</td><td>u8</td><td>0</td></tr>
+<tr><td>if stack_id <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is 0</span></td><td>void</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>default</span></td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>block_runtime_id</td><td>zigzag32</td><td>0</td></tr>
+<tr><td>if extra <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is 355</span></td><td>["encapsulated", { "lengthType": "varint", "type": "ItemExtraDataWithBlockingTick" }]</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>default</span></td><td>["encapsulated", { "lengthType": "varint", "type": "ItemExtraDataWithoutBlockingTick" }]</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>vec3i </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>x</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>y</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>z</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>vec3u </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>x</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>y</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>z</td><td>varint</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>vec3f </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>x</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>y</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>z</td><td>lf32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>vec2f </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>x</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>z</td><td>lf32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>MetadataDictionary length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>MetadataDictionary <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>key</td><td>varint <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>flags</td></tr>
+  <tr><td>1</td><td>health</td></tr>
+  <tr><td>2</td><td>variant</td></tr>
+  <tr><td>3</td><td>color</td></tr>
+  <tr><td>4</td><td>nametag</td></tr>
+  <tr><td>5</td><td>owner_eid</td></tr>
+  <tr><td>6</td><td>target_eid</td></tr>
+  <tr><td>7</td><td>air</td></tr>
+  <tr><td>8</td><td>potion_color</td></tr>
+  <tr><td>9</td><td>potion_ambient</td></tr>
+  <tr><td>10</td><td>jump_duration</td></tr>
+  <tr><td>11</td><td>hurt_time</td></tr>
+  <tr><td>12</td><td>hurt_direction</td></tr>
+  <tr><td>13</td><td>paddle_time_left</td></tr>
+  <tr><td>14</td><td>paddle_time_right</td></tr>
+  <tr><td>15</td><td>experience_value</td></tr>
+  <tr><td>16</td><td>minecart_display_block</td></tr>
+  <tr><td>17</td><td>minecart_display_offset</td></tr>
+  <tr><td>18</td><td>minecart_has_display</td></tr>
+  <tr><td>20</td><td>old_swell</td></tr>
+  <tr><td>21</td><td>swell_dir</td></tr>
+  <tr><td>22</td><td>charge_amount</td></tr>
+  <tr><td>23</td><td>enderman_held_runtime_id</td></tr>
+  <tr><td>24</td><td>entity_age</td></tr>
+  <tr><td>26</td><td>player_flags</td></tr>
+  <tr><td>27</td><td>player_index</td></tr>
+  <tr><td>28</td><td>player_bed_position</td></tr>
+  <tr><td>29</td><td>fireball_power_x</td></tr>
+  <tr><td>30</td><td>fireball_power_y</td></tr>
+  <tr><td>31</td><td>fireball_power_z</td></tr>
+  <tr><td>32</td><td>aux_power</td></tr>
+  <tr><td>33</td><td>fish_x</td></tr>
+  <tr><td>34</td><td>fish_z</td></tr>
+  <tr><td>35</td><td>fish_angle</td></tr>
+  <tr><td>36</td><td>potion_aux_value</td></tr>
+  <tr><td>37</td><td>lead_holder_eid</td></tr>
+  <tr><td>38</td><td>scale</td></tr>
+  <tr><td>39</td><td>interactive_tag</td></tr>
+  <tr><td>40</td><td>npc_skin_id</td></tr>
+  <tr><td>41</td><td>url_tag</td></tr>
+  <tr><td>42</td><td>max_airdata_max_air</td></tr>
+  <tr><td>43</td><td>mark_variant</td></tr>
+  <tr><td>44</td><td>container_type</td></tr>
+  <tr><td>45</td><td>container_base_size</td></tr>
+  <tr><td>46</td><td>container_extra_slots_per_strength</td></tr>
+  <tr><td>47</td><td>block_target</td></tr>
+  <tr><td>48</td><td>wither_invulnerable_ticks</td></tr>
+  <tr><td>49</td><td>wither_target_1</td></tr>
+  <tr><td>50</td><td>wither_target_2</td></tr>
+  <tr><td>51</td><td>wither_target_3</td></tr>
+  <tr><td>52</td><td>aerial_attack</td></tr>
+  <tr><td>53</td><td>boundingbox_width</td></tr>
+  <tr><td>54</td><td>boundingbox_height</td></tr>
+  <tr><td>55</td><td>fuse_length</td></tr>
+  <tr><td>56</td><td>rider_seat_position</td></tr>
+  <tr><td>57</td><td>rider_rotation_locked</td></tr>
+  <tr><td>58</td><td>rider_max_rotation</td></tr>
+  <tr><td>59</td><td>rider_min_rotation</td></tr>
+  <tr><td>60</td><td>rider_rotation_offset</td></tr>
+  <tr><td>61</td><td>area_effect_cloud_radius</td></tr>
+  <tr><td>62</td><td>area_effect_cloud_waiting</td></tr>
+  <tr><td>63</td><td>area_effect_cloud_particle_id</td></tr>
+  <tr><td>64</td><td>shulker_peek_id</td></tr>
+  <tr><td>65</td><td>shulker_attach_face</td></tr>
+  <tr><td>66</td><td>shulker_attached</td></tr>
+  <tr><td>67</td><td>shulker_attach_pos</td></tr>
+  <tr><td>68</td><td>trading_player_eid</td></tr>
+  <tr><td>69</td><td>trading_career</td></tr>
+  <tr><td>70</td><td>has_command_block</td></tr>
+  <tr><td>71</td><td>command_block_command</td></tr>
+  <tr><td>72</td><td>command_block_last_output</td></tr>
+  <tr><td>73</td><td>command_block_track_output</td></tr>
+  <tr><td>74</td><td>controlling_rider_seat_number</td></tr>
+  <tr><td>75</td><td>strength</td></tr>
+  <tr><td>76</td><td>max_strength</td></tr>
+  <tr><td>77</td><td>spell_casting_color</td></tr>
+  <tr><td>78</td><td>limited_life</td></tr>
+  <tr><td>79</td><td>armor_stand_pose_index</td></tr>
+  <tr><td>80</td><td>ender_crystal_time_offset</td></tr>
+  <tr><td>81</td><td>always_show_nametag</td></tr>
+  <tr><td>82</td><td>color_2</td></tr>
+  <tr><td>83</td><td>name_author</td></tr>
+  <tr><td>84</td><td>score_tag</td></tr>
+  <tr><td>85</td><td>balloon_attached_entity</td></tr>
+  <tr><td>86</td><td>pufferfish_size</td></tr>
+  <tr><td>87</td><td>bubble_time</td></tr>
+  <tr><td>88</td><td>agent</td></tr>
+  <tr><td>89</td><td>sitting_amount</td></tr>
+  <tr><td>90</td><td>sitting_amount_previous</td></tr>
+  <tr><td>91</td><td>eating_counter</td></tr>
+  <tr><td>92</td><td>flags_extended</td></tr>
+  <tr><td>93</td><td>laying_amount</td></tr>
+  <tr><td>94</td><td>laying_amount_previous</td></tr>
+  <tr><td>95</td><td>duration</td></tr>
+  <tr><td>96</td><td>spawn_time</td></tr>
+  <tr><td>97</td><td>change_rate</td></tr>
+  <tr><td>98</td><td>change_on_pickup</td></tr>
+  <tr><td>99</td><td>pickup_count</td></tr>
+  <tr><td>100</td><td>interact_text</td></tr>
+  <tr><td>101</td><td>trade_tier</td></tr>
+  <tr><td>102</td><td>max_trade_tier</td></tr>
+  <tr><td>103</td><td>trade_experience</td></tr>
+  <tr><td>104</td><td>skin_id</td></tr>
+  <tr><td>105</td><td>spawning_frames</td></tr>
+  <tr><td>106</td><td>command_block_tick_delay</td></tr>
+  <tr><td>107</td><td>command_block_execute_on_first_tick</td></tr>
+  <tr><td>108</td><td>ambient_sound_interval</td></tr>
+  <tr><td>109</td><td>ambient_sound_interval_range</td></tr>
+  <tr><td>110</td><td>ambient_sound_event_name</td></tr>
+  <tr><td>111</td><td>fall_damage_multiplier</td></tr>
+  <tr><td>112</td><td>name_raw_text</td></tr>
+  <tr><td>113</td><td>can_ride_target</td></tr>
+  <tr><td>114</td><td>low_tier_cured_discount</td></tr>
+  <tr><td>115</td><td>high_tier_cured_discount</td></tr>
+  <tr><td>116</td><td>nearby_cured_discount</td></tr>
+  <tr><td>117</td><td>nearby_cured_discount_timestamp</td></tr>
+  <tr><td>118</td><td>hitbox</td></tr>
+  <tr><td>119</td><td>is_buoyant</td></tr>
+  <tr><td>120</td><td>buoyancy_data</td></tr>
+  <tr><td>121</td><td>goat_horn_count</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>type</td><td>varint <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>byte</td></tr>
+  <tr><td>1</td><td>short</td></tr>
+  <tr><td>2</td><td>int</td></tr>
+  <tr><td>3</td><td>float</td></tr>
+  <tr><td>4</td><td>string</td></tr>
+  <tr><td>5</td><td>compound</td></tr>
+  <tr><td>6</td><td>vec3i</td></tr>
+  <tr><td>7</td><td>long</td></tr>
+  <tr><td>8</td><td>vec3f</td></tr>
+</table></td></tr>
+<tr><td>if value <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is flags</span></td><td>MetadataFlags1</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is flags_extended</span></td><td>MetadataFlags2</td><td>0</td></tr>
+<tr><td>if default <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is byte</span></td><td>i8</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is short</span></td><td>li16</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is int</span></td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is float</span></td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is string</span></td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is compound</span></td><td>nbt</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is vec3i</span></td><td>vec3i</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is long</span></td><td>zigzag64</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is vec3f</span></td><td>vec3f</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+</table><hr/><table class='table'>
+</table><hr/><table class='table'>
+<tr><td>Link </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>ridden_entity_id</td><td>zigzag64</td><td>0</td></tr>
+<tr><td class='field-name'>rider_entity_id</td><td>zigzag64</td><td>0</td></tr>
+<tr><td class='field-name'>type</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>immediate</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>rider_initiated</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>Links length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>Links <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>EntityAttributes length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>EntityAttributes <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>min</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>value</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>max</td><td>lf32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>Rotation </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>yaw</td><td>byterot</td><td>0</td></tr>
+<tr><td class='field-name'>pitch</td><td>byterot</td><td>0</td></tr>
+<tr><td class='field-name'>head_yaw</td><td>byterot</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>BlockCoordinates </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>x</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>y</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>z</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>PlayerAttributes length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>PlayerAttributes <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>min</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>max</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>current</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>default</span></td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>name</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>TransactionUseItem </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>action_type</td><td>varint <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>click_block</td></tr>
+  <tr><td>1</td><td>click_air</td></tr>
+  <tr><td>2</td><td>break_block</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>block_position</td><td>vec3i</td><td>0</td></tr>
+<tr><td class='field-name'>face</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>hotbar_slot</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>held_item</td><td>Item</td><td>0</td></tr>
+<tr><td class='field-name'>player_pos</td><td>vec3f</td><td>0</td></tr>
+<tr><td class='field-name'>click_pos</td><td>vec3f</td><td>0</td></tr>
+<tr><td class='field-name'>block_runtime_id</td><td>varint</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>TransactionActions length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>TransactionActions <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>source_type</td><td>varint <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>container</td></tr>
+  <tr><td>1</td><td>global</td></tr>
+  <tr><td>2</td><td>world_interaction</td></tr>
+  <tr><td>3</td><td>creative</td></tr>
+  <tr><td>100</td><td>craft_slot</td></tr>
+  <tr><td>99999</td><td>craft</td></tr>
+</table></td></tr>
+<tr><td>if source_type <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td><span class='fake'>is container or craft</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>inventory_id</td><td>WindowIDVarint</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is world_interaction</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>flags</td><td>varint</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is craft or craft_slot</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>action</td><td>varint</td><td>0</td></tr>
+</table></td></tr>
+<tr><td class='field-name'><span class='fake'>default</span></td><td>void</td><td>0</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>slot</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>old_item</td><td>Item</td><td>0</td></tr>
+<tr><td class='field-name'>new_item</td><td>Item</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>TransactionLegacy </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>legacy_request_id</td><td>zigzag32</td><td>0</td></tr>
+<tr><td>if legacy_transactions <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is 0</span></td><td>void</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>default</span> length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>default</span> <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>container_id</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>changed_slots length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>changed_slots <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>slot_id</td><td>u8</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>Transaction </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>legacy</td><td>TransactionLegacy</td><td>0</td></tr>
+<tr><td class='field-name'>transaction_type</td><td>varint <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>normal</td></tr>
+  <tr><td>1</td><td>inventory_mismatch</td></tr>
+  <tr><td>2</td><td>item_use</td></tr>
+  <tr><td>3</td><td>item_use_on_entity</td></tr>
+  <tr><td>4</td><td>item_release</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>actions</td><td>TransactionActions</td><td>0</td></tr>
+<tr><td>if transaction_data <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is normal or inventory_mismatch</span></td><td>void</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is item_use</span></td><td>TransactionUseItem</td><td>0</td></tr>
+<tr><td><span class='fake'>is item_use_on_entity</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>entity_runtime_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>action_type</td><td>varint <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>interact</td></tr>
+  <tr><td>1</td><td>attack</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>hotbar_slot</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>held_item</td><td>Item</td><td>0</td></tr>
+<tr><td class='field-name'>player_pos</td><td>vec3f</td><td>0</td></tr>
+<tr><td class='field-name'>click_pos</td><td>vec3f</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is item_release</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>action_type</td><td>varint <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>release</td></tr>
+  <tr><td>1</td><td>consume</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>hotbar_slot</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>held_item</td><td>Item</td><td>0</td></tr>
+<tr><td class='field-name'>head_pos</td><td>vec3f</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>ItemStacks length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>ItemStacks <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table><hr/><table class='table'>
+<tr><td>RecipeIngredient </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>network_id</td><td>zigzag32</td><td>0</td></tr>
+<tr><td>if network_id <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is 0</span></td><td>void</td><td>0</td></tr>
+<tr><td><span class='fake'>default</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>network_data</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>count</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>PotionTypeRecipes length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>PotionTypeRecipes <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>input_item_id</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>input_item_meta</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>ingredient_id</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>ingredient_meta</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>output_item_id</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>output_item_meta</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>PotionContainerChangeRecipes length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>PotionContainerChangeRecipes <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>input_item_id</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>ingredient_id</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>output_item_id</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>Recipes length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>Recipes <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>type</td><td>zigzag32 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>shapeless</td></tr>
+  <tr><td>1</td><td>shaped</td></tr>
+  <tr><td>2</td><td>furnace</td></tr>
+  <tr><td>3</td><td>furnace_with_metadata</td></tr>
+  <tr><td>4</td><td>multi</td></tr>
+  <tr><td>5</td><td>shulker_box</td></tr>
+  <tr><td>6</td><td>shapeless_chemistry</td></tr>
+  <tr><td>7</td><td>shaped_chemistry</td></tr>
+</table></td></tr>
+<tr><td>if recipe <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td><span class='fake'>is shapeless or shulker_box or shapeless_chemistry</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>recipe_id</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>input length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>input <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+<tr><td class='field-name'>output length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>output <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+<tr><td class='field-name'>uuid</td><td>uuid</td><td>0</td></tr>
+<tr><td class='field-name'>block</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>priority</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>network_id</td><td>varint</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is shaped or shaped_chemistry</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>recipe_id</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>width</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>height</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>input length</td><td>$width</td><td>0</td></tr>
+<tr><td class='field-name'>input <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>__659 length</td><td>$height</td><td>0</td></tr>
+<tr><td class='field-name'>__659 <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>output length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>output <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+<tr><td class='field-name'>uuid</td><td>uuid</td><td>0</td></tr>
+<tr><td class='field-name'>block</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>priority</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>network_id</td><td>varint</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is furnace</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>input_id</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>output</td><td>ItemLegacy</td><td>0</td></tr>
+<tr><td class='field-name'>block</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is furnace_with_metadata</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>input_id</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>input_meta</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>output</td><td>ItemLegacy</td><td>0</td></tr>
+<tr><td class='field-name'>block</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is multi</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>uuid</td><td>uuid</td><td>0</td></tr>
+<tr><td class='field-name'>network_id</td><td>varint</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>SkinImage </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>width</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>height</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>data</td><td>ByteArray</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>Skin </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>skin_id</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>play_fab_id</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>skin_resource_pack</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>skin_data</td><td>SkinImage</td><td>0</td></tr>
+<tr><td class='field-name'>animations length</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>animations <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>skin_image</td><td>SkinImage</td><td>0</td></tr>
+<tr><td class='field-name'>animation_type</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>animation_frames</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>expression_type</td><td>lf32</td><td>0</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>cape_data</td><td>SkinImage</td><td>0</td></tr>
+<tr><td class='field-name'>geometry_data</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>animation_data</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>premium</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>persona</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>cape_on_classic</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>cape_id</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>full_skin_id</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>arm_size</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>skin_color</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>personal_pieces length</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>personal_pieces <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>piece_id</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>piece_type</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>pack_id</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>is_default_piece</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>product_id</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>piece_tint_colors length</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>piece_tint_colors <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>piece_type</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>colors length</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>colors <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>PlayerRecords </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>type</td><td>u8 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>add</td></tr>
+  <tr><td>1</td><td>remove</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>records_count</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>records length</td><td>$records_count</td><td>0</td></tr>
+<tr><td class='field-name'>records <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td>if type <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td><span class='fake'>is add</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>uuid</td><td>uuid</td><td>0</td></tr>
+<tr><td class='field-name'>entity_unique_id</td><td>zigzag64</td><td>0</td></tr>
+<tr><td class='field-name'>username</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>xbox_user_id</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>platform_chat_id</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>build_platform</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>skin_data</td><td>Skin</td><td>0</td></tr>
+<tr><td class='field-name'>is_teacher</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>is_host</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is remove</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>uuid</td><td>uuid</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+<tr><td>if verified <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is add</span> length</td><td>$records_count</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is add</span> <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>ScoreEntries </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>type</td><td>u8 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>change</td></tr>
+  <tr><td>1</td><td>remove</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>entries length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>entries <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>scoreboard_id</td><td>zigzag64</td><td>0</td></tr>
+<tr><td class='field-name'>objective_name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>score</td><td>li32</td><td>0</td></tr>
+<tr><td>if type <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td><span class='fake'>is remove</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>entry_type</td><td>i8 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>1</td><td>player</td></tr>
+  <tr><td>2</td><td>entity</td></tr>
+  <tr><td>3</td><td>fake_player</td></tr>
+</table></td></tr>
+<tr><td>if entity_unique_id <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is player or entity</span></td><td>zigzag64</td><td>0</td></tr>
+</table></td></tr>
+<tr><td>if custom_name <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is fake_player</span></td><td>string</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>ScoreboardIdentityEntries </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>type</td><td>i8 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>TYPE_REGISTER_IDENTITY</td></tr>
+  <tr><td>1</td><td>TYPE_CLEAR_IDENTITY</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>entries length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>entries <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>scoreboard_id</td><td>zigzag64</td><td>0</td></tr>
+<tr><td>if entity_unique_id <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is TYPE_REGISTER_IDENTITY</span></td><td>zigzag64</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>default</span></td><td>void</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>Enchant </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>id</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>level</td><td>u8</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>EnchantOptions length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>EnchantOptions <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>cost</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>slot_flags</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>equip_enchants length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>equip_enchants <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+<tr><td class='field-name'>held_enchants length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>held_enchants <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+<tr><td class='field-name'>self_enchants length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>self_enchants <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+<tr><td class='field-name'>name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>option_id</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>Action</td><td>zigzag32 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>start_break</td></tr>
+  <tr><td>1</td><td>abort_break</td></tr>
+  <tr><td>2</td><td>stop_break</td></tr>
+  <tr><td>3</td><td>get_updated_block</td></tr>
+  <tr><td>4</td><td>drop_item</td></tr>
+  <tr><td>5</td><td>start_sleeping</td></tr>
+  <tr><td>6</td><td>stop_sleeping</td></tr>
+  <tr><td>7</td><td>respawn</td></tr>
+  <tr><td>8</td><td>jump</td></tr>
+  <tr><td>9</td><td>start_sprint</td></tr>
+  <tr><td>10</td><td>stop_sprint</td></tr>
+  <tr><td>11</td><td>start_sneak</td></tr>
+  <tr><td>12</td><td>stop_sneak</td></tr>
+  <tr><td>13</td><td>creative_player_destroy_block</td></tr>
+  <tr><td>14</td><td>dimension_change_ack</td></tr>
+  <tr><td>15</td><td>start_glide</td></tr>
+  <tr><td>16</td><td>stop_glide</td></tr>
+  <tr><td>17</td><td>build_denied</td></tr>
+  <tr><td>18</td><td>crack_break</td></tr>
+  <tr><td>19</td><td>change_skin</td></tr>
+  <tr><td>20</td><td>set_enchatnment_seed</td></tr>
+  <tr><td>21</td><td>swimming</td></tr>
+  <tr><td>22</td><td>stop_swimming</td></tr>
+  <tr><td>23</td><td>start_spin_attack</td></tr>
+  <tr><td>24</td><td>stop_spin_attack</td></tr>
+  <tr><td>25</td><td>interact_block</td></tr>
+  <tr><td>26</td><td>predict_break</td></tr>
+  <tr><td>27</td><td>continue_break</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>StackRequestSlotInfo </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>slot_type</td><td>ContainerSlotType</td><td>0</td></tr>
+<tr><td class='field-name'>slot</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>stack_id</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>ItemStackRequest </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>request_id</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>actions length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>actions <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>type_id</td><td>u8 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>take</td></tr>
+  <tr><td>1</td><td>place</td></tr>
+  <tr><td>2</td><td>swap</td></tr>
+  <tr><td>3</td><td>drop</td></tr>
+  <tr><td>4</td><td>destroy</td></tr>
+  <tr><td>5</td><td>consume</td></tr>
+  <tr><td>6</td><td>create</td></tr>
+  <tr><td>7</td><td>lab_table_combine</td></tr>
+  <tr><td>8</td><td>beacon_payment</td></tr>
+  <tr><td>9</td><td>mine_block</td></tr>
+  <tr><td>10</td><td>craft_recipe</td></tr>
+  <tr><td>11</td><td>craft_recipe_auto</td></tr>
+  <tr><td>12</td><td>craft_creative</td></tr>
+  <tr><td>13</td><td>optional</td></tr>
+  <tr><td>14</td><td>non_implemented</td></tr>
+  <tr><td>15</td><td>results_deprecated</td></tr>
+</table></td></tr>
+<tr><td>if type_id <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td><span class='fake'>is take or place</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>count</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>source</td><td>StackRequestSlotInfo</td><td>0</td></tr>
+<tr><td class='field-name'>destination</td><td>StackRequestSlotInfo</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is swap</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>source</td><td>StackRequestSlotInfo</td><td>0</td></tr>
+<tr><td class='field-name'>destination</td><td>StackRequestSlotInfo</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is drop</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>count</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>source</td><td>StackRequestSlotInfo</td><td>0</td></tr>
+<tr><td class='field-name'>randomly</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is destroy or consume</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>count</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>source</td><td>StackRequestSlotInfo</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is create</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>result_slot_id</td><td>u8</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is beacon_payment</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>primary_effect</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>secondary_effect</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is mine_block</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>unknown1</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>predicted_durability</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>network_id</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is craft_recipe or craft_recipe_auto</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>recipe_network_id</td><td>varint</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is craft_creative</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>item_id</td><td>varint32</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is optional</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>recipe_network_id</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>filtered_string_index</td><td>li32</td><td>0</td></tr>
+</table></td></tr>
+<tr><td class='field-name'><span class='fake'>is non_implemented</span></td><td>void</td><td>0</td></tr>
+<tr><td><span class='fake'>is results_deprecated</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>result_items length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>result_items <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+<tr><td class='field-name'>times_crafted</td><td>u8</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+<tr><td class='field-name'>custom_names length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>custom_names <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>ItemStackResponses length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>ItemStackResponses <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>status</td><td>u8 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>ok</td></tr>
+  <tr><td>1</td><td>error</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>request_id</td><td>varint32</td><td>0</td></tr>
+<tr><td>if status <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td><span class='fake'>is ok</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>containers length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>containers <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>slot_type</td><td>ContainerSlotType</td><td>0</td></tr>
+<tr><td class='field-name'>slots length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>slots <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>slot</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>hotbar_slot</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>count</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>item_stack_id</td><td>varint32</td><td>0</td></tr>
+<tr><td class='field-name'>custom_name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>durability_correction</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>ItemComponentList length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>ItemComponentList <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>nbt</td><td>nbt</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>CommandOrigin </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>type</td><td>varint <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>player</td></tr>
+  <tr><td>1</td><td>block</td></tr>
+  <tr><td>2</td><td>minecart_block</td></tr>
+  <tr><td>3</td><td>dev_console</td></tr>
+  <tr><td>4</td><td>test</td></tr>
+  <tr><td>5</td><td>automation_player</td></tr>
+  <tr><td>6</td><td>client_automation</td></tr>
+  <tr><td>7</td><td>dedicated_server</td></tr>
+  <tr><td>8</td><td>entity</td></tr>
+  <tr><td>9</td><td>virtual</td></tr>
+  <tr><td>10</td><td>game_argument</td></tr>
+  <tr><td>11</td><td>entity_server</td></tr>
+  <tr><td>12</td><td>precompiled</td></tr>
+  <tr><td>13</td><td>game_director_entity_server</td></tr>
+  <tr><td>14</td><td>script</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>uuid</td><td>uuid</td><td>0</td></tr>
+<tr><td class='field-name'>request_id</td><td>string</td><td>0</td></tr>
+<tr><td>if player_entity_id <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td><span class='fake'>is dev_console or test</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>player_entity_id</td><td>zigzag64</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>TrackedObject </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>type</td><td>li32 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>entity</td></tr>
+  <tr><td>1</td><td>block</td></tr>
+</table></td></tr>
+<tr><td>if entity_unique_id <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is entity</span></td><td>zigzag64</td><td>0</td></tr>
+</table></td></tr>
+<tr><td>if block_position <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is block</span></td><td>BlockCoordinates</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>MapDecoration </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>type</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>rotation</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>x</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>y</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>label</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>color_abgr</td><td>varint</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>WindowID</td><td>i8 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>inventory</td></tr>
+  <tr><td>1</td><td>first</td></tr>
+  <tr><td>100</td><td>last</td></tr>
+  <tr><td>119</td><td>offhand</td></tr>
+  <tr><td>120</td><td>armor</td></tr>
+  <tr><td>121</td><td>creative</td></tr>
+  <tr><td>122</td><td>hotbar</td></tr>
+  <tr><td>123</td><td>fixed_inventory</td></tr>
+  <tr><td>124</td><td>ui</td></tr>
+  <tr><td>-100</td><td>drop_contents</td></tr>
+  <tr><td>-24</td><td>beacon</td></tr>
+  <tr><td>-23</td><td>trading_output</td></tr>
+  <tr><td>-22</td><td>trading_use_inputs</td></tr>
+  <tr><td>-21</td><td>trading_input_2</td></tr>
+  <tr><td>-20</td><td>trading_input_1</td></tr>
+  <tr><td>-17</td><td>enchant_output</td></tr>
+  <tr><td>-16</td><td>enchant_material</td></tr>
+  <tr><td>-15</td><td>enchant_input</td></tr>
+  <tr><td>-13</td><td>anvil_output</td></tr>
+  <tr><td>-12</td><td>anvil_result</td></tr>
+  <tr><td>-11</td><td>anvil_material</td></tr>
+  <tr><td>-10</td><td>container_input</td></tr>
+  <tr><td>-5</td><td>crafting_use_ingredient</td></tr>
+  <tr><td>-4</td><td>crafting_result</td></tr>
+  <tr><td>-3</td><td>crafting_remove_ingredient</td></tr>
+  <tr><td>-2</td><td>crafting_add_ingredient</td></tr>
+  <tr><td>-1</td><td>none</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>WindowIDVarint</td><td>varint <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>inventory</td></tr>
+  <tr><td>1</td><td>first</td></tr>
+  <tr><td>100</td><td>last</td></tr>
+  <tr><td>119</td><td>offhand</td></tr>
+  <tr><td>120</td><td>armor</td></tr>
+  <tr><td>121</td><td>creative</td></tr>
+  <tr><td>122</td><td>hotbar</td></tr>
+  <tr><td>123</td><td>fixed_inventory</td></tr>
+  <tr><td>124</td><td>ui</td></tr>
+  <tr><td>-100</td><td>drop_contents</td></tr>
+  <tr><td>-24</td><td>beacon</td></tr>
+  <tr><td>-23</td><td>trading_output</td></tr>
+  <tr><td>-22</td><td>trading_use_inputs</td></tr>
+  <tr><td>-21</td><td>trading_input_2</td></tr>
+  <tr><td>-20</td><td>trading_input_1</td></tr>
+  <tr><td>-17</td><td>enchant_output</td></tr>
+  <tr><td>-16</td><td>enchant_material</td></tr>
+  <tr><td>-15</td><td>enchant_input</td></tr>
+  <tr><td>-13</td><td>anvil_output</td></tr>
+  <tr><td>-12</td><td>anvil_result</td></tr>
+  <tr><td>-11</td><td>anvil_material</td></tr>
+  <tr><td>-10</td><td>container_input</td></tr>
+  <tr><td>-5</td><td>crafting_use_ingredient</td></tr>
+  <tr><td>-4</td><td>crafting_result</td></tr>
+  <tr><td>-3</td><td>crafting_remove_ingredient</td></tr>
+  <tr><td>-2</td><td>crafting_add_ingredient</td></tr>
+  <tr><td>-1</td><td>none</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>WindowType</td><td>i8 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>container</td></tr>
+  <tr><td>1</td><td>workbench</td></tr>
+  <tr><td>2</td><td>furnace</td></tr>
+  <tr><td>3</td><td>enchantment</td></tr>
+  <tr><td>4</td><td>brewing_stand</td></tr>
+  <tr><td>5</td><td>anvil</td></tr>
+  <tr><td>6</td><td>dispenser</td></tr>
+  <tr><td>7</td><td>dropper</td></tr>
+  <tr><td>8</td><td>hopper</td></tr>
+  <tr><td>9</td><td>cauldron</td></tr>
+  <tr><td>10</td><td>minecart_chest</td></tr>
+  <tr><td>11</td><td>minecart_hopper</td></tr>
+  <tr><td>12</td><td>horse</td></tr>
+  <tr><td>13</td><td>beacon</td></tr>
+  <tr><td>14</td><td>structure_editor</td></tr>
+  <tr><td>15</td><td>trading</td></tr>
+  <tr><td>16</td><td>command_block</td></tr>
+  <tr><td>17</td><td>jukebox</td></tr>
+  <tr><td>18</td><td>armor</td></tr>
+  <tr><td>19</td><td>hand</td></tr>
+  <tr><td>20</td><td>compound_creator</td></tr>
+  <tr><td>21</td><td>element_constructor</td></tr>
+  <tr><td>22</td><td>material_reducer</td></tr>
+  <tr><td>23</td><td>lab_table</td></tr>
+  <tr><td>24</td><td>loom</td></tr>
+  <tr><td>25</td><td>lectern</td></tr>
+  <tr><td>26</td><td>grindstone</td></tr>
+  <tr><td>27</td><td>blast_furnace</td></tr>
+  <tr><td>28</td><td>smoker</td></tr>
+  <tr><td>29</td><td>stonecutter</td></tr>
+  <tr><td>30</td><td>cartography</td></tr>
+  <tr><td>31</td><td>hud</td></tr>
+  <tr><td>32</td><td>jigsaw_editor</td></tr>
+  <tr><td>33</td><td>smithing_table</td></tr>
+  <tr><td>-9</td><td>none</td></tr>
+  <tr><td>-1</td><td>inventory</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+</table><hr/><table class='table'>
+</table><hr/><table class='table'>
+<tr><td class='field-name'>LegacyEntityType</td><td>li32 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>10</td><td>chicken</td></tr>
+  <tr><td>11</td><td>cow</td></tr>
+  <tr><td>12</td><td>pig</td></tr>
+  <tr><td>13</td><td>sheep</td></tr>
+  <tr><td>14</td><td>wolf</td></tr>
+  <tr><td>15</td><td>villager</td></tr>
+  <tr><td>16</td><td>mooshroom</td></tr>
+  <tr><td>17</td><td>squid</td></tr>
+  <tr><td>18</td><td>rabbit</td></tr>
+  <tr><td>19</td><td>bat</td></tr>
+  <tr><td>20</td><td>iron_golem</td></tr>
+  <tr><td>21</td><td>snow_golem</td></tr>
+  <tr><td>22</td><td>ocelot</td></tr>
+  <tr><td>23</td><td>horse</td></tr>
+  <tr><td>24</td><td>donkey</td></tr>
+  <tr><td>25</td><td>mule</td></tr>
+  <tr><td>26</td><td>skeleton_horse</td></tr>
+  <tr><td>27</td><td>zombie_horse</td></tr>
+  <tr><td>28</td><td>polar_bear</td></tr>
+  <tr><td>29</td><td>llama</td></tr>
+  <tr><td>30</td><td>parrot</td></tr>
+  <tr><td>31</td><td>dolphin</td></tr>
+  <tr><td>32</td><td>zombie</td></tr>
+  <tr><td>33</td><td>creeper</td></tr>
+  <tr><td>34</td><td>skeleton</td></tr>
+  <tr><td>35</td><td>spider</td></tr>
+  <tr><td>36</td><td>zombie_pigman</td></tr>
+  <tr><td>37</td><td>slime</td></tr>
+  <tr><td>38</td><td>enderman</td></tr>
+  <tr><td>39</td><td>silverfish</td></tr>
+  <tr><td>40</td><td>cave_spider</td></tr>
+  <tr><td>41</td><td>ghast</td></tr>
+  <tr><td>42</td><td>magma_cube</td></tr>
+  <tr><td>43</td><td>blaze</td></tr>
+  <tr><td>44</td><td>zombie_villager</td></tr>
+  <tr><td>45</td><td>witch</td></tr>
+  <tr><td>46</td><td>stray</td></tr>
+  <tr><td>47</td><td>husk</td></tr>
+  <tr><td>48</td><td>wither_skeleton</td></tr>
+  <tr><td>49</td><td>guardian</td></tr>
+  <tr><td>50</td><td>elder_guardian</td></tr>
+  <tr><td>51</td><td>npc</td></tr>
+  <tr><td>52</td><td>wither</td></tr>
+  <tr><td>53</td><td>ender_dragon</td></tr>
+  <tr><td>54</td><td>shulker</td></tr>
+  <tr><td>55</td><td>endermite</td></tr>
+  <tr><td>56</td><td>agent</td></tr>
+  <tr><td>57</td><td>vindicator</td></tr>
+  <tr><td>58</td><td>phantom</td></tr>
+  <tr><td>61</td><td>armor_stand</td></tr>
+  <tr><td>62</td><td>tripod_camera</td></tr>
+  <tr><td>63</td><td>player</td></tr>
+  <tr><td>64</td><td>item</td></tr>
+  <tr><td>65</td><td>tnt</td></tr>
+  <tr><td>66</td><td>falling_block</td></tr>
+  <tr><td>67</td><td>moving_block</td></tr>
+  <tr><td>68</td><td>xp_bottle</td></tr>
+  <tr><td>69</td><td>xp_orb</td></tr>
+  <tr><td>70</td><td>eye_of_ender_signal</td></tr>
+  <tr><td>71</td><td>ender_crystal</td></tr>
+  <tr><td>72</td><td>fireworks_rocket</td></tr>
+  <tr><td>73</td><td>thrown_trident</td></tr>
+  <tr><td>74</td><td>turtle</td></tr>
+  <tr><td>75</td><td>cat</td></tr>
+  <tr><td>76</td><td>shulker_bullet</td></tr>
+  <tr><td>77</td><td>fishing_hook</td></tr>
+  <tr><td>78</td><td>chalkboard</td></tr>
+  <tr><td>79</td><td>dragon_fireball</td></tr>
+  <tr><td>80</td><td>arrow</td></tr>
+  <tr><td>81</td><td>snowball</td></tr>
+  <tr><td>82</td><td>egg</td></tr>
+  <tr><td>83</td><td>painting</td></tr>
+  <tr><td>84</td><td>minecart</td></tr>
+  <tr><td>85</td><td>fireball</td></tr>
+  <tr><td>86</td><td>splash_potion</td></tr>
+  <tr><td>87</td><td>ender_pearl</td></tr>
+  <tr><td>88</td><td>leash_knot</td></tr>
+  <tr><td>89</td><td>wither_skull</td></tr>
+  <tr><td>90</td><td>boat</td></tr>
+  <tr><td>91</td><td>wither_skull_dangerous</td></tr>
+  <tr><td>93</td><td>lightning_bolt</td></tr>
+  <tr><td>94</td><td>small_fireball</td></tr>
+  <tr><td>95</td><td>area_effect_cloud</td></tr>
+  <tr><td>96</td><td>hopper_minecart</td></tr>
+  <tr><td>97</td><td>tnt_minecart</td></tr>
+  <tr><td>98</td><td>chest_minecart</td></tr>
+  <tr><td>100</td><td>command_block_minecart</td></tr>
+  <tr><td>101</td><td>lingering_potion</td></tr>
+  <tr><td>102</td><td>llama_spit</td></tr>
+  <tr><td>103</td><td>evocation_fang</td></tr>
+  <tr><td>104</td><td>evocation_illager</td></tr>
+  <tr><td>105</td><td>vex</td></tr>
+  <tr><td>106</td><td>ice_bomb</td></tr>
+  <tr><td>107</td><td>balloon</td></tr>
+  <tr><td>108</td><td>pufferfish</td></tr>
+  <tr><td>109</td><td>salmon</td></tr>
+  <tr><td>110</td><td>drowned</td></tr>
+  <tr><td>111</td><td>tropicalfish</td></tr>
+  <tr><td>112</td><td>cod</td></tr>
+  <tr><td>113</td><td>panda</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+</table><hr/><table class='table'>
+<tr><td>mcpe_packet </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>name</td><td>varint <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>1</td><td>login</td></tr>
+  <tr><td>2</td><td>play_status</td></tr>
+  <tr><td>3</td><td>server_to_client_handshake</td></tr>
+  <tr><td>4</td><td>client_to_server_handshake</td></tr>
+  <tr><td>5</td><td>disconnect</td></tr>
+  <tr><td>6</td><td>resource_packs_info</td></tr>
+  <tr><td>7</td><td>resource_pack_stack</td></tr>
+  <tr><td>8</td><td>resource_pack_client_response</td></tr>
+  <tr><td>9</td><td>text</td></tr>
+  <tr><td>10</td><td>set_time</td></tr>
+  <tr><td>11</td><td>start_game</td></tr>
+  <tr><td>12</td><td>add_player</td></tr>
+  <tr><td>13</td><td>add_entity</td></tr>
+  <tr><td>14</td><td>remove_entity</td></tr>
+  <tr><td>15</td><td>add_item_entity</td></tr>
+  <tr><td>17</td><td>take_item_entity</td></tr>
+  <tr><td>18</td><td>move_entity</td></tr>
+  <tr><td>19</td><td>move_player</td></tr>
+  <tr><td>20</td><td>rider_jump</td></tr>
+  <tr><td>21</td><td>update_block</td></tr>
+  <tr><td>22</td><td>add_painting</td></tr>
+  <tr><td>23</td><td>tick_sync</td></tr>
+  <tr><td>24</td><td>level_sound_event_old</td></tr>
+  <tr><td>25</td><td>level_event</td></tr>
+  <tr><td>26</td><td>block_event</td></tr>
+  <tr><td>27</td><td>entity_event</td></tr>
+  <tr><td>28</td><td>mob_effect</td></tr>
+  <tr><td>29</td><td>update_attributes</td></tr>
+  <tr><td>30</td><td>inventory_transaction</td></tr>
+  <tr><td>31</td><td>mob_equipment</td></tr>
+  <tr><td>32</td><td>mob_armor_equipment</td></tr>
+  <tr><td>33</td><td>interact</td></tr>
+  <tr><td>34</td><td>block_pick_request</td></tr>
+  <tr><td>35</td><td>entity_pick_request</td></tr>
+  <tr><td>36</td><td>player_action</td></tr>
+  <tr><td>38</td><td>hurt_armor</td></tr>
+  <tr><td>39</td><td>set_entity_data</td></tr>
+  <tr><td>40</td><td>set_entity_motion</td></tr>
+  <tr><td>41</td><td>set_entity_link</td></tr>
+  <tr><td>42</td><td>set_health</td></tr>
+  <tr><td>43</td><td>set_spawn_position</td></tr>
+  <tr><td>44</td><td>animate</td></tr>
+  <tr><td>45</td><td>respawn</td></tr>
+  <tr><td>46</td><td>container_open</td></tr>
+  <tr><td>47</td><td>container_close</td></tr>
+  <tr><td>48</td><td>player_hotbar</td></tr>
+  <tr><td>49</td><td>inventory_content</td></tr>
+  <tr><td>50</td><td>inventory_slot</td></tr>
+  <tr><td>51</td><td>container_set_data</td></tr>
+  <tr><td>52</td><td>crafting_data</td></tr>
+  <tr><td>53</td><td>crafting_event</td></tr>
+  <tr><td>54</td><td>gui_data_pick_item</td></tr>
+  <tr><td>55</td><td>adventure_settings</td></tr>
+  <tr><td>56</td><td>block_entity_data</td></tr>
+  <tr><td>57</td><td>player_input</td></tr>
+  <tr><td>58</td><td>level_chunk</td></tr>
+  <tr><td>59</td><td>set_commands_enabled</td></tr>
+  <tr><td>60</td><td>set_difficulty</td></tr>
+  <tr><td>61</td><td>change_dimension</td></tr>
+  <tr><td>62</td><td>set_player_game_type</td></tr>
+  <tr><td>63</td><td>player_list</td></tr>
+  <tr><td>64</td><td>simple_event</td></tr>
+  <tr><td>65</td><td>event</td></tr>
+  <tr><td>66</td><td>spawn_experience_orb</td></tr>
+  <tr><td>67</td><td>clientbound_map_item_data</td></tr>
+  <tr><td>68</td><td>map_info_request</td></tr>
+  <tr><td>69</td><td>request_chunk_radius</td></tr>
+  <tr><td>70</td><td>chunk_radius_update</td></tr>
+  <tr><td>71</td><td>item_frame_drop_item</td></tr>
+  <tr><td>72</td><td>game_rules_changed</td></tr>
+  <tr><td>73</td><td>camera</td></tr>
+  <tr><td>74</td><td>boss_event</td></tr>
+  <tr><td>75</td><td>show_credits</td></tr>
+  <tr><td>76</td><td>available_commands</td></tr>
+  <tr><td>77</td><td>command_request</td></tr>
+  <tr><td>78</td><td>command_block_update</td></tr>
+  <tr><td>79</td><td>command_output</td></tr>
+  <tr><td>80</td><td>update_trade</td></tr>
+  <tr><td>81</td><td>update_equipment</td></tr>
+  <tr><td>82</td><td>resource_pack_data_info</td></tr>
+  <tr><td>83</td><td>resource_pack_chunk_data</td></tr>
+  <tr><td>84</td><td>resource_pack_chunk_request</td></tr>
+  <tr><td>85</td><td>transfer</td></tr>
+  <tr><td>86</td><td>play_sound</td></tr>
+  <tr><td>87</td><td>stop_sound</td></tr>
+  <tr><td>88</td><td>set_title</td></tr>
+  <tr><td>89</td><td>add_behavior_tree</td></tr>
+  <tr><td>90</td><td>structure_block_update</td></tr>
+  <tr><td>91</td><td>show_store_offer</td></tr>
+  <tr><td>92</td><td>purchase_receipt</td></tr>
+  <tr><td>93</td><td>player_skin</td></tr>
+  <tr><td>94</td><td>sub_client_login</td></tr>
+  <tr><td>95</td><td>initiate_web_socket_connection</td></tr>
+  <tr><td>96</td><td>set_last_hurt_by</td></tr>
+  <tr><td>97</td><td>book_edit</td></tr>
+  <tr><td>98</td><td>npc_request</td></tr>
+  <tr><td>99</td><td>photo_transfer</td></tr>
+  <tr><td>100</td><td>modal_form_request</td></tr>
+  <tr><td>101</td><td>modal_form_response</td></tr>
+  <tr><td>102</td><td>server_settings_request</td></tr>
+  <tr><td>103</td><td>server_settings_response</td></tr>
+  <tr><td>104</td><td>show_profile</td></tr>
+  <tr><td>105</td><td>set_default_game_type</td></tr>
+  <tr><td>106</td><td>remove_objective</td></tr>
+  <tr><td>107</td><td>set_display_objective</td></tr>
+  <tr><td>108</td><td>set_score</td></tr>
+  <tr><td>109</td><td>lab_table</td></tr>
+  <tr><td>110</td><td>update_block_synced</td></tr>
+  <tr><td>111</td><td>move_entity_delta</td></tr>
+  <tr><td>112</td><td>set_scoreboard_identity</td></tr>
+  <tr><td>113</td><td>set_local_player_as_initialized</td></tr>
+  <tr><td>114</td><td>update_soft_enum</td></tr>
+  <tr><td>115</td><td>network_stack_latency</td></tr>
+  <tr><td>117</td><td>script_custom_event</td></tr>
+  <tr><td>118</td><td>spawn_particle_effect</td></tr>
+  <tr><td>119</td><td>available_entity_identifiers</td></tr>
+  <tr><td>120</td><td>level_sound_event_v2</td></tr>
+  <tr><td>121</td><td>network_chunk_publisher_update</td></tr>
+  <tr><td>122</td><td>biome_definition_list</td></tr>
+  <tr><td>123</td><td>level_sound_event</td></tr>
+  <tr><td>124</td><td>level_event_generic</td></tr>
+  <tr><td>125</td><td>lectern_update</td></tr>
+  <tr><td>126</td><td>video_stream_connect</td></tr>
+  <tr><td>127</td><td>add_ecs_entity</td></tr>
+  <tr><td>128</td><td>remove_ecs_entity</td></tr>
+  <tr><td>129</td><td>client_cache_status</td></tr>
+  <tr><td>130</td><td>on_screen_texture_animation</td></tr>
+  <tr><td>131</td><td>map_create_locked_copy</td></tr>
+  <tr><td>132</td><td>structure_template_data_export_request</td></tr>
+  <tr><td>133</td><td>structure_template_data_export_response</td></tr>
+  <tr><td>134</td><td>update_block_properties</td></tr>
+  <tr><td>135</td><td>client_cache_blob_status</td></tr>
+  <tr><td>136</td><td>client_cache_miss_response</td></tr>
+  <tr><td>137</td><td>education_settings</td></tr>
+  <tr><td>139</td><td>multiplayer_settings</td></tr>
+  <tr><td>140</td><td>settings_command</td></tr>
+  <tr><td>141</td><td>anvil_damage</td></tr>
+  <tr><td>142</td><td>completed_using_item</td></tr>
+  <tr><td>143</td><td>network_settings</td></tr>
+  <tr><td>144</td><td>player_auth_input</td></tr>
+  <tr><td>145</td><td>creative_content</td></tr>
+  <tr><td>146</td><td>player_enchant_options</td></tr>
+  <tr><td>147</td><td>item_stack_request</td></tr>
+  <tr><td>148</td><td>item_stack_response</td></tr>
+  <tr><td>149</td><td>player_armor_damage</td></tr>
+  <tr><td>151</td><td>update_player_game_type</td></tr>
+  <tr><td>153</td><td>position_tracking_db_broadcast</td></tr>
+  <tr><td>154</td><td>position_tracking_db_request</td></tr>
+  <tr><td>156</td><td>packet_violation_warning</td></tr>
+  <tr><td>157</td><td>motion_prediction_hints</td></tr>
+  <tr><td>158</td><td>animate_entity</td></tr>
+  <tr><td>159</td><td>camera_shake</td></tr>
+  <tr><td>160</td><td>player_fog</td></tr>
+  <tr><td>161</td><td>correct_player_move_prediction</td></tr>
+  <tr><td>162</td><td>item_component</td></tr>
+  <tr><td>163</td><td>filter_text_packet</td></tr>
+  <tr><td>164</td><td>debug_renderer</td></tr>
+</table></td></tr>
+<tr><td>if params <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is login</span></td><td>packet_login</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is play_status</span></td><td>packet_play_status</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is server_to_client_handshake</span></td><td>packet_server_to_client_handshake</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is client_to_server_handshake</span></td><td>packet_client_to_server_handshake</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is disconnect</span></td><td>packet_disconnect</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is resource_packs_info</span></td><td>packet_resource_packs_info</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is resource_pack_stack</span></td><td>packet_resource_pack_stack</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is resource_pack_client_response</span></td><td>packet_resource_pack_client_response</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is text</span></td><td>packet_text</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is set_time</span></td><td>packet_set_time</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is start_game</span></td><td>packet_start_game</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is add_player</span></td><td>packet_add_player</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is add_entity</span></td><td>packet_add_entity</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is remove_entity</span></td><td>packet_remove_entity</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is add_item_entity</span></td><td>packet_add_item_entity</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is take_item_entity</span></td><td>packet_take_item_entity</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is move_entity</span></td><td>packet_move_entity</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is move_player</span></td><td>packet_move_player</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is rider_jump</span></td><td>packet_rider_jump</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is update_block</span></td><td>packet_update_block</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is add_painting</span></td><td>packet_add_painting</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is tick_sync</span></td><td>packet_tick_sync</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is level_sound_event_old</span></td><td>packet_level_sound_event_old</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is level_event</span></td><td>packet_level_event</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is block_event</span></td><td>packet_block_event</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is entity_event</span></td><td>packet_entity_event</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is mob_effect</span></td><td>packet_mob_effect</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is update_attributes</span></td><td>packet_update_attributes</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is inventory_transaction</span></td><td>packet_inventory_transaction</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is mob_equipment</span></td><td>packet_mob_equipment</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is mob_armor_equipment</span></td><td>packet_mob_armor_equipment</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is interact</span></td><td>packet_interact</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is block_pick_request</span></td><td>packet_block_pick_request</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is entity_pick_request</span></td><td>packet_entity_pick_request</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is player_action</span></td><td>packet_player_action</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is hurt_armor</span></td><td>packet_hurt_armor</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is set_entity_data</span></td><td>packet_set_entity_data</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is set_entity_motion</span></td><td>packet_set_entity_motion</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is set_entity_link</span></td><td>packet_set_entity_link</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is set_health</span></td><td>packet_set_health</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is set_spawn_position</span></td><td>packet_set_spawn_position</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is animate</span></td><td>packet_animate</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is respawn</span></td><td>packet_respawn</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is container_open</span></td><td>packet_container_open</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is container_close</span></td><td>packet_container_close</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is player_hotbar</span></td><td>packet_player_hotbar</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is inventory_content</span></td><td>packet_inventory_content</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is inventory_slot</span></td><td>packet_inventory_slot</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is container_set_data</span></td><td>packet_container_set_data</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is crafting_data</span></td><td>packet_crafting_data</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is crafting_event</span></td><td>packet_crafting_event</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is gui_data_pick_item</span></td><td>packet_gui_data_pick_item</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is adventure_settings</span></td><td>packet_adventure_settings</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is block_entity_data</span></td><td>packet_block_entity_data</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is player_input</span></td><td>packet_player_input</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is level_chunk</span></td><td>packet_level_chunk</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is set_commands_enabled</span></td><td>packet_set_commands_enabled</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is set_difficulty</span></td><td>packet_set_difficulty</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is change_dimension</span></td><td>packet_change_dimension</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is set_player_game_type</span></td><td>packet_set_player_game_type</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is player_list</span></td><td>packet_player_list</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is simple_event</span></td><td>packet_simple_event</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is event</span></td><td>packet_event</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is spawn_experience_orb</span></td><td>packet_spawn_experience_orb</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is clientbound_map_item_data</span></td><td>packet_clientbound_map_item_data</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is map_info_request</span></td><td>packet_map_info_request</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is request_chunk_radius</span></td><td>packet_request_chunk_radius</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is chunk_radius_update</span></td><td>packet_chunk_radius_update</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is item_frame_drop_item</span></td><td>packet_item_frame_drop_item</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is game_rules_changed</span></td><td>packet_game_rules_changed</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is camera</span></td><td>packet_camera</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is boss_event</span></td><td>packet_boss_event</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is show_credits</span></td><td>packet_show_credits</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is available_commands</span></td><td>packet_available_commands</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is command_request</span></td><td>packet_command_request</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is command_block_update</span></td><td>packet_command_block_update</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is command_output</span></td><td>packet_command_output</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is update_trade</span></td><td>packet_update_trade</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is update_equipment</span></td><td>packet_update_equipment</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is resource_pack_data_info</span></td><td>packet_resource_pack_data_info</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is resource_pack_chunk_data</span></td><td>packet_resource_pack_chunk_data</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is resource_pack_chunk_request</span></td><td>packet_resource_pack_chunk_request</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is transfer</span></td><td>packet_transfer</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is play_sound</span></td><td>packet_play_sound</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is stop_sound</span></td><td>packet_stop_sound</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is set_title</span></td><td>packet_set_title</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is add_behavior_tree</span></td><td>packet_add_behavior_tree</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is structure_block_update</span></td><td>packet_structure_block_update</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is show_store_offer</span></td><td>packet_show_store_offer</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is purchase_receipt</span></td><td>packet_purchase_receipt</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is player_skin</span></td><td>packet_player_skin</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is sub_client_login</span></td><td>packet_sub_client_login</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is initiate_web_socket_connection</span></td><td>packet_initiate_web_socket_connection</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is set_last_hurt_by</span></td><td>packet_set_last_hurt_by</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is book_edit</span></td><td>packet_book_edit</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is npc_request</span></td><td>packet_npc_request</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is photo_transfer</span></td><td>packet_photo_transfer</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is modal_form_request</span></td><td>packet_modal_form_request</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is modal_form_response</span></td><td>packet_modal_form_response</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is server_settings_request</span></td><td>packet_server_settings_request</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is server_settings_response</span></td><td>packet_server_settings_response</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is show_profile</span></td><td>packet_show_profile</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is set_default_game_type</span></td><td>packet_set_default_game_type</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is remove_objective</span></td><td>packet_remove_objective</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is set_display_objective</span></td><td>packet_set_display_objective</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is set_score</span></td><td>packet_set_score</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is lab_table</span></td><td>packet_lab_table</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is update_block_synced</span></td><td>packet_update_block_synced</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is move_entity_delta</span></td><td>packet_move_entity_delta</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is set_scoreboard_identity</span></td><td>packet_set_scoreboard_identity</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is set_local_player_as_initialized</span></td><td>packet_set_local_player_as_initialized</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is update_soft_enum</span></td><td>packet_update_soft_enum</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is network_stack_latency</span></td><td>packet_network_stack_latency</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is script_custom_event</span></td><td>packet_script_custom_event</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is spawn_particle_effect</span></td><td>packet_spawn_particle_effect</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is available_entity_identifiers</span></td><td>packet_available_entity_identifiers</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is level_sound_event_v2</span></td><td>packet_level_sound_event_v2</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is network_chunk_publisher_update</span></td><td>packet_network_chunk_publisher_update</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is biome_definition_list</span></td><td>packet_biome_definition_list</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is level_sound_event</span></td><td>packet_level_sound_event</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is level_event_generic</span></td><td>packet_level_event_generic</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is lectern_update</span></td><td>packet_lectern_update</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is video_stream_connect</span></td><td>packet_video_stream_connect</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is add_ecs_entity</span></td><td>packet_add_ecs_entity</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is remove_ecs_entity</span></td><td>packet_remove_ecs_entity</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is client_cache_status</span></td><td>packet_client_cache_status</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is on_screen_texture_animation</span></td><td>packet_on_screen_texture_animation</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is map_create_locked_copy</span></td><td>packet_map_create_locked_copy</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is structure_template_data_export_request</span></td><td>packet_structure_template_data_export_request</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is structure_template_data_export_response</span></td><td>packet_structure_template_data_export_response</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is update_block_properties</span></td><td>packet_update_block_properties</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is client_cache_blob_status</span></td><td>packet_client_cache_blob_status</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is client_cache_miss_response</span></td><td>packet_client_cache_miss_response</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is education_settings</span></td><td>packet_education_settings</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is multiplayer_settings</span></td><td>packet_multiplayer_settings</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is settings_command</span></td><td>packet_settings_command</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is anvil_damage</span></td><td>packet_anvil_damage</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is completed_using_item</span></td><td>packet_completed_using_item</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is network_settings</span></td><td>packet_network_settings</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is player_auth_input</span></td><td>packet_player_auth_input</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is creative_content</span></td><td>packet_creative_content</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is player_enchant_options</span></td><td>packet_player_enchant_options</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is item_stack_request</span></td><td>packet_item_stack_request</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is item_stack_response</span></td><td>packet_item_stack_response</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is player_armor_damage</span></td><td>packet_player_armor_damage</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is update_player_game_type</span></td><td>packet_update_player_game_type</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is position_tracking_db_request</span></td><td>packet_position_tracking_db_request</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is position_tracking_db_broadcast</span></td><td>packet_position_tracking_db_broadcast</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is packet_violation_warning</span></td><td>packet_packet_violation_warning</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is motion_prediction_hints</span></td><td>packet_motion_prediction_hints</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is animate_entity</span></td><td>packet_animate_entity</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is camera_shake</span></td><td>packet_camera_shake</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is player_fog</span></td><td>packet_player_fog</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is correct_player_move_prediction</span></td><td>packet_correct_player_move_prediction</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is item_component</span></td><td>packet_item_component</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is filter_text_packet</span></td><td>packet_filter_text_packet</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is debug_renderer</span></td><td>packet_debug_renderer</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+</table><hr/><table class='table'>
+</table><hr/><table class='table'>
+<tr><td>packet_login </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>protocol_version</td><td>i32</td><td>0</td></tr>
+<tr><td class='field-name'>payload_size</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>chain</td><td>LittleString</td><td>0</td></tr>
+<tr><td class='field-name'>client_data</td><td>LittleString</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_play_status </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>status</td><td>i32 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>login_success</td></tr>
+  <tr><td>1</td><td>failed_client</td></tr>
+  <tr><td>2</td><td>failed_spawn</td></tr>
+  <tr><td>3</td><td>player_spawn</td></tr>
+  <tr><td>4</td><td>failed_invalid_tenant</td></tr>
+  <tr><td>5</td><td>failed_vanilla_edu</td></tr>
+  <tr><td>6</td><td>failed_edu_vanilla</td></tr>
+  <tr><td>7</td><td>failed_server_full</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_server_to_client_handshake </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>token</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_client_to_server_handshake </td><td colspan=2><table class='table table-bordered'>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_disconnect </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>hide_disconnect_reason</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>message</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_resource_packs_info </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>must_accept</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>has_scripts</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>behaviour_packs</td><td>BehaviourPackInfos</td><td>0</td></tr>
+<tr><td class='field-name'>texture_packs</td><td>TexturePackInfos</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_resource_pack_stack </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>must_accept</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>behavior_packs</td><td>ResourcePackIdVersions</td><td>0</td></tr>
+<tr><td class='field-name'>resource_packs</td><td>ResourcePackIdVersions</td><td>0</td></tr>
+<tr><td class='field-name'>game_version</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>experiments</td><td>Experiments</td><td>0</td></tr>
+<tr><td class='field-name'>experiments_previously_used</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_resource_pack_client_response </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>response_status</td><td>u8 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>none</td></tr>
+  <tr><td>1</td><td>refused</td></tr>
+  <tr><td>2</td><td>send_packs</td></tr>
+  <tr><td>3</td><td>have_all_packs</td></tr>
+  <tr><td>4</td><td>completed</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>resourcepackids</td><td>ResourcePackIds</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_text </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>type</td><td>u8 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>raw</td></tr>
+  <tr><td>1</td><td>chat</td></tr>
+  <tr><td>2</td><td>translation</td></tr>
+  <tr><td>3</td><td>popup</td></tr>
+  <tr><td>4</td><td>jukebox_popup</td></tr>
+  <tr><td>5</td><td>tip</td></tr>
+  <tr><td>6</td><td>system</td></tr>
+  <tr><td>7</td><td>whisper</td></tr>
+  <tr><td>8</td><td>announcement</td></tr>
+  <tr><td>9</td><td>json_whisper</td></tr>
+  <tr><td>10</td><td>json</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>needs_translation</td><td>bool</td><td>0</td></tr>
+<tr><td>if type <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td><span class='fake'>is chat or whisper or announcement</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>source_name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>message</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is raw or tip or system or json_whisper or json</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>message</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is translation or popup or jukebox_popup</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>message</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>paramaters length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>paramaters <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+<tr><td class='field-name'>xuid</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>platform_chat_id</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_set_time </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>time</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_start_game </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>entity_id</td><td>zigzag64</td><td>0</td></tr>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>player_gamemode</td><td>GameMode</td><td>0</td></tr>
+<tr><td class='field-name'>player_position</td><td>vec3f</td><td>0</td></tr>
+<tr><td class='field-name'>rotation</td><td>vec2f</td><td>0</td></tr>
+<tr><td class='field-name'>seed</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>biome_type</td><td>li16</td><td>0</td></tr>
+<tr><td class='field-name'>biome_name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>dimension</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>generator</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>world_gamemode</td><td>GameMode</td><td>0</td></tr>
+<tr><td class='field-name'>difficulty</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>spawn_position</td><td>BlockCoordinates</td><td>0</td></tr>
+<tr><td class='field-name'>achievements_disabled</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>day_cycle_stop_time</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>edu_offer</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>edu_features_enabled</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>edu_product_uuid</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>rain_level</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>lightning_level</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>has_confirmed_platform_locked_content</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>is_multiplayer</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>broadcast_to_lan</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>xbox_live_broadcast_mode</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>platform_broadcast_mode</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>enable_commands</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>is_texturepacks_required</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>gamerules</td><td>GameRules</td><td>0</td></tr>
+<tr><td class='field-name'>experiments</td><td>Experiments</td><td>0</td></tr>
+<tr><td class='field-name'>experiments_previously_used</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>bonus_chest</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>map_enabled</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>permission_level</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>server_chunk_tick_range</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>has_locked_behavior_pack</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>has_locked_resource_pack</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>is_from_locked_world_template</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>msa_gamertags_only</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>is_from_world_template</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>is_world_template_option_locked</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>only_spawn_v1_villagers</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>game_version</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>limited_world_width</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>limited_world_length</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>is_new_nether</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>experimental_gameplay_override</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>level_id</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>world_name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>premium_world_template_id</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>is_trial</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>movement_authority</td><td>zigzag32 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>client</td></tr>
+  <tr><td>1</td><td>server</td></tr>
+  <tr><td>2</td><td>server_with_rewind</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>rewind_history_size</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>server_authoritative_block_breaking</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>current_tick</td><td>li64</td><td>0</td></tr>
+<tr><td class='field-name'>enchantment_seed</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>block_palette</td><td>BlockPalette</td><td>0</td></tr>
+<tr><td class='field-name'>itemstates</td><td>Itemstates</td><td>0</td></tr>
+<tr><td class='field-name'>multiplayer_correlation_id</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>server_authoritative_inventory</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_add_player </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>uuid</td><td>uuid</td><td>0</td></tr>
+<tr><td class='field-name'>username</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>entity_id_self</td><td>zigzag64</td><td>0</td></tr>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>platform_chat_id</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>x</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>y</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>z</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>speed_x</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>speed_y</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>speed_z</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>pitch</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>yaw</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>head_yaw</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>held_item</td><td>Item</td><td>0</td></tr>
+<tr><td class='field-name'>metadata</td><td>MetadataDictionary</td><td>0</td></tr>
+<tr><td class='field-name'>flags</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>command_permission</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>action_permissions</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>permission_level</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>custom_stored_permissions</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>user_id</td><td>li64</td><td>0</td></tr>
+<tr><td class='field-name'>links</td><td>Links</td><td>0</td></tr>
+<tr><td class='field-name'>device_id</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>device_os</td><td>li32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_add_entity </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>entity_id_self</td><td>zigzag64</td><td>0</td></tr>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>entity_type</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>x</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>y</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>z</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>speed_x</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>speed_y</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>speed_z</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>pitch</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>yaw</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>head_yaw</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>attributes</td><td>EntityAttributes</td><td>0</td></tr>
+<tr><td class='field-name'>metadata</td><td>MetadataDictionary</td><td>0</td></tr>
+<tr><td class='field-name'>links</td><td>Links</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_remove_entity </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>entity_id_self</td><td>zigzag64</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_add_item_entity </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>entity_id_self</td><td>zigzag64</td><td>0</td></tr>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>item</td><td>Item</td><td>0</td></tr>
+<tr><td class='field-name'>x</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>y</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>z</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>speed_x</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>speed_y</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>speed_z</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>metadata</td><td>MetadataDictionary</td><td>0</td></tr>
+<tr><td class='field-name'>is_from_fishing</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_take_item_entity </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>target</td><td>varint</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_move_entity </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>flags</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>position</td><td>vec3f</td><td>0</td></tr>
+<tr><td class='field-name'>rotation</td><td>Rotation</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_move_player </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>runtime_id</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>position</td><td>vec3f</td><td>0</td></tr>
+<tr><td class='field-name'>pitch</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>yaw</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>head_yaw</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>mode</td><td>u8 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>normal</td></tr>
+  <tr><td>1</td><td>reset</td></tr>
+  <tr><td>2</td><td>teleport</td></tr>
+  <tr><td>3</td><td>rotation</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>on_ground</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>ridden_runtime_id</td><td>varint</td><td>0</td></tr>
+<tr><td>if teleport <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td><span class='fake'>is teleport</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>cause</td><td>li32 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>unknown</td></tr>
+  <tr><td>1</td><td>projectile</td></tr>
+  <tr><td>2</td><td>chorus_fruit</td></tr>
+  <tr><td>3</td><td>command</td></tr>
+  <tr><td>4</td><td>behavior</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>source_entity_type</td><td>LegacyEntityType</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+<tr><td class='field-name'>tick</td><td>varint64</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_rider_jump </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>jump_strength</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_update_block </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>position</td><td>BlockCoordinates</td><td>0</td></tr>
+<tr><td class='field-name'>block_runtime_id</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>flags</td><td>UpdateBlockFlags</td><td>0</td></tr>
+<tr><td class='field-name'>layer</td><td>varint</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+</table><hr/><table class='table'>
+<tr><td>packet_add_painting </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>entity_id_self</td><td>zigzag64</td><td>0</td></tr>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>coordinates</td><td>BlockCoordinates</td><td>0</td></tr>
+<tr><td class='field-name'>direction</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>title</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_tick_sync </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>request_time</td><td>li64</td><td>0</td></tr>
+<tr><td class='field-name'>response_time</td><td>li64</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_level_sound_event_old </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>sound_id</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>position</td><td>vec3f</td><td>0</td></tr>
+<tr><td class='field-name'>block_id</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>entity_type</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>is_baby_mob</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>is_global</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_level_event </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>event</td><td>zigzag32 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>1000</td><td>sound_click</td></tr>
+  <tr><td>1001</td><td>sound_click_fail</td></tr>
+  <tr><td>1002</td><td>sound_shoot</td></tr>
+  <tr><td>1003</td><td>sound_door</td></tr>
+  <tr><td>1004</td><td>sound_fizz</td></tr>
+  <tr><td>1005</td><td>sound_ignite</td></tr>
+  <tr><td>1007</td><td>sound_ghast</td></tr>
+  <tr><td>1008</td><td>sound_ghast_shoot</td></tr>
+  <tr><td>1009</td><td>sound_blaze_shoot</td></tr>
+  <tr><td>1010</td><td>sound_door_bump</td></tr>
+  <tr><td>1012</td><td>sound_door_crash</td></tr>
+  <tr><td>1018</td><td>sound_enderman_teleport</td></tr>
+  <tr><td>1020</td><td>sound_anvil_break</td></tr>
+  <tr><td>1021</td><td>sound_anvil_use</td></tr>
+  <tr><td>1022</td><td>sound_anvil_fall</td></tr>
+  <tr><td>1030</td><td>sound_pop</td></tr>
+  <tr><td>1032</td><td>sound_portal</td></tr>
+  <tr><td>1040</td><td>sound_itemframe_add_item</td></tr>
+  <tr><td>1041</td><td>sound_itemframe_remove</td></tr>
+  <tr><td>1042</td><td>sound_itemframe_place</td></tr>
+  <tr><td>1043</td><td>sound_itemframe_remove_item</td></tr>
+  <tr><td>1044</td><td>sound_itemframe_rotate_item</td></tr>
+  <tr><td>1050</td><td>sound_camera</td></tr>
+  <tr><td>1051</td><td>sound_orb</td></tr>
+  <tr><td>1052</td><td>sound_totem</td></tr>
+  <tr><td>1060</td><td>sound_armor_stand_break</td></tr>
+  <tr><td>1061</td><td>sound_armor_stand_hit</td></tr>
+  <tr><td>1062</td><td>sound_armor_stand_fall</td></tr>
+  <tr><td>1063</td><td>sound_armor_stand_place</td></tr>
+  <tr><td>1064</td><td>pointed_dripstone_land</td></tr>
+  <tr><td>1065</td><td>dye_used</td></tr>
+  <tr><td>1066</td><td>ink_sack_used</td></tr>
+  <tr><td>2000</td><td>particle_shoot</td></tr>
+  <tr><td>2001</td><td>particle_destroy</td></tr>
+  <tr><td>2002</td><td>particle_splash</td></tr>
+  <tr><td>2003</td><td>particle_eye_despawn</td></tr>
+  <tr><td>2004</td><td>particle_spawn</td></tr>
+  <tr><td>2005</td><td>particle_crop_growth</td></tr>
+  <tr><td>2006</td><td>particle_guardian_curse</td></tr>
+  <tr><td>2007</td><td>particle_death_smoke</td></tr>
+  <tr><td>2008</td><td>particle_block_force_field</td></tr>
+  <tr><td>2009</td><td>particle_projectile_hit</td></tr>
+  <tr><td>2010</td><td>particle_dragon_egg_teleport</td></tr>
+  <tr><td>2011</td><td>particle_crop_eaten</td></tr>
+  <tr><td>2012</td><td>particle_critical</td></tr>
+  <tr><td>2013</td><td>particle_enderman_teleport</td></tr>
+  <tr><td>2014</td><td>particle_punch_block</td></tr>
+  <tr><td>2015</td><td>particle_bubble</td></tr>
+  <tr><td>2016</td><td>particle_evaporate</td></tr>
+  <tr><td>2017</td><td>particle_destroy_armor_stand</td></tr>
+  <tr><td>2018</td><td>particle_breaking_egg</td></tr>
+  <tr><td>2019</td><td>particle_destroy_egg</td></tr>
+  <tr><td>2020</td><td>particle_evaporate_water</td></tr>
+  <tr><td>2021</td><td>particle_destroy_block_no_sound</td></tr>
+  <tr><td>2022</td><td>particle_knockback_roar</td></tr>
+  <tr><td>2023</td><td>particle_teleport_trail</td></tr>
+  <tr><td>2024</td><td>particle_point_cloud</td></tr>
+  <tr><td>2025</td><td>particle_explosion</td></tr>
+  <tr><td>2026</td><td>particle_block_explosion</td></tr>
+  <tr><td>2027</td><td>particle_vibration_signal</td></tr>
+  <tr><td>2028</td><td>particle_dripstone_drip</td></tr>
+  <tr><td>2029</td><td>particle_fizz_effect</td></tr>
+  <tr><td>2030</td><td>particle_wax_on</td></tr>
+  <tr><td>2031</td><td>particle_wax_off</td></tr>
+  <tr><td>2032</td><td>particle_scrape</td></tr>
+  <tr><td>2033</td><td>particle_electric_spark</td></tr>
+  <tr><td>3001</td><td>start_rain</td></tr>
+  <tr><td>3002</td><td>start_thunder</td></tr>
+  <tr><td>3003</td><td>stop_rain</td></tr>
+  <tr><td>3004</td><td>stop_thunder</td></tr>
+  <tr><td>3005</td><td>pause_game</td></tr>
+  <tr><td>3006</td><td>pause_game_no_screen</td></tr>
+  <tr><td>3007</td><td>set_game_speed</td></tr>
+  <tr><td>3500</td><td>redstone_trigger</td></tr>
+  <tr><td>3501</td><td>cauldron_explode</td></tr>
+  <tr><td>3502</td><td>cauldron_dye_armor</td></tr>
+  <tr><td>3503</td><td>cauldron_clean_armor</td></tr>
+  <tr><td>3504</td><td>cauldron_fill_potion</td></tr>
+  <tr><td>3505</td><td>cauldron_take_potion</td></tr>
+  <tr><td>3506</td><td>cauldron_fill_water</td></tr>
+  <tr><td>3507</td><td>cauldron_take_water</td></tr>
+  <tr><td>3508</td><td>cauldron_add_dye</td></tr>
+  <tr><td>3509</td><td>cauldron_clean_banner</td></tr>
+  <tr><td>3600</td><td>block_start_break</td></tr>
+  <tr><td>3601</td><td>block_stop_break</td></tr>
+  <tr><td>4000</td><td>set_data</td></tr>
+  <tr><td>9800</td><td>players_sleeping</td></tr>
+  <tr><td>16384</td><td>add_particle_mask</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>position</td><td>vec3f</td><td>0</td></tr>
+<tr><td class='field-name'>data</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_block_event </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>position</td><td>BlockCoordinates</td><td>0</td></tr>
+<tr><td class='field-name'>type</td><td>zigzag32 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>sound</td></tr>
+  <tr><td>1</td><td>change_state</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>data</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_entity_event </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>event_id</td><td>u8 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>1</td><td>jump</td></tr>
+  <tr><td>2</td><td>hurt_animation</td></tr>
+  <tr><td>3</td><td>death_animation</td></tr>
+  <tr><td>4</td><td>arm_swing</td></tr>
+  <tr><td>5</td><td>stop_attack</td></tr>
+  <tr><td>6</td><td>tame_fail</td></tr>
+  <tr><td>7</td><td>tame_success</td></tr>
+  <tr><td>8</td><td>shake_wet</td></tr>
+  <tr><td>9</td><td>use_item</td></tr>
+  <tr><td>10</td><td>eat_grass_animation</td></tr>
+  <tr><td>11</td><td>fish_hook_bubble</td></tr>
+  <tr><td>12</td><td>fish_hook_position</td></tr>
+  <tr><td>13</td><td>fish_hook_hook</td></tr>
+  <tr><td>14</td><td>fish_hook_tease</td></tr>
+  <tr><td>15</td><td>squid_ink_cloud</td></tr>
+  <tr><td>16</td><td>zombie_villager_cure</td></tr>
+  <tr><td>18</td><td>respawn</td></tr>
+  <tr><td>19</td><td>iron_golem_offer_flower</td></tr>
+  <tr><td>20</td><td>iron_golem_withdraw_flower</td></tr>
+  <tr><td>21</td><td>love_particles</td></tr>
+  <tr><td>22</td><td>villager_angry</td></tr>
+  <tr><td>23</td><td>villager_happy</td></tr>
+  <tr><td>24</td><td>witch_spell_particles</td></tr>
+  <tr><td>25</td><td>firework_particles</td></tr>
+  <tr><td>26</td><td>in_love_particles</td></tr>
+  <tr><td>27</td><td>silverfish_spawn_animation</td></tr>
+  <tr><td>28</td><td>guardian_attack</td></tr>
+  <tr><td>29</td><td>witch_drink_potion</td></tr>
+  <tr><td>30</td><td>witch_throw_potion</td></tr>
+  <tr><td>31</td><td>minecart_tnt_prime_fuse</td></tr>
+  <tr><td>32</td><td>creeper_prime_fuse</td></tr>
+  <tr><td>33</td><td>air_supply_expired</td></tr>
+  <tr><td>34</td><td>player_add_xp_levels</td></tr>
+  <tr><td>35</td><td>elder_guardian_curse</td></tr>
+  <tr><td>36</td><td>agent_arm_swing</td></tr>
+  <tr><td>37</td><td>ender_dragon_death</td></tr>
+  <tr><td>38</td><td>dust_particles</td></tr>
+  <tr><td>39</td><td>arrow_shake</td></tr>
+  <tr><td>57</td><td>eating_item</td></tr>
+  <tr><td>60</td><td>baby_animal_feed</td></tr>
+  <tr><td>61</td><td>death_smoke_cloud</td></tr>
+  <tr><td>62</td><td>complete_trade</td></tr>
+  <tr><td>63</td><td>remove_leash</td></tr>
+  <tr><td>65</td><td>consume_totem</td></tr>
+  <tr><td>66</td><td>player_check_treasure_hunter_achievement</td></tr>
+  <tr><td>67</td><td>entity_spawn</td></tr>
+  <tr><td>68</td><td>dragon_puke</td></tr>
+  <tr><td>69</td><td>item_entity_merge</td></tr>
+  <tr><td>70</td><td>start_swim</td></tr>
+  <tr><td>71</td><td>balloon_pop</td></tr>
+  <tr><td>72</td><td>treasure_hunt</td></tr>
+  <tr><td>73</td><td>agent_summon</td></tr>
+  <tr><td>74</td><td>charged_crossbow</td></tr>
+  <tr><td>75</td><td>fall</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>data</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_mob_effect </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>event_id</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>effect_id</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>amplifier</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>particles</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>duration</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_update_attributes </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>attributes</td><td>PlayerAttributes</td><td>0</td></tr>
+<tr><td class='field-name'>tick</td><td>varint64</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_inventory_transaction </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>transaction</td><td>Transaction</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_mob_equipment </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>item</td><td>Item</td><td>0</td></tr>
+<tr><td class='field-name'>slot</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>selected_slot</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>window_id</td><td>WindowID</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_mob_armor_equipment </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>helmet</td><td>Item</td><td>0</td></tr>
+<tr><td class='field-name'>chestplate</td><td>Item</td><td>0</td></tr>
+<tr><td class='field-name'>leggings</td><td>Item</td><td>0</td></tr>
+<tr><td class='field-name'>boots</td><td>Item</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_interact </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>action_id</td><td>u8 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>3</td><td>leave_vehicle</td></tr>
+  <tr><td>4</td><td>mouse_over_entity</td></tr>
+  <tr><td>6</td><td>open_inventory</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>target_entity_id</td><td>varint64</td><td>0</td></tr>
+<tr><td>if position <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is mouse_over_entity or leave_vehicle</span></td><td>vec3f</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_block_pick_request </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>x</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>y</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>z</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>add_user_data</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>selected_slot</td><td>u8</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_entity_pick_request </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>runtime_entity_id</td><td>lu64</td><td>0</td></tr>
+<tr><td class='field-name'>selected_slot</td><td>u8</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_player_action </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>action</td><td>Action</td><td>0</td></tr>
+<tr><td class='field-name'>position</td><td>BlockCoordinates</td><td>0</td></tr>
+<tr><td class='field-name'>face</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_hurt_armor </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>health</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_set_entity_data </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>metadata</td><td>MetadataDictionary</td><td>0</td></tr>
+<tr><td class='field-name'>tick</td><td>varint</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_set_entity_motion </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>velocity</td><td>vec3f</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_set_entity_link </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>link</td><td>Link</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_set_health </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>health</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_set_spawn_position </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>spawn_type</td><td>zigzag32 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>player</td></tr>
+  <tr><td>1</td><td>world</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>player_position</td><td>BlockCoordinates</td><td>0</td></tr>
+<tr><td class='field-name'>dimension</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>world_position</td><td>BlockCoordinates</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_animate </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>action_id</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_respawn </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>x</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>y</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>z</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>state</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_container_open </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>window_id</td><td>WindowID</td><td>0</td></tr>
+<tr><td class='field-name'>window_type</td><td>WindowType</td><td>0</td></tr>
+<tr><td class='field-name'>coordinates</td><td>BlockCoordinates</td><td>0</td></tr>
+<tr><td class='field-name'>runtime_entity_id</td><td>zigzag64</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_container_close </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>window_id</td><td>WindowID</td><td>0</td></tr>
+<tr><td class='field-name'>server</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_player_hotbar </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>selected_slot</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>window_id</td><td>WindowID</td><td>0</td></tr>
+<tr><td class='field-name'>select_slot</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_inventory_content </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>window_id</td><td>WindowIDVarint</td><td>0</td></tr>
+<tr><td class='field-name'>input</td><td>ItemStacks</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_inventory_slot </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>window_id</td><td>WindowIDVarint</td><td>0</td></tr>
+<tr><td class='field-name'>slot</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>item</td><td>Item</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_container_set_data </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>window_id</td><td>WindowID</td><td>0</td></tr>
+<tr><td class='field-name'>property</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>value</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_crafting_data </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>recipes</td><td>Recipes</td><td>0</td></tr>
+<tr><td class='field-name'>potion_type_recipes</td><td>PotionTypeRecipes</td><td>0</td></tr>
+<tr><td class='field-name'>potion_container_recipes</td><td>PotionContainerChangeRecipes</td><td>0</td></tr>
+<tr><td class='field-name'>is_clean</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_crafting_event </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>window_id</td><td>WindowID</td><td>0</td></tr>
+<tr><td class='field-name'>recipe_type</td><td>zigzag32 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>inventory</td></tr>
+  <tr><td>1</td><td>crafting</td></tr>
+  <tr><td>2</td><td>workbench</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>recipe_id</td><td>uuid</td><td>0</td></tr>
+<tr><td class='field-name'>input length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>input <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+<tr><td class='field-name'>result length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>result <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_gui_data_pick_item </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>item_name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>item_effects</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>hotbar_slot</td><td>li32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_adventure_settings </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>flags</td><td>AdventureFlags</td><td>0</td></tr>
+<tr><td class='field-name'>command_permission</td><td>varint32 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>normal</td></tr>
+  <tr><td>1</td><td>operator</td></tr>
+  <tr><td>2</td><td>host</td></tr>
+  <tr><td>3</td><td>automation</td></tr>
+  <tr><td>4</td><td>admin</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>action_permissions</td><td>ActionPermissions</td><td>0</td></tr>
+<tr><td class='field-name'>permission_level</td><td>varint <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>visitor</td></tr>
+  <tr><td>1</td><td>member</td></tr>
+  <tr><td>2</td><td>operator</td></tr>
+  <tr><td>3</td><td>custom</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>custom_stored_permissions</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>user_id</td><td>li64</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+</table><hr/><table class='table'>
+</table><hr/><table class='table'>
+<tr><td>packet_block_entity_data </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>position</td><td>BlockCoordinates</td><td>0</td></tr>
+<tr><td class='field-name'>nbt</td><td>nbt</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_player_input </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>motion_x</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>motion_z</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>jumping</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>sneaking</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_level_chunk </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>x</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>z</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>sub_chunk_count</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>cache_enabled</td><td>bool</td><td>0</td></tr>
+<tr><td>if blobs <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td><span class='fake'>is true</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>hashes length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>hashes <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+<tr><td class='field-name'>payload</td><td>ByteArray</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_set_commands_enabled </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>enabled</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_set_difficulty </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>difficulty</td><td>varint</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_change_dimension </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>dimension</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>position</td><td>vec3f</td><td>0</td></tr>
+<tr><td class='field-name'>respawn</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_set_player_game_type </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>gamemode</td><td>GameMode</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_player_list </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>records</td><td>PlayerRecords</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_simple_event </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>event_type</td><td>lu16</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_event </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>runtime_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>event_type</td><td>zigzag32 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>achievement_awarded</td></tr>
+  <tr><td>1</td><td>entity_interact</td></tr>
+  <tr><td>2</td><td>portal_built</td></tr>
+  <tr><td>3</td><td>portal_used</td></tr>
+  <tr><td>4</td><td>mob_killed</td></tr>
+  <tr><td>5</td><td>cauldron_used</td></tr>
+  <tr><td>6</td><td>player_death</td></tr>
+  <tr><td>7</td><td>boss_killed</td></tr>
+  <tr><td>8</td><td>agent_command</td></tr>
+  <tr><td>9</td><td>agent_created</td></tr>
+  <tr><td>10</td><td>banner_pattern_removed</td></tr>
+  <tr><td>11</td><td>commaned_executed</td></tr>
+  <tr><td>12</td><td>fish_bucketed</td></tr>
+  <tr><td>13</td><td>mob_born</td></tr>
+  <tr><td>14</td><td>pet_died</td></tr>
+  <tr><td>15</td><td>cauldron_block_used</td></tr>
+  <tr><td>16</td><td>composter_block_used</td></tr>
+  <tr><td>17</td><td>bell_block_used</td></tr>
+  <tr><td>18</td><td>actor_definition</td></tr>
+  <tr><td>19</td><td>raid_update</td></tr>
+  <tr><td>20</td><td>player_movement_anomaly</td></tr>
+  <tr><td>21</td><td>player_moement_corrected</td></tr>
+  <tr><td>22</td><td>honey_harvested</td></tr>
+  <tr><td>23</td><td>target_block_hit</td></tr>
+  <tr><td>24</td><td>piglin_barter</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>use_player_id</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>event_data</td><td>restBuffer</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_spawn_experience_orb </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>position</td><td>vec3f</td><td>0</td></tr>
+<tr><td class='field-name'>count</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+</table><hr/><table class='table'>
+<tr><td>packet_clientbound_map_item_data </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>map_id</td><td>zigzag64</td><td>0</td></tr>
+<tr><td class='field-name'>update_flags</td><td>UpdateMapFlags</td><td>0</td></tr>
+<tr><td class='field-name'>dimension</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>locked</td><td>bool</td><td>0</td></tr>
+<tr><td>if included_in <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is true</span> length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is true</span> <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table></td></tr>
+<tr><td>if scale <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is true</span></td><td>u8</td><td>0</td></tr>
+</table></td></tr>
+<tr><td>if tracked <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td><span class='fake'>is true</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>objects length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>objects <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+<tr><td class='field-name'>decorations length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>decorations <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+<tr><td>if texture <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td><span class='fake'>is true</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>width</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>height</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>x_offset</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>y_offset</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>pixels length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>pixels <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_map_info_request </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>map_id</td><td>zigzag64</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_request_chunk_radius </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>chunk_radius</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_chunk_radius_update </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>chunk_radius</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_item_frame_drop_item </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>coordinates</td><td>BlockCoordinates</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_game_rules_changed </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>rules</td><td>GameRules</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_camera </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>camera_entity_unique_id</td><td>zigzag64</td><td>0</td></tr>
+<tr><td class='field-name'>target_player_unique_id</td><td>zigzag64</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_boss_event </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>boss_entity_id</td><td>zigzag64</td><td>0</td></tr>
+<tr><td class='field-name'>type</td><td>varint <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>show_bar</td></tr>
+  <tr><td>1</td><td>register_player</td></tr>
+  <tr><td>2</td><td>hide_bar</td></tr>
+  <tr><td>3</td><td>unregister_player</td></tr>
+  <tr><td>4</td><td>set_bar_progress</td></tr>
+  <tr><td>5</td><td>set_bar_title</td></tr>
+  <tr><td>6</td><td>update_properties</td></tr>
+  <tr><td>7</td><td>texture</td></tr>
+</table></td></tr>
+<tr><td>if type <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td><span class='fake'>is register_player or unregister_player</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>player_id</td><td>zigzag64</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is show</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>title</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>bar_progress</td><td>lf32</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is update_properties</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>darkness_factor</td><td>li16</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is texture</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>color</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>overlay</td><td>varint</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is set_bar_progress</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>bar_progress</td><td>lf32</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is set_bar_title</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>title</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_show_credits </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>status</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_available_commands </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>values_len</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>_enum_type</td><td>["enum_size_based_on_values_len"]</td><td>0</td></tr>
+<tr><td class='field-name'>enum_values length</td><td>$values_len</td><td>0</td></tr>
+<tr><td class='field-name'>enum_values <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+<tr><td class='field-name'>suffixes length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>suffixes <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+<tr><td class='field-name'>enums length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>enums <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>values length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>values <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td>if ../_enum_type <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is byte</span></td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is short</span></td><td>lu16</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is int</span></td><td>lu32</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+<tr><td class='field-name'>command_data length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>command_data <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>description</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>flags</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>permission_level</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>alias</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>overloads length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>overloads <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>__3419 length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>__3419 <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>paramater_name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>value_type</td><td>lu16 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>1</td><td>int</td></tr>
+  <tr><td>2</td><td>float</td></tr>
+  <tr><td>3</td><td>value</td></tr>
+  <tr><td>4</td><td>wildcard_int</td></tr>
+  <tr><td>5</td><td>operator</td></tr>
+  <tr><td>6</td><td>target</td></tr>
+  <tr><td>16</td><td>file_path</td></tr>
+  <tr><td>32</td><td>string</td></tr>
+  <tr><td>40</td><td>position</td></tr>
+  <tr><td>44</td><td>message</td></tr>
+  <tr><td>46</td><td>raw_text</td></tr>
+  <tr><td>50</td><td>json</td></tr>
+  <tr><td>63</td><td>command</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>enum_type</td><td>lu16 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>16</td><td>valid</td></tr>
+  <tr><td>32</td><td>enum</td></tr>
+  <tr><td>256</td><td>suffixed</td></tr>
+  <tr><td>1024</td><td>soft_enum</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>optional</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>options</td><td>CommandFlags</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+<tr><td class='field-name'>dynamic_enums length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>dynamic_enums <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>values length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>values <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>enum_constraints length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>enum_constraints <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>value_index</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>enum_index</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>constraints length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>constraints <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>constraint</td><td>u8 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>cheats_enabled</td></tr>
+  <tr><td>1</td><td>operator_permissions</td></tr>
+  <tr><td>2</td><td>host_permissions</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+</table><hr/><table class='table'>
+<tr><td>packet_command_request </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>command</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>origin</td><td>CommandOrigin</td><td>0</td></tr>
+<tr><td class='field-name'>interval</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_command_block_update </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>is_block</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_command_output </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>origin</td><td>CommandOrigin</td><td>0</td></tr>
+<tr><td class='field-name'>output_type</td><td>i8 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>1</td><td>last</td></tr>
+  <tr><td>2</td><td>silent</td></tr>
+  <tr><td>3</td><td>all</td></tr>
+  <tr><td>4</td><td>data_set</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>success_count</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>output length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>output <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>success</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>message_id</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>paramaters length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>paramaters <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table></td></tr>
+<tr><td>if data_set <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is data_set</span></td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>default</span></td><td>void</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_update_trade </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>window_id</td><td>WindowID</td><td>0</td></tr>
+<tr><td class='field-name'>window_type</td><td>WindowType</td><td>0</td></tr>
+<tr><td class='field-name'>size</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>trade_tier</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>villager_unique_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>entity_unique_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>display_name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>new_trading_ui</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>economic_trades</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>offers</td><td>nbt</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_update_equipment </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>window_id</td><td>WindowID</td><td>0</td></tr>
+<tr><td class='field-name'>window_type</td><td>WindowType</td><td>0</td></tr>
+<tr><td class='field-name'>size</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>entity_id</td><td>zigzag64</td><td>0</td></tr>
+<tr><td class='field-name'>inventory</td><td>nbt</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_resource_pack_data_info </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>package_id</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>max_chunk_size</td><td>lu32</td><td>0</td></tr>
+<tr><td class='field-name'>chunk_count</td><td>lu32</td><td>0</td></tr>
+<tr><td class='field-name'>compressed_package_size</td><td>lu64</td><td>0</td></tr>
+<tr><td class='field-name'>hash</td><td>ByteArray</td><td>0</td></tr>
+<tr><td class='field-name'>is_premium</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>pack_type</td><td>u8</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_resource_pack_chunk_data </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>package_id</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>chunk_index</td><td>lu32</td><td>0</td></tr>
+<tr><td class='field-name'>progress</td><td>lu64</td><td>0</td></tr>
+<tr><td class='field-name'>payload</td><td>ByteArray</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_resource_pack_chunk_request </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>package_id</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>chunk_index</td><td>lu32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_transfer </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>server_address</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>port</td><td>lu16</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_play_sound </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>coordinates</td><td>BlockCoordinates</td><td>0</td></tr>
+<tr><td class='field-name'>volume</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>pitch</td><td>lf32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_stop_sound </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>stop_all</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_set_title </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>type</td><td>zigzag32 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>clear</td></tr>
+  <tr><td>1</td><td>reset</td></tr>
+  <tr><td>2</td><td>set_title</td></tr>
+  <tr><td>3</td><td>set_subtitle</td></tr>
+  <tr><td>4</td><td>action_bar_message</td></tr>
+  <tr><td>5</td><td>set_durations</td></tr>
+  <tr><td>6</td><td>set_title_json</td></tr>
+  <tr><td>7</td><td>set_subtitle_json</td></tr>
+  <tr><td>8</td><td>action_bar_message_json</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>text</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>fade_in_time</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>stay_time</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>fade_out_time</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_add_behavior_tree </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>behaviortree</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_structure_block_update </td><td colspan=2><table class='table table-bordered'>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_show_store_offer </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>unknown0</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>unknown1</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_purchase_receipt </td><td colspan=2><table class='table table-bordered'>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_player_skin </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>uuid</td><td>uuid</td><td>0</td></tr>
+<tr><td class='field-name'>skin</td><td>Skin</td><td>0</td></tr>
+<tr><td class='field-name'>skin_name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>old_skin_name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>is_verified</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_sub_client_login </td><td colspan=2><table class='table table-bordered'>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_initiate_web_socket_connection </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>server</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_set_last_hurt_by </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>unknown</td><td>varint</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_book_edit </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>type</td><td>u8 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>replace_page</td></tr>
+  <tr><td>1</td><td>add_page</td></tr>
+  <tr><td>2</td><td>delete_page</td></tr>
+  <tr><td>3</td><td>swap_pages</td></tr>
+  <tr><td>4</td><td>sign</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>slot</td><td>u8</td><td>0</td></tr>
+<tr><td>if type <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td><span class='fake'>is replace_page or add_page</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>page_number</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>text</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>photo_name</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is delete_page</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>page_number</td><td>u8</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is swap_pages</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>page1</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>page2</td><td>u8</td><td>0</td></tr>
+</table></td></tr>
+<tr><td><span class='fake'>is sign</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>title</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>author</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>xuid</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_npc_request </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>unknown0</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>unknown1</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>unknown2</td><td>u8</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_photo_transfer </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>file_name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>image_data</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>unknown2</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_modal_form_request </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>form_id</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>data</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_modal_form_response </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>form_id</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>data</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_server_settings_request </td><td colspan=2><table class='table table-bordered'>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_server_settings_response </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>form_id</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>data</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_show_profile </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>xuid</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_set_default_game_type </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>gamemode</td><td>GameMode</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_remove_objective </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>objective_name</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_set_display_objective </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>display_slot</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>objective_name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>display_name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>criteria_name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>sort_order</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_set_score </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>entries</td><td>ScoreEntries</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_lab_table </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>useless_byte</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>lab_table_x</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>lab_table_y</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>lab_table_z</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>reaction_type</td><td>u8</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_update_block_synced </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>position</td><td>BlockCoordinates</td><td>0</td></tr>
+<tr><td class='field-name'>block_runtime_id</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>flags</td><td>UpdateBlockFlags</td><td>0</td></tr>
+<tr><td class='field-name'>layer</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>entity_unique_id</td><td>zigzag64</td><td>0</td></tr>
+<tr><td class='field-name'>transition_type</td><td>varint64 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>entity</td></tr>
+  <tr><td>1</td><td>create</td></tr>
+  <tr><td>2</td><td>destroy</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_move_entity_delta </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>flags</td><td>DeltaMoveFlags</td><td>0</td></tr>
+<tr><td>if x <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is true</span></td><td>lf32</td><td>0</td></tr>
+</table></td></tr>
+<tr><td>if y <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is true</span></td><td>lf32</td><td>0</td></tr>
+</table></td></tr>
+<tr><td>if z <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is true</span></td><td>lf32</td><td>0</td></tr>
+</table></td></tr>
+<tr><td>if rot_x <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is true</span></td><td>u8</td><td>0</td></tr>
+</table></td></tr>
+<tr><td>if rot_y <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is true</span></td><td>u8</td><td>0</td></tr>
+</table></td></tr>
+<tr><td>if rot_z <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is true</span></td><td>u8</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+</table><hr/><table class='table'>
+<tr><td>packet_set_scoreboard_identity </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>entries</td><td>ScoreboardIdentityEntries</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_set_local_player_as_initialized </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>runtime_entity_id</td><td>varint64</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_update_soft_enum </td><td colspan=2><table class='table table-bordered'>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_network_stack_latency </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>timestamp</td><td>lu64</td><td>0</td></tr>
+<tr><td class='field-name'>unknown_flag</td><td>u8</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_script_custom_event </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>event_name</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>event_data</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_spawn_particle_effect </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>dimension_id</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>entity_id</td><td>zigzag64</td><td>0</td></tr>
+<tr><td class='field-name'>position</td><td>vec3f</td><td>0</td></tr>
+<tr><td class='field-name'>particle_name</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_available_entity_identifiers </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>nbt</td><td>nbt</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_level_sound_event_v2 </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>sound_id</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>position</td><td>vec3f</td><td>0</td></tr>
+<tr><td class='field-name'>block_id</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>entity_type</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>is_baby_mob</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>is_global</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_network_chunk_publisher_update </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>coordinates</td><td>BlockCoordinates</td><td>0</td></tr>
+<tr><td class='field-name'>radius</td><td>varint</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_biome_definition_list </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>nbt</td><td>nbt</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_level_sound_event </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>sound_id</td><td>SoundType</td><td>0</td></tr>
+<tr><td class='field-name'>position</td><td>vec3f</td><td>0</td></tr>
+<tr><td class='field-name'>block_id</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>entity_type</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>is_baby_mob</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>is_global</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_level_event_generic </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>event_id</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>nbt</td><td>nbtLoop</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_lectern_update </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>page</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>page_count</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>position</td><td>vec3i</td><td>0</td></tr>
+<tr><td class='field-name'>drop_book</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_video_stream_connect </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>server_uri</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>frame_send_frequency</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>action</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>resolution_x</td><td>li32</td><td>0</td></tr>
+<tr><td class='field-name'>resolution_y</td><td>li32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_add_ecs_entity </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>network_id</td><td>varint64</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_remove_ecs_entity </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>network_id</td><td>varint64</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_client_cache_status </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>enabled</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_on_screen_texture_animation </td><td colspan=2><table class='table table-bordered'>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_map_create_locked_copy </td><td colspan=2><table class='table table-bordered'>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_structure_template_data_export_request </td><td colspan=2><table class='table table-bordered'>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_structure_template_data_export_response </td><td colspan=2><table class='table table-bordered'>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_update_block_properties </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>nbt</td><td>nbt</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_client_cache_blob_status </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>misses</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>haves</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>missing length</td><td>$misses</td><td>0</td></tr>
+<tr><td class='field-name'>missing <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+<tr><td class='field-name'>have length</td><td>$haves</td><td>0</td></tr>
+<tr><td class='field-name'>have <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_client_cache_miss_response </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>blobs length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>blobs <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_education_settings </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>CodeBuilderDefaultURI</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>CodeBuilderTitle</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>CanResizeCodeBuilder</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>HasOverrideURI</td><td>bool</td><td>0</td></tr>
+<tr><td>if OverrideURI <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is true</span></td><td>string</td><td>0</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>HasQuiz</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_multiplayer_settings </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>action_type</td><td>zigzag32 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>enable_multiplayer</td></tr>
+  <tr><td>1</td><td>disable_multiplayer</td></tr>
+  <tr><td>2</td><td>refresh_join_code</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_settings_command </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>command_line</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>suppress_output</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_anvil_damage </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>damage</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>position</td><td>BlockCoordinates</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_completed_using_item </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>used_item_id</td><td>li16</td><td>0</td></tr>
+<tr><td class='field-name'>use_method</td><td>li32 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>equip_armor</td></tr>
+  <tr><td>1</td><td>eat</td></tr>
+  <tr><td>2</td><td>attack</td></tr>
+  <tr><td>3</td><td>consume</td></tr>
+  <tr><td>4</td><td>throw</td></tr>
+  <tr><td>5</td><td>shoot</td></tr>
+  <tr><td>6</td><td>place</td></tr>
+  <tr><td>7</td><td>fill_bottle</td></tr>
+  <tr><td>8</td><td>fill_bucket</td></tr>
+  <tr><td>9</td><td>pour_bucket</td></tr>
+  <tr><td>10</td><td>use_tool</td></tr>
+  <tr><td>11</td><td>interact</td></tr>
+  <tr><td>12</td><td>retrieved</td></tr>
+  <tr><td>13</td><td>dyed</td></tr>
+  <tr><td>14</td><td>traded</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_network_settings </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>compression_threshold</td><td>u16</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_player_auth_input </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>pitch</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>yaw</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>position</td><td>vec3f</td><td>0</td></tr>
+<tr><td class='field-name'>move_vector</td><td>vec2f</td><td>0</td></tr>
+<tr><td class='field-name'>head_yaw</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>input_data</td><td>InputFlag</td><td>0</td></tr>
+<tr><td class='field-name'>input_mode</td><td>varint <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>unknown</td></tr>
+  <tr><td>1</td><td>mouse</td></tr>
+  <tr><td>2</td><td>touch</td></tr>
+  <tr><td>3</td><td>game_pad</td></tr>
+  <tr><td>4</td><td>motion_controller</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>play_mode</td><td>varint <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>normal</td></tr>
+  <tr><td>1</td><td>teaser</td></tr>
+  <tr><td>2</td><td>screen</td></tr>
+  <tr><td>3</td><td>viewer</td></tr>
+  <tr><td>4</td><td>reality</td></tr>
+  <tr><td>5</td><td>placement</td></tr>
+  <tr><td>6</td><td>living_room</td></tr>
+  <tr><td>7</td><td>exit_level</td></tr>
+  <tr><td>8</td><td>exit_level_living_room</td></tr>
+  <tr><td>9</td><td>num_modes</td></tr>
+</table></td></tr>
+<tr><td>if gaze_direction <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is reality</span></td><td>vec3f</td><td>0</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>tick</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>delta</td><td>vec3f</td><td>0</td></tr>
+<tr><td>if transaction <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td><span class='fake'>is true</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>legacy</td><td>TransactionLegacy</td><td>0</td></tr>
+<tr><td class='field-name'>actions</td><td>TransactionActions</td><td>0</td></tr>
+<tr><td class='field-name'>data</td><td>TransactionUseItem</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+<tr><td>if item_stack_request <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is true</span></td><td>ItemStackRequest</td><td>0</td></tr>
+</table></td></tr>
+<tr><td>if block_action <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is true</span> length</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'><span class='fake'>is true</span> <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>action</td><td>Action</td><td>0</td></tr>
+<tr><td>if action <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td><span class='fake'>is start_break or abort_break or crack_break or predict_break or continue_break</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>position</td><td>BlockCoordinates</td><td>0</td></tr>
+<tr><td class='field-name'>face</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+</table><hr/><table class='table'>
+<tr><td>packet_creative_content </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>items length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>items <span class="tag tag-array">array</span></td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>entry_id</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>item</td><td>ItemLegacy</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_player_enchant_options </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>enchant_options</td><td>EnchantOptions</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_item_stack_request </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>requests length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>requests <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_item_stack_response </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>responses</td><td>ItemStackResponses</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_player_armor_damage </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>type</td><td>ArmorDamageType</td><td>0</td></tr>
+<tr><td>if helmet_damage <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is true</span></td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+<tr><td>if chestplate_damage <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is true</span></td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+<tr><td>if leggings_damage <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is true</span></td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+<tr><td>if boots_damage <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is true</span></td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+</table><hr/><table class='table'>
+<tr><td>packet_update_player_game_type </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>gamemode</td><td>GameMode</td><td>0</td></tr>
+<tr><td class='field-name'>player_unique_id</td><td>zigzag64</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_position_tracking_db_request </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>action</td><td>u8 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>query</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>tracking_id</td><td>zigzag32</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_position_tracking_db_broadcast </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>broadcast_action</td><td>u8 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>update</td></tr>
+  <tr><td>1</td><td>destory</td></tr>
+  <tr><td>2</td><td>not_found</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>tracking_id</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>nbt</td><td>nbt</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_packet_violation_warning </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>violation_type</td><td>zigzag32 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>malformed</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>severity</td><td>zigzag32 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>warning</td></tr>
+  <tr><td>1</td><td>final_warning</td></tr>
+  <tr><td>2</td><td>terminating</td></tr>
+</table></td></tr>
+<tr><td class='field-name'>packet_id</td><td>zigzag32</td><td>0</td></tr>
+<tr><td class='field-name'>reason</td><td>string</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_motion_prediction_hints </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>entity_runtime_id</td><td>varint64</td><td>0</td></tr>
+<tr><td class='field-name'>velocity</td><td>vec3f</td><td>0</td></tr>
+<tr><td class='field-name'>on_ground</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_animate_entity </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>animation</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>next_state</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>stop_condition</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>controller</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>blend_out_time</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>runtime_entity_ids length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>runtime_entity_ids <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_camera_shake </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>intensity</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>duration</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>type</td><td>u8</td><td>0</td></tr>
+<tr><td class='field-name'>action</td><td>u8 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>0</td><td>add</td></tr>
+  <tr><td>1</td><td>stop</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_player_fog </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>stack length</td><td>varint</td><td>0</td></tr>
+<tr><td class='field-name'>stack <span class="tag tag-array">array</span></td><td>null</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_correct_player_move_prediction </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>position</td><td>vec3f</td><td>0</td></tr>
+<tr><td class='field-name'>delta</td><td>vec3f</td><td>0</td></tr>
+<tr><td class='field-name'>on_ground</td><td>bool</td><td>0</td></tr>
+<tr><td class='field-name'>tick</td><td>varint64</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_item_component </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>entries</td><td>ItemComponentList</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_filter_text_packet </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>text</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>from_server</td><td>bool</td><td>0</td></tr>
+</table></td></tr>
+</table><hr/><table class='table'>
+<tr><td>packet_debug_renderer </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>type</td><td>li32 <span class='tag tag-enum'>enum</span> <table class='table table-bordered'>
+  <tr><td>1</td><td>clear</td></tr>
+  <tr><td>2</td><td>add_cube</td></tr>
+</table></td></tr>
+<tr><td>if type <span class='tag tag-switch'>switch</span></td><td colspawn=2><table class='table table-bordered'>
+<tr><td class='field-name'><span class='fake'>is clear</span></td><td>void</td><td>0</td></tr>
+<tr><td><span class='fake'>is add_cube</span> </td><td colspan=2><table class='table table-bordered'>
+<tr><td class='field-name'>text</td><td>string</td><td>0</td></tr>
+<tr><td class='field-name'>position</td><td>vec3f</td><td>0</td></tr>
+<tr><td class='field-name'>red</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>green</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>blue</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>alpha</td><td>lf32</td><td>0</td></tr>
+<tr><td class='field-name'>duration</td><td>li64</td><td>0</td></tr>
+</table></td></tr>
+</table></td></tr>
+</table></td></tr>
+</table><hr/>
