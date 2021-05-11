@@ -101,7 +101,7 @@ const toTransform = {
     "!comment,86": "Payload is the data of the blob. When sent, the client will associate the Hash of the blob with the\nPayload in it.\n",
     "payload": "ByteArray"
   },
-  "%array,BlockPalette,,varint": {
+  "%array,BlockProperties,,varint": {
     "name": "string",
     "state": "nbt"
   },
@@ -110,7 +110,6 @@ const toTransform = {
     "runtime_id": "li16",
     "component_based": "bool"
   },
-  "!comment,99": "Start of item crap ...\n",
   "%container,ItemExtraDataWithBlockingTick,": {
     "%map,has_nbt,lu16": {
       "%n,65535": "true",
@@ -142,7 +141,7 @@ const toTransform = {
     "%array,can_place_on,ShortArray,li32": null,
     "%array,can_destroy,ShortArray,li32": null
   },
-  "!comment,126": "Same as below but without a \"networkStackID\" boolean ...\n",
+  "!comment,126": "Same as below but without a \"networkStackID\" boolean\n",
   "%container,ItemLegacy,": {
     "network_id": "zigzag32",
     "%switch,__129,network_id": {
@@ -183,7 +182,6 @@ const toTransform = {
       }
     }
   },
-  "!comment,164": "end of item crap\n",
   "%container,vec3i,": {
     "x": "zigzag32",
     "y": "zigzag32",
@@ -204,7 +202,7 @@ const toTransform = {
     "z": "lf32"
   },
   "%array,MetadataDictionary,,varint": {
-    "!comment,186": "https://github.com/pmmp/PocketMine-MP/blob/stable/src/pocketmine/entity/Entity.php#L101\n",
+    "!comment,184": "https://github.com/pmmp/PocketMine-MP/blob/stable/src/pocketmine/entity/Entity.php#L101\n",
     "%map,key,varint": {
       "%n,0": "flags",
       "%n,1": "health",
@@ -498,31 +496,31 @@ const toTransform = {
     "default": "lf32",
     "name": "string"
   },
-  "!comment,473": "UseItemTransactionData represents an inventory transaction data object sent when the client uses an item on\na block. Also used in PlayerAuthoritativeInput packet\n",
+  "!comment,471": "UseItemTransactionData represents an inventory transaction data object sent when the client uses an item on\na block. Also used in PlayerAuthoritativeInput packet\n",
   "%container,TransactionUseItem,": {
-    "!comment,476": "ActionType is the type of the UseItem inventory transaction. It is one of the action types found above,\nand specifies the way the player interacted with the block.\n",
+    "!comment,474": "ActionType is the type of the UseItem inventory transaction. It is one of the action types found above,\nand specifies the way the player interacted with the block.\n",
     "%map,action_type,varint": {
       "%n,0": "click_block",
       "%n,1": "click_air",
       "%n,2": "break_block"
     },
-    "!comment,482": "BlockPosition is the position of the block that was interacted with. This is only really a correct\nblock position if ActionType is not UseItemActionClickAir.\n",
+    "!comment,480": "BlockPosition is the position of the block that was interacted with. This is only really a correct\nblock position if ActionType is not UseItemActionClickAir.\n",
     "block_position": "vec3i",
-    "!comment,485": "BlockFace is the face of the block that was interacted with. When clicking the block, it is the face\nclicked. When breaking the block, it is the face that was last being hit until the block broke.\n",
+    "!comment,483": "BlockFace is the face of the block that was interacted with. When clicking the block, it is the face\nclicked. When breaking the block, it is the face that was last being hit until the block broke.\n",
     "face": "varint",
-    "!comment,488": "HotBarSlot is the hot bar slot that the player was holding while clicking the block. It should be used\nto ensure that the hot bar slot and held item are correctly synchronised with the server.\n",
+    "!comment,486": "HotBarSlot is the hot bar slot that the player was holding while clicking the block. It should be used\nto ensure that the hot bar slot and held item are correctly synchronised with the server.\n",
     "hotbar_slot": "varint",
-    "!comment,491": "HeldItem is the item that was held to interact with the block. The server should check if this item\nis actually present in the HotBarSlot.\n",
+    "!comment,489": "HeldItem is the item that was held to interact with the block. The server should check if this item\nis actually present in the HotBarSlot.\n",
     "held_item": "Item",
-    "!comment,494": "Position is the position of the player at the time of interaction. For clicking a block, this is the\nposition at that time, whereas for breaking the block it is the position at the time of breaking.\n",
+    "!comment,492": "Position is the position of the player at the time of interaction. For clicking a block, this is the\nposition at that time, whereas for breaking the block it is the position at the time of breaking.\n",
     "player_pos": "vec3f",
-    "!comment,497": "ClickedPosition is the position that was clicked relative to the block's base coordinate. It can be\nused to find out exactly where a player clicked the block.\n",
+    "!comment,495": "ClickedPosition is the position that was clicked relative to the block's base coordinate. It can be\nused to find out exactly where a player clicked the block.\n",
     "click_pos": "vec3f",
-    "!comment,500": "BlockRuntimeID is the runtime ID of the block that was clicked. It may be used by the server to verify\nthat the player's world client-side is synchronised with the server's.\n",
+    "!comment,498": "BlockRuntimeID is the runtime ID of the block that was clicked. It may be used by the server to verify\nthat the player's world client-side is synchronised with the server's.\n",
     "block_runtime_id": "varint"
   },
-  "!comment,504": "Actions is a list of actions that took place, that form the inventory transaction together. Each of\nthese actions hold one slot in which one item was changed to another. In general, the combination of\n",
-  "!comment,506": "all of these actions results in a balanced inventory transaction. This should be checked to ensure that\nno items are cheated into the inventory.\n",
+  "!comment,502": "Actions is a list of actions that took place, that form the inventory transaction together. Each of\nthese actions hold one slot in which one item was changed to another. In general, the combination of\n",
+  "!comment,504": "all of these actions results in a balanced inventory transaction. This should be checked to ensure that\nno items are cheated into the inventory.\n",
   "%array,TransactionActions,,varint": {
     "%map,source_type,varint": {
       "%n,0": "container",
@@ -532,7 +530,7 @@ const toTransform = {
       "%n,100": "craft_slot",
       "%n,99999": "craft"
     },
-    "%switch,__516,source_type": {
+    "%switch,__514,source_type": {
       "if container or craft": {
         "inventory_id": "WindowIDVarint"
       },
@@ -548,14 +546,14 @@ const toTransform = {
     "old_item": "Item",
     "new_item": "Item"
   },
-  "!comment,528": "The Minecraft bedrock inventory system was refactored, but not all inventory actions use the new packet.\nThis data structure holds actions that have not been updated to the new system.\n",
+  "!comment,526": "The Minecraft bedrock inventory system was refactored, but not all inventory actions use the new packet.\nThis data structure holds actions that have not been updated to the new system.\n",
   "%container,TransactionLegacy,": {
-    "!comment,531": "LegacyRequestID is an ID that is only non-zero at times when sent by the client. The server should\nalways send 0 for this. When this field is not 0, the LegacySetItemSlots slice below will have values\n",
-    "!comment,533": "in it.\nLegacyRequestID ties in with the ItemStackResponse packet. If this field is non-0, the server should\n",
-    "!comment,535": "respond with an ItemStackResponse packet. Some inventory actions such as dropping an item out of the\nhotbar are still one using this packet, and the ItemStackResponse packet needs to tie in with it.\n",
+    "!comment,529": "LegacyRequestID is an ID that is only non-zero at times when sent by the client. The server should\nalways send 0 for this. When this field is not 0, the LegacySetItemSlots slice below will have values\n",
+    "!comment,531": "in it.\nLegacyRequestID ties in with the ItemStackResponse packet. If this field is non-0, the server should\n",
+    "!comment,533": "respond with an ItemStackResponse packet. Some inventory actions such as dropping an item out of the\nhotbar are still one using this packet, and the ItemStackResponse packet needs to tie in with it.\n",
     "legacy_request_id": "zigzag32",
-    "!comment,538": "`legacy_transactions` are only present if the LegacyRequestID is non-zero. These item slots inform the\nserver of the slots that were changed during the inventory transaction, and the server should send\n",
-    "!comment,540": "back an ItemStackResponse packet with these slots present in it. (Or false with no slots, if rejected.)\n",
+    "!comment,536": "`legacy_transactions` are only present if the LegacyRequestID is non-zero. These item slots inform the\nserver of the slots that were changed during the inventory transaction, and the server should send\n",
+    "!comment,538": "back an ItemStackResponse packet with these slots present in it. (Or false with no slots, if rejected.)\n",
     "%switch,legacy_transactions,legacy_request_id": {
       "if 0": "void",
       "%array,default,,varint": {
@@ -567,9 +565,9 @@ const toTransform = {
     }
   },
   "%container,Transaction,": {
-    "!comment,549": "Old transaction system data\n",
+    "!comment,547": "Old transaction system data\n",
     "legacy": "TransactionLegacy",
-    "!comment,551": "What type of transaction took place\n",
+    "!comment,549": "What type of transaction took place\n",
     "%map,transaction_type,varint": {
       "%n,0": "normal",
       "%n,1": "inventory_mismatch",
@@ -577,44 +575,44 @@ const toTransform = {
       "%n,3": "item_use_on_entity",
       "%n,4": "item_release"
     },
-    "!comment,558": "The list of inventory internal actions in this packet, e.g. inventory GUI actions\n",
+    "!comment,556": "The list of inventory internal actions in this packet, e.g. inventory GUI actions\n",
     "actions": "TransactionActions",
-    "!comment,560": "Extra data if an intenal inventory transaction did not take place, e.g. use of an item \n",
+    "!comment,558": "Extra data if an intenal inventory transaction did not take place, e.g. use of an item \n",
     "%switch,transaction_data,transaction_type": {
       "if normal or inventory_mismatch": "void",
-      "!comment,563": "UseItemTransactionData represents an inventory transaction data object sent when the client uses an item on\na block.\n",
+      "!comment,561": "UseItemTransactionData represents an inventory transaction data object sent when the client uses an item on\na block.\n",
       "if item_use": "TransactionUseItem",
-      "!comment,566": "UseItemOnEntityTransactionData represents an inventory transaction data object sent when the client uses\nan item on an entity.\n",
+      "!comment,564": "UseItemOnEntityTransactionData represents an inventory transaction data object sent when the client uses\nan item on an entity.\n",
       "if item_use_on_entity": {
-        "!comment,569": "TargetEntityRuntimeID is the entity runtime ID of the target that was clicked. It is the runtime ID\nthat was assigned to it in the AddEntity packet.\n",
+        "!comment,567": "TargetEntityRuntimeID is the entity runtime ID of the target that was clicked. It is the runtime ID\nthat was assigned to it in the AddEntity packet.\n",
         "entity_runtime_id": "varint64",
-        "!comment,572": "ActionType is the type of the UseItemOnEntity inventory transaction. It is one of the action types\nfound in the constants above, and specifies the way the player interacted with the entity.\n",
+        "!comment,570": "ActionType is the type of the UseItemOnEntity inventory transaction. It is one of the action types\nfound in the constants above, and specifies the way the player interacted with the entity.\n",
         "%map,action_type,varint": {
           "%n,0": "interact",
           "%n,1": "attack"
         },
-        "!comment,577": "HotBarSlot is the hot bar slot that the player was holding while clicking the entity. It should be used\nto ensure that the hot bar slot and held item are correctly synchronised with the server.\n",
+        "!comment,575": "HotBarSlot is the hot bar slot that the player was holding while clicking the entity. It should be used\nto ensure that the hot bar slot and held item are correctly synchronised with the server.\n",
         "hotbar_slot": "zigzag32",
-        "!comment,580": "HeldItem is the item that was held to interact with the entity. The server should check if this item\nis actually present in the HotBarSlot.\n",
+        "!comment,578": "HeldItem is the item that was held to interact with the entity. The server should check if this item\nis actually present in the HotBarSlot.\n",
         "held_item": "Item",
-        "!comment,583": "Position is the position of the player at the time of clicking the entity.\n",
+        "!comment,581": "Position is the position of the player at the time of clicking the entity.\n",
         "player_pos": "vec3f",
-        "!comment,585": "ClickedPosition is the position that was clicked relative to the entity's base coordinate. It can be\nused to find out exactly where a player clicked the entity.\n",
+        "!comment,583": "ClickedPosition is the position that was clicked relative to the entity's base coordinate. It can be\nused to find out exactly where a player clicked the entity.\n",
         "click_pos": "vec3f"
       },
-      "!comment,588": "ReleaseItemTransactionData represents an inventory transaction data object sent when the client releases\nthe item it was using, for example when stopping while eating or stopping the charging of a bow.        \n",
+      "!comment,586": "ReleaseItemTransactionData represents an inventory transaction data object sent when the client releases\nthe item it was using, for example when stopping while eating or stopping the charging of a bow.        \n",
       "if item_release": {
-        "!comment,591": "ActionType is the type of the ReleaseItem inventory transaction. It is one of the action types found\nin the constants above, and specifies the way the item was released.\n",
-        "!comment,593": "As of 1.13, the ActionType is always 0. This field can be ignored, because releasing food (by consuming\nit) or releasing a bow (to shoot an arrow) is essentially the same.\n",
+        "!comment,589": "ActionType is the type of the ReleaseItem inventory transaction. It is one of the action types found\nin the constants above, and specifies the way the item was released.\n",
+        "!comment,591": "As of 1.13, the ActionType is always 0. This field can be ignored, because releasing food (by consuming\nit) or releasing a bow (to shoot an arrow) is essentially the same.\n",
         "%map,action_type,varint": {
           "%n,0": "release",
           "%n,1": "consume"
         },
-        "!comment,598": "HotBarSlot is the hot bar slot that the player was holding while releasing the item. It should be used\nto ensure that the hot bar slot and held item are correctly synchronised with the server.\n",
+        "!comment,596": "HotBarSlot is the hot bar slot that the player was holding while releasing the item. It should be used\nto ensure that the hot bar slot and held item are correctly synchronised with the server.\n",
         "hotbar_slot": "zigzag32",
-        "!comment,601": "HeldItem is the item that was released. The server should check if this item is actually present in the\nHotBarSlot.\n",
+        "!comment,599": "HeldItem is the item that was released. The server should check if this item is actually present in the\nHotBarSlot.\n",
         "held_item": "Item",
-        "!comment,604": "HeadPosition is the position of the player's head at the time of releasing the item. This is used\nmainly for purposes such as spawning eating particles at that position.\n",
+        "!comment,602": "HeadPosition is the position of the player's head at the time of releasing the item. This is used\nmainly for purposes such as spawning eating particles at that position.\n",
         "head_pos": "vec3f"
       }
     }
@@ -622,7 +620,7 @@ const toTransform = {
   "%array,ItemStacks,Item,varint": null,
   "%container,RecipeIngredient,": {
     "network_id": "zigzag32",
-    "%switch,__612,network_id": {
+    "%switch,__610,network_id": {
       "if 0": "void",
       "%container,default,": {
         "network_data": "zigzag32",
@@ -648,7 +646,7 @@ const toTransform = {
       "%n,0": "shapeless",
       "%n,1": "shaped",
       "%n,2": "furnace",
-      "!comment,636": "`furnace_with_metadata` is a recipe specifically used for furnace-type crafting stations. It is equal to\n`furnace`, except it has an input item with a specific metadata value, instead of any metadata value.\n",
+      "!comment,634": "`furnace_with_metadata` is a recipe specifically used for furnace-type crafting stations. It is equal to\n`furnace`, except it has an input item with a specific metadata value, instead of any metadata value.\n",
       "%n,3": "furnace_with_metadata",
       "%n,4": "multi",
       "%n,5": "shulker_box",
@@ -669,9 +667,9 @@ const toTransform = {
         "recipe_id": "string",
         "width": "zigzag32",
         "height": "zigzag32",
-        "!comment,656": "todo: can this become\nRecipeIngredient[$height][$width] or RecipeIngredient[]$height[]$width ?\n",
+        "!comment,654": "2D input array, size of width*height\n",
         "%array,input,,$width": {
-          "%array,__659,RecipeIngredient,$height": null
+          "%array,__656,RecipeIngredient,$height": null
         },
         "%array,output,ItemLegacy,varint": null,
         "uuid": "uuid",
@@ -741,7 +739,7 @@ const toTransform = {
     },
     "records_count": "varint",
     "%array,records,,$records_count": {
-      "%switch,__719,type": {
+      "%switch,__716,type": {
         "if add": {
           "uuid": "uuid",
           "entity_unique_id": "zigzag64",
@@ -771,7 +769,7 @@ const toTransform = {
       "scoreboard_id": "zigzag64",
       "objective_name": "string",
       "score": "li32",
-      "%switch,__743,type": {
+      "%switch,__740,type": {
         "if remove": {
           "%map,entry_type,i8": {
             "%n,1": "player",
@@ -829,14 +827,14 @@ const toTransform = {
     "%n,11": "start_sneak",
     "%n,12": "stop_sneak",
     "%n,13": "creative_player_destroy_block",
-    "!comment,792": "sent when spawning in a different dimension to tell the server we spawned\n",
+    "!comment,789": "sent when spawning in a different dimension to tell the server we spawned\n",
     "%n,14": "dimension_change_ack",
     "%n,15": "start_glide",
     "%n,16": "stop_glide",
     "%n,17": "build_denied",
     "%n,18": "crack_break",
     "%n,19": "change_skin",
-    "!comment,799": "no longer used\n",
+    "!comment,796": "no longer used\n",
     "%n,20": "set_enchatnment_seed",
     "%n,21": "swimming",
     "%n,22": "stop_swimming",
@@ -846,119 +844,119 @@ const toTransform = {
     "%n,26": "predict_break",
     "%n,27": "continue_break"
   },
-  "!comment,809": "Source and Destination point to the source slot from which Count of the item stack were taken and the\ndestination slot to which this item was moved.\n",
+  "!comment,806": "Source and Destination point to the source slot from which Count of the item stack were taken and the\ndestination slot to which this item was moved.\n",
   "%container,StackRequestSlotInfo,": {
-    "!comment,812": "ContainerID is the ID of the container that the slot was in.\n",
+    "!comment,809": "ContainerID is the ID of the container that the slot was in.\n",
     "slot_type": "ContainerSlotType",
-    "!comment,814": "Slot is the index of the slot within the container with the ContainerID above. \n",
+    "!comment,811": "Slot is the index of the slot within the container with the ContainerID above. \n",
     "slot": "u8",
-    "!comment,816": "StackNetworkID is the unique stack ID that the client assumes to be present in this slot. The server\nmust check if these IDs match. If they do not match, servers should reject the stack request that the\n",
-    "!comment,818": "action holding this info was in.\n",
+    "!comment,813": "StackNetworkID is the unique stack ID that the client assumes to be present in this slot. The server\nmust check if these IDs match. If they do not match, servers should reject the stack request that the\n",
+    "!comment,815": "action holding this info was in.\n",
     "stack_id": "zigzag32"
   },
-  "!comment,821": "ItemStackRequest is sent by the client to change item stacks in an inventory. It is essentially a\nreplacement of the InventoryTransaction packet added in 1.16 for inventory specific actions, such as moving\n",
-  "!comment,823": "items around or crafting. The InventoryTransaction packet is still used for actions such as placing blocks\nand interacting with entities.\n",
+  "!comment,818": "ItemStackRequest is sent by the client to change item stacks in an inventory. It is essentially a\nreplacement of the InventoryTransaction packet added in 1.16 for inventory specific actions, such as moving\n",
+  "!comment,820": "items around or crafting. The InventoryTransaction packet is still used for actions such as placing blocks\nand interacting with entities.\n",
   "%container,ItemStackRequest,": {
-    "!comment,826": "RequestID is a unique ID for the request. This ID is used by the server to send a response for this\nspecific request in the ItemStackResponse packet.\n",
+    "!comment,823": "RequestID is a unique ID for the request. This ID is used by the server to send a response for this\nspecific request in the ItemStackResponse packet.\n",
     "request_id": "varint",
     "%array,actions,,varint": {
       "%map,type_id,u8": {
-        "!comment,831": "TakeStackRequestAction is sent by the client to the server to take x amount of items from one slot in a\ncontainer to the cursor.\n",
+        "!comment,828": "TakeStackRequestAction is sent by the client to the server to take x amount of items from one slot in a\ncontainer to the cursor.\n",
         "%n,0": "take",
-        "!comment,834": "PlaceStackRequestAction is sent by the client to the server to place x amount of items from one slot into\nanother slot, such as when shift clicking an item in the inventory to move it around or when moving an item\n",
-        "!comment,836": "in the cursor into a slot.\n",
+        "!comment,831": "PlaceStackRequestAction is sent by the client to the server to place x amount of items from one slot into\nanother slot, such as when shift clicking an item in the inventory to move it around or when moving an item\n",
+        "!comment,833": "in the cursor into a slot.\n",
         "%n,1": "place",
-        "!comment,838": "SwapStackRequestAction is sent by the client to swap the item in its cursor with an item present in another\ncontainer. The two item stacks swap places. \n",
+        "!comment,835": "SwapStackRequestAction is sent by the client to swap the item in its cursor with an item present in another\ncontainer. The two item stacks swap places. \n",
         "%n,2": "swap",
-        "!comment,841": "DropStackRequestAction is sent by the client when it drops an item out of the inventory when it has its\ninventory opened. This action is not sent when a player drops an item out of the hotbar using the Q button\n",
-        "!comment,843": "(or the equivalent on mobile). The InventoryTransaction packet is still used for that action, regardless of\nwhether the item stack network IDs are used or not.\n",
+        "!comment,838": "DropStackRequestAction is sent by the client when it drops an item out of the inventory when it has its\ninventory opened. This action is not sent when a player drops an item out of the hotbar using the Q button\n",
+        "!comment,840": "(or the equivalent on mobile). The InventoryTransaction packet is still used for that action, regardless of\nwhether the item stack network IDs are used or not.\n",
         "%n,3": "drop",
-        "!comment,846": "DestroyStackRequestAction is sent by the client when it destroys an item in creative mode by moving it\nback into the creative inventory.\n",
+        "!comment,843": "DestroyStackRequestAction is sent by the client when it destroys an item in creative mode by moving it\nback into the creative inventory.\n",
         "%n,4": "destroy",
-        "!comment,849": "ConsumeStackRequestAction is sent by the client when it uses an item to craft another item. The original\nitem is 'consumed'.\n",
+        "!comment,846": "ConsumeStackRequestAction is sent by the client when it uses an item to craft another item. The original\nitem is 'consumed'.\n",
         "%n,5": "consume",
-        "!comment,852": "CreateStackRequestAction is sent by the client when an item is created through being used as part of a\nrecipe. For example, when milk is used to craft a cake, the buckets are leftover. The buckets are moved to\n",
-        "!comment,854": "the slot sent by the client here.\nNote that before this is sent, an action for consuming all items in the crafting table/grid is sent. Items\n",
-        "!comment,856": "that are not fully consumed when used for a recipe should not be destroyed there, but instead, should be\nturned into their respective resulting items. \n",
+        "!comment,849": "CreateStackRequestAction is sent by the client when an item is created through being used as part of a\nrecipe. For example, when milk is used to craft a cake, the buckets are leftover. The buckets are moved to\n",
+        "!comment,851": "the slot sent by the client here.\nNote that before this is sent, an action for consuming all items in the crafting table/grid is sent. Items\n",
+        "!comment,853": "that are not fully consumed when used for a recipe should not be destroyed there, but instead, should be\nturned into their respective resulting items. \n",
         "%n,6": "create",
-        "!comment,859": "LabTableCombineStackRequestAction is sent by the client when it uses a lab table to combine item stacks.\n",
+        "!comment,856": "LabTableCombineStackRequestAction is sent by the client when it uses a lab table to combine item stacks.\n",
         "%n,7": "lab_table_combine",
-        "!comment,861": "BeaconPaymentStackRequestAction is sent by the client when it submits an item to enable effects from a\nbeacon. These items will have been moved into the beacon item slot in advance. \n",
+        "!comment,858": "BeaconPaymentStackRequestAction is sent by the client when it submits an item to enable effects from a\nbeacon. These items will have been moved into the beacon item slot in advance. \n",
         "%n,8": "beacon_payment",
-        "!comment,864": "MineBlockStackRequestAction is sent by the client when it breaks a block.\n",
+        "!comment,861": "MineBlockStackRequestAction is sent by the client when it breaks a block.\n",
         "%n,9": "mine_block",
-        "!comment,866": "CraftRecipeStackRequestAction is sent by the client the moment it begins crafting an item. This is the\nfirst action sent, before the Consume and Create item stack request actions.\n",
-        "!comment,868": "This action is also sent when an item is enchanted. Enchanting should be treated mostly the same way as\ncrafting, where the old item is consumed.\n",
+        "!comment,863": "CraftRecipeStackRequestAction is sent by the client the moment it begins crafting an item. This is the\nfirst action sent, before the Consume and Create item stack request actions.\n",
+        "!comment,865": "This action is also sent when an item is enchanted. Enchanting should be treated mostly the same way as\ncrafting, where the old item is consumed.\n",
         "%n,10": "craft_recipe",
-        "!comment,871": "AutoCraftRecipeStackRequestAction is sent by the client similarly to the CraftRecipeStackRequestAction. The\nonly difference is that the recipe is automatically created and crafted by shift clicking the recipe book.\n",
+        "!comment,868": "AutoCraftRecipeStackRequestAction is sent by the client similarly to the CraftRecipeStackRequestAction. The\nonly difference is that the recipe is automatically created and crafted by shift clicking the recipe book.\n",
         "%n,11": "craft_recipe_auto",
-        "!comment,874": "CraftCreativeStackRequestAction is sent by the client when it takes an item out fo the creative inventory.\nThe item is thus not really crafted, but instantly created.\n",
+        "!comment,871": "CraftCreativeStackRequestAction is sent by the client when it takes an item out fo the creative inventory.\nThe item is thus not really crafted, but instantly created.\n",
         "%n,12": "craft_creative",
-        "!comment,877": "CraftRecipeOptionalStackRequestAction is sent when using an anvil. When this action is sent, the\nCustomNames field in the respective stack request is non-empty and contains the name of the item created\n",
-        "!comment,879": "using the anvil.\n",
+        "!comment,874": "CraftRecipeOptionalStackRequestAction is sent when using an anvil. When this action is sent, the\nCustomNames field in the respective stack request is non-empty and contains the name of the item created\n",
+        "!comment,876": "using the anvil.\n",
         "%n,13": "optional",
-        "!comment,881": "CraftNonImplementedStackRequestAction is an action sent for inventory actions that aren't yet implemented\nin the new system. These include, for example, anvils.\n",
+        "!comment,878": "CraftNonImplementedStackRequestAction is an action sent for inventory actions that aren't yet implemented\nin the new system. These include, for example, anvils.\n",
         "%n,14": "non_implemented",
-        "!comment,884": "CraftResultsDeprecatedStackRequestAction is an additional, deprecated packet sent by the client after\ncrafting. It holds the final results and the amount of times the recipe was crafted. It shouldn't be used.\n",
-        "!comment,886": "This action is also sent when an item is enchanted. Enchanting should be treated mostly the same way as\ncrafting, where the old item is consumed.\n",
+        "!comment,881": "CraftResultsDeprecatedStackRequestAction is an additional, deprecated packet sent by the client after\ncrafting. It holds the final results and the amount of times the recipe was crafted. It shouldn't be used.\n",
+        "!comment,883": "This action is also sent when an item is enchanted. Enchanting should be treated mostly the same way as\ncrafting, where the old item is consumed.\n",
         "%n,15": "results_deprecated"
       },
-      "%switch,__889,type_id": {
+      "%switch,__886,type_id": {
         "if take or place": {
           "count": "u8",
           "source": "StackRequestSlotInfo",
           "destination": "StackRequestSlotInfo"
         },
         "if swap": {
-          "!comment,895": "Source and Destination point to the source slot from which Count of the item stack were taken and the\ndestination slot to which this item was moved.\n",
+          "!comment,892": "Source and Destination point to the source slot from which Count of the item stack were taken and the\ndestination slot to which this item was moved.\n",
           "source": "StackRequestSlotInfo",
           "destination": "StackRequestSlotInfo"
         },
         "if drop": {
-          "!comment,900": "Count is the count of the item in the source slot that was taken towards the destination slot.\n",
+          "!comment,897": "Count is the count of the item in the source slot that was taken towards the destination slot.\n",
           "count": "u8",
-          "!comment,902": "Source is the source slot from which items were dropped to the ground.\n",
+          "!comment,899": "Source is the source slot from which items were dropped to the ground.\n",
           "source": "StackRequestSlotInfo",
-          "!comment,904": "Randomly seems to be set to false in most cases. I'm not entirely sure what this does, but this is what\nvanilla calls this field.\n",
+          "!comment,901": "Randomly seems to be set to false in most cases. I'm not entirely sure what this does, but this is what\nvanilla calls this field.\n",
           "randomly": "bool"
         },
         "if destroy or consume": {
-          "!comment,908": "Count is the count of the item in the source slot that was destroyed.\n",
+          "!comment,905": "Count is the count of the item in the source slot that was destroyed.\n",
           "count": "u8",
-          "!comment,910": "Source is the source slot from which items came that were destroyed by moving them into the creative\ninventory.\n",
+          "!comment,907": "Source is the source slot from which items came that were destroyed by moving them into the creative\ninventory.\n",
           "source": "StackRequestSlotInfo"
         },
         "if create": {
-          "!comment,914": "ResultsSlot is the slot in the inventory in which the results of the crafting ingredients are to be\nplaced.\n",
+          "!comment,911": "ResultsSlot is the slot in the inventory in which the results of the crafting ingredients are to be\nplaced.\n",
           "result_slot_id": "u8"
         },
         "if beacon_payment": {
-          "!comment,918": "PrimaryEffect and SecondaryEffect are the effects that were selected from the beacon.\n",
+          "!comment,915": "PrimaryEffect and SecondaryEffect are the effects that were selected from the beacon.\n",
           "primary_effect": "zigzag32",
           "secondary_effect": "zigzag32"
         },
         "if mine_block": {
-          "!comment,922": "// Unknown1 ... TODO: Find out what this is for\n",
+          "!comment,919": "// Unknown1 ... TODO: Find out what this is for\n",
           "unknown1": "zigzag32",
-          "!comment,924": "PredictedDurability is the durability of the item that the client assumes to be present at the time\n",
+          "!comment,921": "PredictedDurability is the durability of the item that the client assumes to be present at the time\n",
           "predicted_durability": "zigzag32",
-          "!comment,926": "StackNetworkID is the unique stack ID that the client assumes to be present at the time. The server\nmust check if these IDs match. If they do not match, servers should reject the stack request that the\n",
-          "!comment,928": "action holding this info was in.\n",
+          "!comment,923": "StackNetworkID is the unique stack ID that the client assumes to be present at the time. The server\nmust check if these IDs match. If they do not match, servers should reject the stack request that the\n",
+          "!comment,925": "action holding this info was in.\n",
           "network_id": "zigzag32"
         },
         "if craft_recipe or craft_recipe_auto": {
-          "!comment,931": "RecipeNetworkID is the network ID of the recipe that is about to be crafted. This network ID matches\none of the recipes sent in the CraftingData packet, where each of the recipes have a RecipeNetworkID as\n",
-          "!comment,933": "of 1.16.\n",
+          "!comment,928": "RecipeNetworkID is the network ID of the recipe that is about to be crafted. This network ID matches\none of the recipes sent in the CraftingData packet, where each of the recipes have a RecipeNetworkID as\n",
+          "!comment,930": "of 1.16.\n",
           "recipe_network_id": "varint"
         },
         "if craft_creative": {
-          "!comment,936": "The stack ID of the creative item that is being created. This is one of the\ncreative item stack IDs sent in the CreativeContent packet.\n",
+          "!comment,933": "The stack ID of the creative item that is being created. This is one of the\ncreative item stack IDs sent in the CreativeContent packet.\n",
           "item_id": "varint32"
         },
         "if optional": {
-          "!comment,940": "For the cartography table, if a certain MULTI recipe is being called, this points to the network ID that was assigned.\n",
+          "!comment,937": "For the cartography table, if a certain MULTI recipe is being called, this points to the network ID that was assigned.\n",
           "recipe_network_id": "varint",
-          "!comment,942": "Most likely the index in the request's filter strings that this action is using\n",
+          "!comment,939": "Most likely the index in the request's filter strings that this action is using\n",
           "filtered_string_index": "li32"
         },
         "if non_implemented": "void",
@@ -968,39 +966,39 @@ const toTransform = {
         }
       }
     },
-    "!comment,948": "CustomNames is a list of custom names involved in the request. This is typically filled with one string\nwhen an anvil is used.\n",
-    "!comment,950": "* Used for the server to determine which strings should be filtered. Used in anvils to verify a renamed item.\n",
+    "!comment,945": "CustomNames is a list of custom names involved in the request. This is typically filled with one string\nwhen an anvil is used.\n",
+    "!comment,947": "* Used for the server to determine which strings should be filtered. Used in anvils to verify a renamed item.\n",
     "%array,custom_names,string,varint": null
   },
-  "!comment,953": "ItemStackResponse is a response to an individual ItemStackRequest.\n",
+  "!comment,950": "ItemStackResponse is a response to an individual ItemStackRequest.\n",
   "%array,ItemStackResponses,,varint": {
-    "!comment,955": "Status specifies if the request with the RequestID below was successful. If this is the case, the\nContainerInfo below will have information on what slots ended up changing. If not, the container info\n",
-    "!comment,957": "will be empty.\nA non-0 status means an error occurred and will result in the action being reverted.\n",
+    "!comment,952": "Status specifies if the request with the RequestID below was successful. If this is the case, the\nContainerInfo below will have information on what slots ended up changing. If not, the container info\n",
+    "!comment,954": "will be empty.\nA non-0 status means an error occurred and will result in the action being reverted.\n",
     "%map,status,u8": {
       "%n,0": "ok",
       "%n,1": "error"
     },
-    "!comment,962": "RequestID is the unique ID of the request that this response is in reaction to. If rejected, the client\nwill undo the actions from the request with this ID.\n",
+    "!comment,959": "RequestID is the unique ID of the request that this response is in reaction to. If rejected, the client\nwill undo the actions from the request with this ID.\n",
     "request_id": "varint32",
-    "%switch,__965,status": {
+    "%switch,__962,status": {
       "if ok": {
-        "!comment,967": "ContainerInfo holds information on the containers that had their contents changed as a result of the\nrequest.\n",
+        "!comment,964": "ContainerInfo holds information on the containers that had their contents changed as a result of the\nrequest.\n",
         "%array,containers,,varint": {
-          "!comment,970": "ContainerID is the container ID of the container that the slots that follow are in. For the main\ninventory, this value seems to be 0x1b. For the cursor, this value seems to be 0x3a. For the crafting\n",
-          "!comment,972": "grid, this value seems to be 0x0d.\n* actually, this is ContainerSlotType - used by the inventory system that specifies the type of slot\n",
+          "!comment,967": "ContainerID is the container ID of the container that the slots that follow are in. For the main\ninventory, this value seems to be 0x1b. For the cursor, this value seems to be 0x3a. For the crafting\n",
+          "!comment,969": "grid, this value seems to be 0x0d.\n* actually, this is ContainerSlotType - used by the inventory system that specifies the type of slot\n",
           "slot_type": "ContainerSlotType",
-          "!comment,975": "SlotInfo holds information on what item stack should be present in specific slots in the container.\n",
+          "!comment,972": "SlotInfo holds information on what item stack should be present in specific slots in the container.\n",
           "%array,slots,,varint": {
-            "!comment,977": "Slot and HotbarSlot seem to be the same value every time: The slot that was actually changed. I'm not\nsure if these slots ever differ.\n",
+            "!comment,974": "Slot and HotbarSlot seem to be the same value every time: The slot that was actually changed. I'm not\nsure if these slots ever differ.\n",
             "slot": "u8",
             "hotbar_slot": "u8",
-            "!comment,981": "Count is the total count of the item stack. This count will be shown client-side after the response is\nsent to the client.\n",
+            "!comment,978": "Count is the total count of the item stack. This count will be shown client-side after the response is\nsent to the client.\n",
             "count": "u8",
-            "!comment,984": "StackNetworkID is the network ID of the new stack at a specific slot.\n",
+            "!comment,981": "StackNetworkID is the network ID of the new stack at a specific slot.\n",
             "item_stack_id": "varint32",
-            "!comment,986": "CustomName is the custom name of the item stack. It is used in relation to text filtering.\n",
+            "!comment,983": "CustomName is the custom name of the item stack. It is used in relation to text filtering.\n",
             "custom_name": "string",
-            "!comment,988": "DurabilityCorrection is the current durability of the item stack. This durability will be shown\nclient-side after the response is sent to the client.\n",
+            "!comment,985": "DurabilityCorrection is the current durability of the item stack. This durability will be shown\nclient-side after the response is sent to the client.\n",
             "durability_correction": "zigzag32"
           }
         }
@@ -1008,14 +1006,14 @@ const toTransform = {
     }
   },
   "%array,ItemComponentList,,varint": {
-    "!comment,994": "Name is the name of the item, which is a name like 'minecraft:stick'.\n",
+    "!comment,991": "Name is the name of the item, which is a name like 'minecraft:stick'.\n",
     "name": "string",
-    "!comment,996": "Data is a map containing the components and properties of the item.\n",
+    "!comment,993": "Data is a map containing the components and properties of the item.\n",
     "nbt": "nbt"
   },
   "%container,CommandOrigin,": {
-    "!comment,1000": "Origin is one of the values above that specifies the origin of the command. The origin may change,\ndepending on what part of the client actually called the command. The command may be issued by a\n",
-    "!comment,1002": "websocket server, for example.\n",
+    "!comment,997": "Origin is one of the values above that specifies the origin of the command. The origin may change,\ndepending on what part of the client actually called the command. The command may be issued by a\n",
+    "!comment,999": "websocket server, for example.\n",
     "%map,type,varint": {
       "%n,0": "player",
       "%n,1": "block",
@@ -1033,50 +1031,50 @@ const toTransform = {
       "%n,13": "game_director_entity_server",
       "%n,14": "script"
     },
-    "!comment,1020": "UUID is the UUID of the command called. This UUID is a bit odd as it is not specified by the server. It\nis not clear what exactly this UUID is meant to identify, but it is unique for each command called.\n",
+    "!comment,1017": "UUID is the UUID of the command called. This UUID is a bit odd as it is not specified by the server. It\nis not clear what exactly this UUID is meant to identify, but it is unique for each command called.\n",
     "uuid": "uuid",
-    "!comment,1023": "RequestID is an ID that identifies the request of the client. The server should send a CommandOrigin\nwith the same request ID to ensure it can be matched with the request by the caller of the command.\n",
-    "!comment,1025": "This is especially important for websocket servers and it seems that this field is only non-empty for\nthese websocket servers.\n",
+    "!comment,1020": "RequestID is an ID that identifies the request of the client. The server should send a CommandOrigin\nwith the same request ID to ensure it can be matched with the request by the caller of the command.\n",
+    "!comment,1022": "This is especially important for websocket servers and it seems that this field is only non-empty for\nthese websocket servers.\n",
     "request_id": "string",
-    "!comment,1028": "PlayerUniqueID is an ID that identifies the player, the same as the one found in the AdventureSettings\npacket. Filling it out with 0 seems to work.\n",
-    "!comment,1030": "PlayerUniqueID is only written if Origin is CommandOriginDevConsole or CommandOriginTest.\n",
+    "!comment,1025": "PlayerUniqueID is an ID that identifies the player, the same as the one found in the AdventureSettings\npacket. Filling it out with 0 seems to work.\n",
+    "!comment,1027": "PlayerUniqueID is only written if Origin is CommandOriginDevConsole or CommandOriginTest.\n",
     "%switch,player_entity_id,type": {
       "if dev_console or test": {
         "player_entity_id": "zigzag64"
       }
     }
   },
-  "!comment,1035": "MapTrackedObject is an object on a map that is 'tracked' by the client, such as an entity or a block. This\nobject may move, which is handled client-side.\n",
+  "!comment,1032": "MapTrackedObject is an object on a map that is 'tracked' by the client, such as an entity or a block. This\nobject may move, which is handled client-side.\n",
   "%container,TrackedObject,": {
-    "!comment,1038": "Type is the type of the tracked object. It is either MapObjectTypeEntity or MapObjectTypeBlock.\n",
+    "!comment,1035": "Type is the type of the tracked object. It is either MapObjectTypeEntity or MapObjectTypeBlock.\n",
     "%map,type,li32": {
       "%n,0": "entity",
       "%n,1": "block"
     },
-    "!comment,1042": "EntityUniqueID is the unique ID of the entity, if the tracked object was an entity. It needs not to be\nfilled out if Type is not MapObjectTypeEntity.\n",
+    "!comment,1039": "EntityUniqueID is the unique ID of the entity, if the tracked object was an entity. It needs not to be\nfilled out if Type is not MapObjectTypeEntity.\n",
     "%switch,entity_unique_id,type": {
       "if entity": "zigzag64"
     },
-    "!comment,1046": "BlockPosition is the position of the block, if the tracked object was a block. It needs not to be\nfilled out if Type is not MapObjectTypeBlock.\n",
+    "!comment,1043": "BlockPosition is the position of the block, if the tracked object was a block. It needs not to be\nfilled out if Type is not MapObjectTypeBlock.\n",
     "%switch,block_position,type": {
       "if block": "BlockCoordinates"
     }
   },
-  "!comment,1051": "MapDecoration is a fixed decoration on a map: Its position or other properties do not change automatically\nclient-side.\n",
+  "!comment,1048": "MapDecoration is a fixed decoration on a map: Its position or other properties do not change automatically\nclient-side.\n",
   "%container,MapDecoration,": {
     "type": "u8",
-    "!comment,1055": "Rotation is the rotation of the map decoration. It is byte due to the 16 fixed directions that the\nmap decoration may face.\n",
+    "!comment,1052": "Rotation is the rotation of the map decoration. It is byte due to the 16 fixed directions that the\nmap decoration may face.\n",
     "rotation": "u8",
-    "!comment,1058": "X is the offset on the X axis in pixels of the decoration.\n",
+    "!comment,1055": "X is the offset on the X axis in pixels of the decoration.\n",
     "x": "u8",
-    "!comment,1060": "Y is the offset on the Y axis in pixels of the decoration.\n",
+    "!comment,1057": "Y is the offset on the Y axis in pixels of the decoration.\n",
     "y": "u8",
-    "!comment,1062": "Label is the name of the map decoration. This name may be of any value.\n",
+    "!comment,1059": "Label is the name of the map decoration. This name may be of any value.\n",
     "label": "string",
-    "!comment,1064": "Colour is the colour of the map decoration. Some map decoration types have a specific colour set\nautomatically, whereas others may be changed.\n",
+    "!comment,1061": "Colour is the colour of the map decoration. Some map decoration types have a specific colour set\nautomatically, whereas others may be changed.\n",
     "color_abgr": "varint"
   },
-  "!comment,1068": "Some arbitrary definitions from CBMC, Window IDs are normally\nunique + sequential\n",
+  "!comment,1065": "Some arbitrary definitions from CBMC, Window IDs are normally\nunique + sequential\n",
   "%map,WindowID,i8": {
     "%n,-100": "drop_contents",
     "%n,-24": "beacon",
@@ -1173,7 +1171,7 @@ const toTransform = {
     "%n,32": "jigsaw_editor",
     "%n,33": "smithing_table"
   },
-  "!comment,1166": "Used in inventory transactions. \n",
+  "!comment,1163": "Used in inventory transactions. \n",
   "%map,ContainerSlotType,u8": [
     "anvil_input",
     "anvil_material",
@@ -1574,7 +1572,7 @@ const toTransform = {
     "BigDripleafTiltUp",
     "Undefined"
   ],
-  "!comment,1567": "TODO: remove?\n",
+  "!comment,1564": "TODO: remove?\n",
   "%map,LegacyEntityType,li32": {
     "%n,10": "chicken",
     "%n,11": "cow",
@@ -1677,7 +1675,7 @@ const toTransform = {
     "%n,112": "cod",
     "%n,113": "panda"
   },
-  "!import,1669": "types.yaml",
+  "!import,1666": "types.yaml",
   "%container,mcpe_packet,": {
     "%map,name,varint": {
       "%n,1": "login",
@@ -1998,94 +1996,94 @@ const toTransform = {
       "if debug_renderer": "packet_debug_renderer"
     }
   },
-  "!import,1989": "packet_map.yml",
-  "!comment,1991": "todo: docs\n",
-  "!StartDocs,1992": "Packets",
-  "!comment,1994": "# Login Sequence\nThe login process is as follows:\n",
-  "!comment,1996": "\nC→S: [Login](#packet_login)\n",
-  "!comment,1998": "S→C: [Server To Client Handshake](#packet_server_to_client_handshake)\nC→S: [Client To Server Handshake](#packet_client_to_server_handshake)\n",
-  "!comment,2000": "S→C: [Play Status (Login success)](#packet_play_status)\nTo spawn, the following packets should be sent, in order, after the ones above:\n",
-  "!comment,2002": "\nS→C: [Resource Packs Info](#packet_resource_packs_info)\n",
-  "!comment,2004": "C→S: [Resource Pack Client Response](#packet_resource_pack_client_response)\nS→C: [Resource Pack Stack](#packet_resource_pack_stack)\n",
-  "!comment,2006": "C→S: [Resource Pack Client Response](#packet_resource_pack_client_response)\nS→C: [Start Game](#packet_start_game)\n",
-  "!comment,2008": "S→C: [Creative Content](#packet_creative_content)\nS→C: [Biome Definition List](#packet_biome_definition_list)\n",
-  "!comment,2010": "S→C: [Chunks](#packet_level_chunk)\nS→C: [Play Status (Player spawn)](#packet_play_status)\n",
-  "!comment,2012": "If there are no resource packs being sent, a Resource Pack Stack can be sent directly\n after Resource Packs Info to avoid the client responses.\n",
+  "!import,1986": "packet_map.yml",
+  "!StartDocs,1988": "Packets",
+  "!comment,1990": "# Login Sequence\nThe login process is as follows:\n",
+  "!comment,1992": "\n* C→S: [Login](#packet_login)\n",
+  "!comment,1994": "* S→C: [Server To Client Handshake](#packet_server_to_client_handshake)\n* C→S: [Client To Server Handshake](#packet_client_to_server_handshake)\n",
+  "!comment,1996": "* S→C: [Play Status (Login success)](#packet_play_status)\n* To spawn, the following packets should be sent, in order, after the ones above:\n",
+  "!comment,1998": "* S→C: [Resource Packs Info](#packet_resource_packs_info)\n* C→S: [Resource Pack Client Response](#packet_resource_pack_client_response)\n",
+  "!comment,2000": "* S→C: [Resource Pack Stack](#packet_resource_pack_stack)\n* C→S: [Resource Pack Client Response](#packet_resource_pack_client_response)\n",
+  "!comment,2002": "* S→C: [Start Game](#packet_start_game)\n* S→C: [Creative Content](#packet_creative_content)\n",
+  "!comment,2004": "* S→C: [Biome Definition List](#packet_biome_definition_list)\n* S→C: [Chunks](#packet_level_chunk)\n",
+  "!comment,2006": "* S→C: [Play Status (Player spawn)](#packet_play_status)\n",
+  "!comment,2008": "If there are no resource packs being sent, a Resource Pack Stack can be sent directly\n after Resource Packs Info to avoid the client responses.\n",
+  "!comment,2010": "\n===\n",
   "%container,packet_login,": {
     "!id": 1,
     "!bound": "server",
-    "!comment,2019": "Protocol version (Big Endian!)\n",
+    "!comment,2016": "Protocol version (Big Endian!)\n",
     "protocol_version": "i32",
-    "!comment,2021": "The combined size of the `chain` and `client_data`\n",
+    "!comment,2018": "The combined size of the `chain` and `client_data`\n",
     "payload_size": "varint",
-    "!comment,2023": "JSON array of JWT data: contains the display name, UUID and XUID\nIt should be signed by the Mojang public key\n",
+    "!comment,2020": "JSON array of JWT data: contains the display name, UUID and XUID\nIt should be signed by the Mojang public key\n",
     "chain": "LittleString",
-    "!comment,2026": "Skin related data\n",
+    "!comment,2023": "Skin related data\n",
     "client_data": "LittleString"
   },
   "%container,packet_play_status,": {
     "!id": 2,
     "!bound": "client",
     "%map,status,i32": {
-      "!comment,2033": "Sent after Login has been successfully decoded and the player has logged in\n",
+      "!comment,2030": "Sent after Login has been successfully decoded and the player has logged in\n",
       "%n,0": "login_success",
-      "!comment,2035": "Displays \"Could not connect: Outdated client!\"\n",
+      "!comment,2032": "Displays \"Could not connect: Outdated client!\"\n",
       "%n,1": "failed_client",
-      "!comment,2037": "Displays \"Could not connect: Outdated server!\"\n",
+      "!comment,2034": "Displays \"Could not connect: Outdated server!\"\n",
       "%n,2": "failed_spawn",
-      "!comment,2039": "Sent after world data to spawn the player\n",
+      "!comment,2036": "Sent after world data to spawn the player\n",
       "%n,3": "player_spawn",
-      "!comment,2041": "Displays \"Unable to connect to world. Your school does not have access to this server.\"\n",
+      "!comment,2038": "Displays \"Unable to connect to world. Your school does not have access to this server.\"\n",
       "%n,4": "failed_invalid_tenant",
-      "!comment,2043": "Displays \"The server is not running Minecraft: Education Edition. Failed to connect.\"\n",
+      "!comment,2040": "Displays \"The server is not running Minecraft: Education Edition. Failed to connect.\"\n",
       "%n,5": "failed_vanilla_edu",
-      "!comment,2045": "Displays \"The server is running an incompatible edition of Minecraft. Failed to connect.\"\n",
+      "!comment,2042": "Displays \"The server is running an incompatible edition of Minecraft. Failed to connect.\"\n",
       "%n,6": "failed_edu_vanilla",
-      "!comment,2047": "Displays \"Wow this server is popular! Check back later to see if space opens up. Server Full\"\n",
+      "!comment,2044": "Displays \"Wow this server is popular! Check back later to see if space opens up. Server Full\"\n",
       "%n,7": "failed_server_full"
     }
   },
   "%container,packet_server_to_client_handshake,": {
     "!id": 3,
     "!bound": "client",
-    "!comment,2054": "Contains the salt to complete the Diffie-Hellman key exchange\n",
+    "!comment,2051": "Contains the salt to complete the Diffie-Hellman key exchange\n",
     "token": "string"
   },
-  "!comment,2058": "Sent by the client in response to a Server To Client Handshake packet \nsent by the server. It is the first encrypted packet in the login handshake\n",
-  "!comment,2060": "and serves as a confirmation that encryption is correctly initialized client side. \nIt has no fields.\n",
+  "!comment,2055": "Sent by the client in response to a Server To Client Handshake packet \nsent by the server. It is the first encrypted packet in the login handshake\n",
+  "!comment,2057": "and serves as a confirmation that encryption is correctly initialized client side. \nIt has no fields.\n",
   "%container,packet_client_to_server_handshake,": {
     "!id": 4,
     "!bound": "server"
   },
-  "!comment,2066": "Sent by the server to disconnect a client.\n",
+  "!comment,2063": "Sent by the server to disconnect a client.\n",
   "%container,packet_disconnect,": {
     "!id": 5,
     "!bound": "client",
-    "!comment,2070": "Specifies if the disconnection screen should be hidden when the client is disconnected, \nmeaning it will be sent directly to the main menu.\n",
+    "!comment,2067": "Specifies if the disconnection screen should be hidden when the client is disconnected, \nmeaning it will be sent directly to the main menu.\n",
     "hide_disconnect_reason": "bool",
-    "!comment,2073": "An optional message to show when disconnected.\n",
+    "!comment,2070": "An optional message to show when disconnected.\n",
     "message": "string"
   },
   "%container,packet_resource_packs_info,": {
     "!id": 6,
     "!bound": "client",
-    "!comment,2080": "If the resource pack requires the client accept it.\n",
+    "!comment,2077": "If the resource pack requires the client accept it.\n",
     "must_accept": "bool",
-    "!comment,2082": "If scripting is enabled.\n",
+    "!comment,2079": "If scripting is enabled.\n",
     "has_scripts": "bool",
-    "!comment,2084": "A list of behaviour packs that the client needs to download before joining the server. \nAll of these behaviour packs will be applied together.\n",
+    "!comment,2081": "A list of behaviour packs that the client needs to download before joining the server. \nAll of these behaviour packs will be applied together.\n",
     "behaviour_packs": "BehaviourPackInfos",
-    "!comment,2087": "A list of resource packs that the client needs to download before joining the server. \nThe order of these resource packs is not relevant in this packet. It is however important in the Resource Pack Stack packet.\n",
+    "!comment,2084": "A list of resource packs that the client needs to download before joining the server. \nThe order of these resource packs is not relevant in this packet. It is however important in the Resource Pack Stack packet.\n",
     "texture_packs": "TexturePackInfos"
   },
   "%container,packet_resource_pack_stack,": {
     "!id": 7,
     "!bound": "client",
-    "!comment,2094": "If the resource pack must be accepted for the player to join the server.\n",
+    "!comment,2091": "If the resource pack must be accepted for the player to join the server.\n",
     "must_accept": "bool",
-    "!comment,2096": "[inline]\n",
+    "!comment,2093": "[inline]\n",
     "behavior_packs": "ResourcePackIdVersions",
-    "!comment,2098": "[inline]\n",
+    "!comment,2095": "[inline]\n",
     "resource_packs": "ResourcePackIdVersions",
     "game_version": "string",
     "experiments": "Experiments",
@@ -2101,15 +2099,14 @@ const toTransform = {
       "%n,3": "have_all_packs",
       "%n,4": "completed"
     },
-    "!comment,2113": "All of the pack IDs.\n",
+    "!comment,2110": "All of the pack IDs.\n",
     "resourcepackids": "ResourcePackIds"
   },
-  "!comment,2116": "Sent by the client to the server to send chat messages, and by the server to the client \nto forward or send messages, which may be chat, popups, tips etc.\n",
-  "!comment,2118": "# https://github.com/pmmp/PocketMine-MP/blob/a43b46a93cb127f037c879b5d8c29cda251dd60c/src/pocketmine/network/mcpe/protocol/TextPacket.php\n# https://github.com/Sandertv/gophertunnel/blob/05ac3f843dd60d48b9ca0ab275cda8d9e85d8c43/minecraft/protocol/packet/text.go\n",
+  "!comment,2113": "Sent by the client to the server to send chat messages, and by the server to the client \nto forward or send messages, which may be chat, popups, tips etc.\n",
   "%container,packet_text,": {
     "!id": 9,
     "!bound": "both",
-    "!comment,2123": "TextType is the type of the text sent. When a client sends this to the server, it should always be\nTextTypeChat. If the server sends it, it may be one of the other text types above.\n",
+    "!comment,2120": "TextType is the type of the text sent. When a client sends this to the server, it should always be\nTextTypeChat. If the server sends it, it may be one of the other text types above.\n",
     "%map,type,u8": {
       "%n,0": "raw",
       "%n,1": "chat",
@@ -2123,10 +2120,10 @@ const toTransform = {
       "%n,9": "json_whisper",
       "%n,10": "json"
     },
-    "!comment,2137": "NeedsTranslation specifies if any of the messages need to be translated. It seems that where % is found\nin translatable text types, these are translated regardless of this bool. Translatable text types\n",
-    "!comment,2139": "include TextTypeTip, TextTypePopup and TextTypeJukeboxPopup.\n",
+    "!comment,2134": "NeedsTranslation specifies if any of the messages need to be translated. It seems that where % is found\nin translatable text types, these are translated regardless of this bool. Translatable text types\n",
+    "!comment,2136": "include TextTypeTip, TextTypePopup and TextTypeJukeboxPopup.\n",
     "needs_translation": "bool",
-    "%switch,__2141,type": {
+    "%switch,__2138,type": {
       "if chat or whisper or announcement": {
         "source_name": "string",
         "message": "string"
@@ -2139,168 +2136,169 @@ const toTransform = {
         "%array,paramaters,string,varint": null
       }
     },
-    "!comment,2150": "The XUID of the player who sent this message.\n",
+    "!comment,2147": "The XUID of the player who sent this message.\n",
     "xuid": "string",
-    "!comment,2152": "PlatformChatID is an identifier only set for particular platforms when chatting (presumably only for\nNintendo Switch). It is otherwise an empty string, and is used to decide which players are able to\n",
-    "!comment,2154": "chat with each other.\n",
+    "!comment,2149": "PlatformChatID is an identifier only set for particular platforms when chatting (presumably only for\nNintendo Switch). It is otherwise an empty string, and is used to decide which players are able to\n",
+    "!comment,2151": "chat with each other.\n",
     "platform_chat_id": "string"
   },
-  "!comment,2156": "For additional information and examples of all the chat types above, see here: https://imgur.com/a/KhcFscg\n",
-  "!comment,2159": "Sent by the server to update the current time client-side. The client actually advances time\nclient-side by itself, so this packet does not need to be sent each tick. It is merely a means\n",
-  "!comment,2161": "of synchronizing time between server and client.\n",
+  "!comment,2153": "For additional information and examples of all the chat types above, see here: https://imgur.com/a/KhcFscg\n",
+  "!comment,2156": "Sent by the server to update the current time client-side. The client actually advances time\nclient-side by itself, so this packet does not need to be sent each tick. It is merely a means\n",
+  "!comment,2158": "of synchronizing time between server and client.\n",
   "%container,packet_set_time,": {
     "!id": 10,
     "!bound": "client",
-    "!comment,2165": "Time is the current time. The time is not limited to 24000 (time of day), but continues \nprogressing after that.\n",
+    "!comment,2162": "Time is the current time. The time is not limited to 24000 (time of day), but continues \nprogressing after that.\n",
     "time": "zigzag32"
   },
-  "!comment,2169": "Sent by the server to send information about the world the player will be spawned in.\n",
+  "!comment,2166": "Sent by the server to send information about the world the player will be spawned in.\n",
   "%container,packet_start_game,": {
     "!id": 11,
     "!bound": "client",
-    "!comment,2173": "The unique ID of the player. The unique ID is a value that remains consistent across\ndifferent sessions of the same world, but most unofficial servers simply fill the\n",
-    "!comment,2175": "runtime ID of the entity out for this field.\n",
+    "!comment,2170": "The unique ID of the player. The unique ID is a value that remains consistent across\ndifferent sessions of the same world, but most unofficial servers simply fill the\n",
+    "!comment,2172": "runtime ID of the entity out for this field.\n",
     "entity_id": "zigzag64",
-    "!comment,2177": "The runtime ID of the player. The runtime ID is unique for each world session, \nand entities are generally identified in packets using this runtime ID.\n",
+    "!comment,2174": "The runtime ID of the player. The runtime ID is unique for each world session, \nand entities are generally identified in packets using this runtime ID.\n",
     "runtime_entity_id": "varint64",
-    "!comment,2180": "PlayerGameMode is the game mode the player currently has. It is a value from 0-4, with 0 being\nsurvival mode, 1 being creative mode, 2 being adventure mode, 3 being survival spectator and 4 being\n",
-    "!comment,2182": "creative spectator.\nThis field may be set to 5 to make the client fall back to the game mode set in the WorldGameMode\n",
-    "!comment,2184": "field.\n",
+    "!comment,2177": "PlayerGameMode is the game mode the player currently has. It is a value from 0-4, with 0 being\nsurvival mode, 1 being creative mode, 2 being adventure mode, 3 being survival spectator and 4 being\n",
+    "!comment,2179": "creative spectator.\nThis field may be set to 5 to make the client fall back to the game mode set in the WorldGameMode\n",
+    "!comment,2181": "field.\n",
     "player_gamemode": "GameMode",
-    "!comment,2186": "The spawn position of the player in the world. In servers this is often the same as the \nworld's spawn position found below.\n",
+    "!comment,2183": "The spawn position of the player in the world. In servers this is often the same as the \nworld's spawn position found below.\n",
     "player_position": "vec3f",
-    "!comment,2189": "The pitch and yaw of the player\n",
+    "!comment,2186": "The pitch and yaw of the player\n",
     "rotation": "vec2f",
-    "!comment,2191": "The seed used to generate the world. Unlike in Java edition, the seed is a 32bit Integer here.\n",
+    "!comment,2188": "The seed used to generate the world. Unlike in Java edition, the seed is a 32bit Integer here.\n",
     "seed": "zigzag32",
     "biome_type": "li16",
     "biome_name": "string",
-    "!comment,2195": "Dimension is the ID of the dimension that the player spawns in. It is a value from 0-2, \nwith 0 being the overworld, 1 being the nether and 2 being the end.\n",
+    "!comment,2192": "Dimension is the ID of the dimension that the player spawns in. It is a value from 0-2, \nwith 0 being the overworld, 1 being the nether and 2 being the end.\n",
     "dimension": "zigzag32",
-    "!comment,2198": "Generator is the generator used for the world. It is a value from 0-4, with 0 being old\nlimited worlds, 1 being infinite worlds, 2 being flat worlds, 3 being nether worlds and \n",
-    "!comment,2200": "4 being end worlds. A value of 0 will actually make the client stop rendering chunks you \nsend beyond the world limit.\n",
+    "!comment,2195": "Generator is the generator used for the world. It is a value from 0-4, with 0 being old\nlimited worlds, 1 being infinite worlds, 2 being flat worlds, 3 being nether worlds and \n",
+    "!comment,2197": "4 being end worlds. A value of 0 will actually make the client stop rendering chunks you \nsend beyond the world limit.\n",
     "generator": "zigzag32",
-    "!comment,2203": "The world game mode that a player gets when it first spawns in the world. It is shown in the\nsettings and is used if the Player Gamemode is set to 5.\n",
+    "!comment,2200": "The world game mode that a player gets when it first spawns in the world. It is shown in the\nsettings and is used if the Player Gamemode is set to 5.\n",
     "world_gamemode": "GameMode",
-    "!comment,2206": "Difficulty is the difficulty of the world. It is a value from 0-3, with 0 being peaceful,\n1 being easy, 2 being normal and 3 being hard.\n",
+    "!comment,2203": "Difficulty is the difficulty of the world. It is a value from 0-3, with 0 being peaceful,\n1 being easy, 2 being normal and 3 being hard.\n",
     "difficulty": "zigzag32",
-    "!comment,2209": "The block on which the world spawn of the world. This coordinate has no effect on the place\nthat the client spawns, but it does have an effect on the direction that a compass poInts.\n",
+    "!comment,2206": "The block on which the world spawn of the world. This coordinate has no effect on the place\nthat the client spawns, but it does have an effect on the direction that a compass poInts.\n",
     "spawn_position": "BlockCoordinates",
-    "!comment,2212": "Defines if achievements are disabled in the world. The client crashes if this value is set \nto true while the player's or the world's game mode is creative, and it's recommended to simply\n",
-    "!comment,2214": "always set this to false as a server.\n",
+    "!comment,2209": "Defines if achievements are disabled in the world. The client crashes if this value is set \nto true while the player's or the world's game mode is creative, and it's recommended to simply\n",
+    "!comment,2211": "always set this to false as a server.\n",
     "achievements_disabled": "bool",
-    "!comment,2216": "The time at which the day cycle was locked if the day cycle is disabled using the respective\ngame rule. The client will maIntain this time as Boolean as the day cycle is disabled.\n",
+    "!comment,2213": "The time at which the day cycle was locked if the day cycle is disabled using the respective\ngame rule. The client will maIntain this time as Boolean as the day cycle is disabled.\n",
     "day_cycle_stop_time": "zigzag32",
-    "!comment,2219": "Some Minecraft: Education Edition field that specifies what 'region' the world was from, \nwith 0 being None, 1 being RestOfWorld, and 2 being China. The actual use of this field is unknown.\n",
+    "!comment,2216": "Some Minecraft: Education Edition field that specifies what 'region' the world was from, \nwith 0 being None, 1 being RestOfWorld, and 2 being China. The actual use of this field is unknown.\n",
     "edu_offer": "zigzag32",
-    "!comment,2222": "Specifies if the world has education edition features enabled, such as the blocks or entities\nspecific to education edition.\n",
+    "!comment,2219": "Specifies if the world has education edition features enabled, such as the blocks or entities\nspecific to education edition.\n",
     "edu_features_enabled": "bool",
     "edu_product_uuid": "string",
-    "!comment,2226": "The level specifying the Intensity of the rain falling. When set to 0, no rain falls at all.\n",
+    "!comment,2223": "The level specifying the Intensity of the rain falling. When set to 0, no rain falls at all.\n",
     "rain_level": "lf32",
     "lightning_level": "lf32",
-    "!comment,2229": "The level specifying the Intensity of the thunder. This may actually be set independently\nfrom the rain level, meaning dark clouds can be produced without rain.\n",
+    "!comment,2226": "The level specifying the Intensity of the thunder. This may actually be set independently\nfrom the rain level, meaning dark clouds can be produced without rain.\n",
     "has_confirmed_platform_locked_content": "bool",
-    "!comment,2232": "Specifies if the world is a multi-player game. This should always be set to true for servers.\n",
+    "!comment,2229": "Specifies if the world is a multi-player game. This should always be set to true for servers.\n",
     "is_multiplayer": "bool",
-    "!comment,2234": "Specifies if LAN broadcast was Intended to be enabled for the world.\n",
+    "!comment,2231": "Specifies if LAN broadcast was Intended to be enabled for the world.\n",
     "broadcast_to_lan": "bool",
-    "!comment,2236": "The mode used to broadcast the joined game across XBOX Live.\n",
+    "!comment,2233": "The mode used to broadcast the joined game across XBOX Live.\n",
     "xbox_live_broadcast_mode": "varint",
-    "!comment,2238": "The mode used to broadcast the joined game across the platform.\n",
+    "!comment,2235": "The mode used to broadcast the joined game across the platform.\n",
     "platform_broadcast_mode": "varint",
-    "!comment,2240": "If commands are enabled for the player. It is recommended to always set this to true on the\nserver, as setting it to false means the player cannot, under any circumstance, use a command.\n",
+    "!comment,2237": "If commands are enabled for the player. It is recommended to always set this to true on the\nserver, as setting it to false means the player cannot, under any circumstance, use a command.\n",
     "enable_commands": "bool",
-    "!comment,2243": "Specifies if the texture pack the world might hold is required, meaning the client was\n forced to download it before joining.\n",
+    "!comment,2240": "Specifies if the texture pack the world might hold is required, meaning the client was\n forced to download it before joining.\n",
     "is_texturepacks_required": "bool",
-    "!comment,2246": "Defines game rules currently active with their respective values. The value of these game\n rules may be either 'bool', 'Int32' or 'Float32'. Some game rules are server side only,\n",
-    "!comment,2248": "and don't necessarily need to be sent to the client.\n",
+    "!comment,2243": "Defines game rules currently active with their respective values. The value of these game\n rules may be either 'bool', 'Int32' or 'Float32'. Some game rules are server side only,\n",
+    "!comment,2245": "and don't necessarily need to be sent to the client.\n",
     "gamerules": "GameRules",
     "experiments": "Experiments",
     "experiments_previously_used": "bool",
-    "!comment,2252": "Specifies if the world had the bonus map setting enabled when generating it.\nIt does not have any effect client-side.\n",
+    "!comment,2249": "Specifies if the world had the bonus map setting enabled when generating it.\nIt does not have any effect client-side.\n",
     "bonus_chest": "bool",
-    "!comment,2255": "Specifies if the world has the start with map setting enabled, meaning each\njoining player obtains a map. This should always be set to false, because the\n",
-    "!comment,2257": "client obtains a map all on its own accord if this is set to true.\n",
+    "!comment,2252": "Specifies if the world has the start with map setting enabled, meaning each\njoining player obtains a map. This should always be set to false, because the\n",
+    "!comment,2254": "client obtains a map all on its own accord if this is set to true.\n",
     "map_enabled": "bool",
-    "!comment,2259": "The permission level of the player. It is a value from 0-3, with 0 being visitor,\n1 being member, 2 being operator and 3 being custom.\n",
+    "!comment,2256": "The permission level of the player. It is a value from 0-3, with 0 being visitor,\n1 being member, 2 being operator and 3 being custom.\n",
     "permission_level": "zigzag32",
-    "!comment,2262": "The radius around the player in which chunks are ticked. Most servers set this value\nto a fixed number, as it does not necessarily affect anything client-side.\n",
+    "!comment,2259": "The radius around the player in which chunks are ticked. Most servers set this value\nto a fixed number, as it does not necessarily affect anything client-side.\n",
     "server_chunk_tick_range": "li32",
-    "!comment,2265": "Specifies if the texture pack of the world is locked, meaning it cannot be disabled\nfrom the world. This is typically set for worlds on the marketplace that have a dedicated\n",
-    "!comment,2267": "texture pack.\n",
+    "!comment,2262": "Specifies if the texture pack of the world is locked, meaning it cannot be disabled\nfrom the world. This is typically set for worlds on the marketplace that have a dedicated\n",
+    "!comment,2264": "texture pack.\n",
     "has_locked_behavior_pack": "bool",
-    "!comment,2269": "Specifies if the texture pack of the world is locked, meaning it cannot be disabled from the\nworld. This is typically set for worlds on the marketplace that have a dedicated texture pack.\n",
+    "!comment,2266": "Specifies if the texture pack of the world is locked, meaning it cannot be disabled from the\nworld. This is typically set for worlds on the marketplace that have a dedicated texture pack.\n",
     "has_locked_resource_pack": "bool",
-    "!comment,2272": "Specifies if the world from the server was from a locked world template.\nFor servers this should always be set to false.\n",
+    "!comment,2269": "Specifies if the world from the server was from a locked world template.\nFor servers this should always be set to false.\n",
     "is_from_locked_world_template": "bool",
     "msa_gamertags_only": "bool",
-    "!comment,2276": "Specifies if the world from the server was from a locked world template. \nFor servers this should always be set to false.\n",
+    "!comment,2273": "Specifies if the world from the server was from a locked world template. \nFor servers this should always be set to false.\n",
     "is_from_world_template": "bool",
-    "!comment,2279": "Specifies if the world was a template that locks all settings that change properties \nabove in the settings GUI. It is recommended to set this to true for servers that\n",
-    "!comment,2281": "do not allow things such as setting game rules through the GUI.\n",
+    "!comment,2276": "Specifies if the world was a template that locks all settings that change properties \nabove in the settings GUI. It is recommended to set this to true for servers that\n",
+    "!comment,2278": "do not allow things such as setting game rules through the GUI.\n",
     "is_world_template_option_locked": "bool",
-    "!comment,2283": "A hack that Mojang put in place to preserve backwards compatibility with old villagers. \nThe his never actually read though, so it has no functionality.\n",
+    "!comment,2280": "A hack that Mojang put in place to preserve backwards compatibility with old villagers. \nThe his never actually read though, so it has no functionality.\n",
     "only_spawn_v1_villagers": "bool",
-    "!comment,2286": "The version of the game from which Vanilla features will be used.\nThe exact function of this field isn't clear.\n",
+    "!comment,2283": "The version of the game from which Vanilla features will be used.\nThe exact function of this field isn't clear.\n",
     "game_version": "string",
     "limited_world_width": "li32",
     "limited_world_length": "li32",
     "is_new_nether": "bool",
     "experimental_gameplay_override": "bool",
-    "!comment,2293": "A base64 encoded world ID that is used to identify the world.\n",
+    "!comment,2290": "A base64 encoded world ID that is used to identify the world.\n",
     "level_id": "string",
-    "!comment,2295": "The name of the world that the player is joining. Note that this field shows up\nabove the player list for the rest of the game session, and cannot be changed.\n",
-    "!comment,2297": "Setting the server name to this field is recommended.\n",
+    "!comment,2292": "The name of the world that the player is joining. Note that this field shows up\nabove the player list for the rest of the game session, and cannot be changed.\n",
+    "!comment,2294": "Setting the server name to this field is recommended.\n",
     "world_name": "string",
-    "!comment,2299": "A UUID specific to the premium world template that might have been used to\ngenerate the world. Servers should always fill out an empty String for this.\n",
+    "!comment,2296": "A UUID specific to the premium world template that might have been used to\ngenerate the world. Servers should always fill out an empty String for this.\n",
     "premium_world_template_id": "string",
-    "!comment,2302": "Specifies if the world was a trial world, meaning features are limited and there \nis a time limit on the world.\n",
+    "!comment,2299": "Specifies if the world was a trial world, meaning features are limited and there \nis a time limit on the world.\n",
     "is_trial": "bool",
-    "!comment,2306": "MovementType specifies the way the server handles player movement. Available options are\npacket.AuthoritativeMovementModeClient, packet.AuthoritativeMovementModeServer and\n",
-    "!comment,2308": "packet.AuthoritativeMovementModeServerWithRewind, where server the server authoritative types result\nin the client sending PlayerAuthInput packets instead of MovePlayer packets and the rewind mode\n",
-    "!comment,2310": "requires sending the tick of movement and several actions.\n",
-    "!comment,2312": "Specifies if the client or server is authoritative over the movement of the player, \nmeaning it controls the movement of it. \n",
-    "!comment,2314": "# https://github.com/pmmp/PocketMine-MP/blob/a43b46a93cb127f037c879b5d8c29cda251dd60c/src/pocketmine/network/mcpe/protocol/types/PlayerMovementType.php#L26\n",
+    "!comment,2303": "MovementType specifies the way the server handles player movement. Available options are\npacket.AuthoritativeMovementModeClient, packet.AuthoritativeMovementModeServer and\n",
+    "!comment,2305": "packet.AuthoritativeMovementModeServerWithRewind, where server the server authoritative types result\nin the client sending PlayerAuthInput packets instead of MovePlayer packets and the rewind mode\n",
+    "!comment,2307": "requires sending the tick of movement and several actions.\n",
+    "!comment,2309": "Specifies if the client or server is authoritative over the movement of the player, \nmeaning it controls the movement of it. \n",
     "%map,movement_authority,zigzag32": {
       "%n,0": "client",
       "%n,1": "server",
-      "!comment,2318": "PlayerAuthInputPacket + a bunch of junk that solves a nonexisting problem\n",
+      "!comment,2315": "PlayerAuthInputPacket + a bunch of junk that solves a nonexisting problem\n",
       "%n,2": "server_with_rewind"
     },
-    "!comment,2320": "RewindHistorySize is the amount of history to keep at maximum if MovementType is\npacket.AuthoritativeMovementModeServerWithRewind.\n",
+    "!comment,2317": "RewindHistorySize is the amount of history to keep at maximum if MovementType is\npacket.AuthoritativeMovementModeServerWithRewind.\n",
     "rewind_history_size": "zigzag32",
-    "!comment,2323": "ServerAuthoritativeBlockBreaking specifies if block breaking should be sent through\npacket.PlayerAuthInput or not. This field is somewhat redundant as it is always enabled if\n",
-    "!comment,2325": "MovementType is packet.AuthoritativeMovementModeServer or\npacket.AuthoritativeMovementModeServerWithRewind\n",
+    "!comment,2320": "ServerAuthoritativeBlockBreaking specifies if block breaking should be sent through\npacket.PlayerAuthInput or not. This field is somewhat redundant as it is always enabled if\n",
+    "!comment,2322": "MovementType is packet.AuthoritativeMovementModeServer or\npacket.AuthoritativeMovementModeServerWithRewind\n",
     "server_authoritative_block_breaking": "bool",
-    "!comment,2329": "The total time in ticks that has elapsed since the start of the world.\n",
+    "!comment,2326": "The total time in ticks that has elapsed since the start of the world.\n",
     "current_tick": "li64",
-    "!comment,2331": "The seed used to seed the random used to produce enchantments in the enchantment table. \nNote that the exact correct random implementation must be used to produce the correct\n",
-    "!comment,2333": "results both client- and server-side.\n",
+    "!comment,2328": "The seed used to seed the random used to produce enchantments in the enchantment table. \nNote that the exact correct random implementation must be used to produce the correct\n",
+    "!comment,2330": "results both client- and server-side.\n",
     "enchantment_seed": "zigzag32",
-    "!comment,2336": "# This is not sent anymore in protocol versions > 419 (Bedrock Edition v1.16.100)\n# A list of all blocks registered on the server.\n",
-    "block_palette": "BlockPalette",
-    "!comment,2339": "A list of all items with their legacy IDs which are available in the game.\nFailing to send any of the items that are in the game will crash mobile clients.\n",
+    "!comment,2333": "BlockProperties is a list of all the custom blocks registered on the server.\n",
+    "block_properties": "BlockProperties",
+    "!comment,2335": "A list of all items with their legacy IDs which are available in the game.\nFailing to send any of the items that are in the game will crash mobile clients.\n",
     "itemstates": "Itemstates",
-    "!comment,2342": "A unique ID specifying the multi-player session of the player. \nA random UUID should be filled out for this field.\n",
+    "!comment,2338": "A unique ID specifying the multi-player session of the player. \nA random UUID should be filled out for this field.\n",
     "multiplayer_correlation_id": "string",
+    "!comment,2341": "ServerAuthoritativeInventory specifies if the server authoritative inventory system is enabled. This\nis a new system introduced in 1.16. Backwards compatibility with the inventory transactions has to\n",
+    "!comment,2343": "some extent been preserved, but will eventually be removed.\n",
     "server_authoritative_inventory": "bool"
   },
   "%container,packet_add_player,": {
     "!id": 12,
     "!bound": "client",
-    "!comment,2351": "UUID is the UUID of the player. It is the same UUID that the client sent in the\nLogin packet at the start of the session. A player with this UUID must exist\n",
-    "!comment,2353": "in the player list (built up using the Player List packet) for it to show up in-game.\n",
+    "!comment,2350": "UUID is the UUID of the player. It is the same UUID that the client sent in the\nLogin packet at the start of the session. A player with this UUID must exist\n",
+    "!comment,2352": "in the player list (built up using the Player List packet) for it to show up in-game.\n",
     "uuid": "uuid",
-    "!comment,2355": "Username is the name of the player. This username is the username that will be\nset as the initial name tag of the player.\n",
+    "!comment,2354": "Username is the name of the player. This username is the username that will be\nset as the initial name tag of the player.\n",
     "username": "string",
-    "!comment,2358": "The unique ID of the player. The unique ID is a value that remains consistent\n across different sessions of the same world, but most unoffical servers simply \n",
-    "!comment,2360": "fill the runtime ID of the player out for this field.\n",
+    "!comment,2357": "The unique ID of the player. The unique ID is a value that remains consistent\n across different sessions of the same world, but most unoffical servers simply \n",
+    "!comment,2359": "fill the runtime ID of the player out for this field.\n",
     "entity_id_self": "zigzag64",
-    "!comment,2362": "The runtime ID of the player. The runtime ID is unique for each world session,\nand entities are generally identified in packets using this runtime ID.\n",
+    "!comment,2361": "The runtime ID of the player. The runtime ID is unique for each world session,\nand entities are generally identified in packets using this runtime ID.\n",
     "runtime_entity_id": "varint64",
-    "!comment,2365": "An identifier only set for particular platforms when chatting (presumably only for \nNintendo Switch). It is otherwise an empty string, and is used to decide which players\n",
-    "!comment,2367": "are able to chat with each other.\n",
+    "!comment,2364": "An identifier only set for particular platforms when chatting (presumably only for \nNintendo Switch). It is otherwise an empty string, and is used to decide which players\n",
+    "!comment,2366": "are able to chat with each other.\n",
     "platform_chat_id": "string",
     "x": "lf32",
     "y": "lf32",
@@ -2368,47 +2366,47 @@ const toTransform = {
     "runtime_entity_id": "varint64",
     "target": "varint"
   },
-  "!comment,2435": "MoveActorAbsolute is sent by the server to move an entity to an absolute position. It is typically used\nfor movements where high accuracy isn't needed, such as for long range teleporting.\n",
+  "!comment,2434": "MoveActorAbsolute is sent by the server to move an entity to an absolute position. It is typically used\nfor movements where high accuracy isn't needed, such as for long range teleporting.\n",
   "%container,packet_move_entity,": {
     "!id": 18,
     "!bound": "both",
-    "!comment,2440": "EntityRuntimeID is the runtime ID of the entity. The runtime ID is unique for each world session, and\nentities are generally identified in packets using this runtime ID.\n",
+    "!comment,2439": "EntityRuntimeID is the runtime ID of the entity. The runtime ID is unique for each world session, and\nentities are generally identified in packets using this runtime ID.\n",
     "runtime_entity_id": "varint64",
-    "!comment,2443": "Flags is a combination of flags that specify details of the movement. It is a combination of the flags\nabove.\n",
+    "!comment,2442": "Flags is a combination of flags that specify details of the movement. It is a combination of the flags\nabove.\n",
     "flags": "u8",
-    "!comment,2446": "Position is the position to spawn the entity on. If the entity is on a distance that the player cannot\nsee it, the entity will still show up if the player moves closer.\n",
+    "!comment,2445": "Position is the position to spawn the entity on. If the entity is on a distance that the player cannot\nsee it, the entity will still show up if the player moves closer.\n",
     "position": "vec3f",
-    "!comment,2449": "Rotation is a Vec3 holding the X, Y and Z rotation of the entity after the movement. This is a Vec3 for\nthe reason that projectiles like arrows don't have yaw/pitch, but do have roll.\n",
+    "!comment,2448": "Rotation is a Vec3 holding the X, Y and Z rotation of the entity after the movement. This is a Vec3 for\nthe reason that projectiles like arrows don't have yaw/pitch, but do have roll.\n",
     "rotation": "Rotation"
   },
-  "!comment,2453": "MovePlayer is sent by players to send their movement to the server, and by the server to update the\nmovement of player entities to other players.\n",
+  "!comment,2452": "MovePlayer is sent by players to send their movement to the server, and by the server to update the\nmovement of player entities to other players.\n",
   "%container,packet_move_player,": {
     "!id": 19,
     "!bound": "both",
-    "!comment,2458": "EntityRuntimeID is the runtime ID of the player. The runtime ID is unique for each world session, and\nentities are generally identified in packets using this runtime ID.\n",
+    "!comment,2457": "EntityRuntimeID is the runtime ID of the player. The runtime ID is unique for each world session, and\nentities are generally identified in packets using this runtime ID.\n",
     "runtime_id": "varint",
-    "!comment,2461": "Position is the position to spawn the player on. If the player is on a distance that the viewer cannot\nsee it, the player will still show up if the viewer moves closer.\n",
+    "!comment,2460": "Position is the position to spawn the player on. If the player is on a distance that the viewer cannot\nsee it, the player will still show up if the viewer moves closer.\n",
     "position": "vec3f",
-    "!comment,2464": "Pitch is the vertical rotation of the player. Facing straight forward yields a pitch of 0. Pitch is\nmeasured in degrees.\n",
+    "!comment,2463": "Pitch is the vertical rotation of the player. Facing straight forward yields a pitch of 0. Pitch is\nmeasured in degrees.\n",
     "pitch": "lf32",
-    "!comment,2467": "Yaw is the horizontal rotation of the player. Yaw is also measured in degrees\n",
+    "!comment,2466": "Yaw is the horizontal rotation of the player. Yaw is also measured in degrees\n",
     "yaw": "lf32",
-    "!comment,2469": "HeadYaw is the same as Yaw, except that it applies specifically to the head of the player. A different\nvalue for HeadYaw than Yaw means that the player will have its head turned\n",
+    "!comment,2468": "HeadYaw is the same as Yaw, except that it applies specifically to the head of the player. A different\nvalue for HeadYaw than Yaw means that the player will have its head turned\n",
     "head_yaw": "lf32",
-    "!comment,2472": "Mode is the mode of the movement. It specifies the way the player's movement should be shown to other\nplayers. It is one of the constants below.\n",
+    "!comment,2471": "Mode is the mode of the movement. It specifies the way the player's movement should be shown to other\nplayers. It is one of the constants below.\n",
     "%map,mode,u8": {
       "%n,0": "normal",
       "%n,1": "reset",
       "%n,2": "teleport",
       "%n,3": "rotation"
     },
-    "!comment,2479": "OnGround specifies if the player is considered on the ground. Note that proxies or hacked clients could\nfake this to always be true, so it should not be taken for granted.\n",
+    "!comment,2478": "OnGround specifies if the player is considered on the ground. Note that proxies or hacked clients could\nfake this to always be true, so it should not be taken for granted.\n",
     "on_ground": "bool",
-    "!comment,2482": "RiddenEntityRuntimeID is the runtime ID of the entity that the player might currently be riding. If not\nriding, this should be left 0.\n",
+    "!comment,2481": "RiddenEntityRuntimeID is the runtime ID of the entity that the player might currently be riding. If not\nriding, this should be left 0.\n",
     "ridden_runtime_id": "varint",
     "%switch,teleport,mode": {
       "if teleport": {
-        "!comment,2487": "TeleportCause is written only if Mode is MoveModeTeleport. It specifies the cause of the teleportation,\nwhich is one of the constants above.\n",
+        "!comment,2486": "TeleportCause is written only if Mode is MoveModeTeleport. It specifies the cause of the teleportation,\nwhich is one of the constants above.\n",
         "%map,cause,li32": {
           "%n,0": "unknown",
           "%n,1": "projectile",
@@ -2416,7 +2414,7 @@ const toTransform = {
           "%n,3": "command",
           "%n,4": "behavior"
         },
-        "!comment,2495": "TeleportSourceEntityType is the entity type that caused the teleportation, for example an ender pearl.\nTODO: is this still a integer and not a string?\n",
+        "!comment,2494": "TeleportSourceEntityType is the entity type that caused the teleportation, for example an ender pearl.\nTODO: is this still a integer and not a string?\n",
         "source_entity_type": "LegacyEntityType"
       }
     },
@@ -2427,17 +2425,17 @@ const toTransform = {
     "!bound": "both",
     "jump_strength": "zigzag32"
   },
-  "!comment,2505": "UpdateBlock is sent by the server to update a block client-side, without resending the entire chunk that\nthe block is located in. It is particularly useful for small modifications like block breaking/placing.\n",
+  "!comment,2504": "UpdateBlock is sent by the server to update a block client-side, without resending the entire chunk that\nthe block is located in. It is particularly useful for small modifications like block breaking/placing.\n",
   "%container,packet_update_block,": {
     "!id": 21,
     "!bound": "client",
-    "!comment,2510": "Position is the block position at which a block is updated.\n",
+    "!comment,2509": "Position is the block position at which a block is updated.\n",
     "position": "BlockCoordinates",
-    "!comment,2512": "NewBlockRuntimeID is the runtime ID of the block that is placed at Position after sending the packet\nto the client.\n",
+    "!comment,2511": "NewBlockRuntimeID is the runtime ID of the block that is placed at Position after sending the packet\nto the client.\n",
     "block_runtime_id": "varint",
-    "!comment,2515": "Flags is a combination of flags that specify the way the block is updated client-side. It is a\ncombination of the flags above, but typically sending only the BlockUpdateNetwork flag is sufficient.\n",
+    "!comment,2514": "Flags is a combination of flags that specify the way the block is updated client-side. It is a\ncombination of the flags above, but typically sending only the BlockUpdateNetwork flag is sufficient.\n",
     "flags": "UpdateBlockFlags",
-    "!comment,2518": "Layer is the world layer on which the block is updated. For most blocks, this is the first layer, as\nthat layer is the default layer to place blocks on, but for blocks inside of each other, this differs.\n",
+    "!comment,2517": "Layer is the world layer on which the block is updated. For most blocks, this is the first layer, as\nthat layer is the default layer to place blocks on, but for blocks inside of each other, this differs.\n",
     "layer": "varint"
   },
   "UpdateBlockFlags": [
@@ -2462,16 +2460,16 @@ const toTransform = {
     "direction": "zigzag32",
     "title": "string"
   },
-  "!comment,2545": "TickSync is sent by the client and the server to maintain a synchronized, server-authoritative tick between\nthe client and the server. The client sends this packet first, and the server should reply with another one\n",
-  "!comment,2547": "of these packets, including the response time.\n",
+  "!comment,2544": "TickSync is sent by the client and the server to maintain a synchronized, server-authoritative tick between\nthe client and the server. The client sends this packet first, and the server should reply with another one\n",
+  "!comment,2546": "of these packets, including the response time.\n",
   "%container,packet_tick_sync,": {
     "!id": 23,
     "!bound": "both",
-    "!comment,2551": "ClientRequestTimestamp is the timestamp on which the client sent this packet to the server. The server\nshould fill out that same value when replying.\n",
-    "!comment,2553": "The ClientRequestTimestamp is always 0\n",
+    "!comment,2550": "ClientRequestTimestamp is the timestamp on which the client sent this packet to the server. The server\nshould fill out that same value when replying.\n",
+    "!comment,2552": "The ClientRequestTimestamp is always 0\n",
     "request_time": "li64",
-    "!comment,2555": "ServerReceptionTimestamp is the timestamp on which the server received the packet sent by the client.\nWhen the packet is sent by the client, this value is 0.\n",
-    "!comment,2557": "ServerReceptionTimestamp is generally the current tick of the server. It isn't an actual timestamp, as\nthe field implies\n",
+    "!comment,2554": "ServerReceptionTimestamp is the timestamp on which the server received the packet sent by the client.\nWhen the packet is sent by the client, this value is 0.\n",
+    "!comment,2556": "ServerReceptionTimestamp is generally the current tick of the server. It isn't an actual timestamp, as\nthe field implies\n",
     "response_time": "li64"
   },
   "%container,packet_level_sound_event_old,": {
@@ -2583,14 +2581,14 @@ const toTransform = {
   "%container,packet_block_event,": {
     "!id": 26,
     "!bound": "client",
-    "!comment,2670": "Position is the position of the block that an event occurred at.\n",
+    "!comment,2669": "Position is the position of the block that an event occurred at.\n",
     "position": "BlockCoordinates",
-    "!comment,2672": "EventType is the type of the block event. \nThe event type decides the way the event data that follows is used\n",
+    "!comment,2671": "EventType is the type of the block event. \nThe event type decides the way the event data that follows is used\n",
     "%map,type,zigzag32": {
       "%n,0": "sound",
       "%n,1": "change_state"
     },
-    "!comment,2677": "EventData holds event type specific data. For chests for example,\nopening the chest means the data must be 1\n",
+    "!comment,2676": "EventData holds event type specific data. For chests for example,\nopening the chest means the data must be 1\n",
     "data": "zigzag32"
   },
   "%container,packet_entity_event,": {
@@ -2672,8 +2670,8 @@ const toTransform = {
     "attributes": "PlayerAttributes",
     "tick": "varint64"
   },
-  "!comment,2762": "InventoryTransaction is a packet sent by the client. It essentially exists out of multiple sub-packets,\neach of which have something to do with the inventory in one way or another. Some of these sub-packets\n",
-  "!comment,2764": "directly relate to the inventory, others relate to interaction with the world, that could potentially\nresult in a change in the inventory.\n",
+  "!comment,2761": "InventoryTransaction is a packet sent by the client. It essentially exists out of multiple sub-packets,\neach of which have something to do with the inventory in one way or another. Some of these sub-packets\n",
+  "!comment,2763": "directly relate to the inventory, others relate to interaction with the world, that could potentially\nresult in a change in the inventory.\n",
   "%container,packet_inventory_transaction,": {
     "!id": 30,
     "!bound": "both",
@@ -2697,20 +2695,20 @@ const toTransform = {
     "leggings": "Item",
     "boots": "Item"
   },
-  "!comment,2789": "Interact is sent by the client when it interacts with another entity in some way. It used to be used for\nnormal entity and block interaction, but this is no longer the case now.\n",
+  "!comment,2788": "Interact is sent by the client when it interacts with another entity in some way. It used to be used for\nnormal entity and block interaction, but this is no longer the case now.\n",
   "%container,packet_interact,": {
     "!id": 33,
     "!bound": "both",
-    "!comment,2794": "Action type is the ID of the action that was executed by the player. It is one of the constants that\nmay be found above.\n",
+    "!comment,2793": "Action type is the ID of the action that was executed by the player. It is one of the constants that\nmay be found above.\n",
     "%map,action_id,u8": {
       "%n,3": "leave_vehicle",
       "%n,4": "mouse_over_entity",
       "%n,6": "open_inventory"
     },
-    "!comment,2800": "TargetEntityRuntimeID is the runtime ID of the entity that the player interacted with. This is empty\nfor the InteractActionOpenInventory action type.\n",
+    "!comment,2799": "TargetEntityRuntimeID is the runtime ID of the entity that the player interacted with. This is empty\nfor the InteractActionOpenInventory action type.\n",
     "target_entity_id": "varint64",
-    "!comment,2803": "Position associated with the ActionType above. For the InteractActionMouseOverEntity, this is the\nposition relative to the entity moused over over which the player hovered with its mouse/touch. For the\n",
-    "!comment,2805": "InteractActionLeaveVehicle, this is the position that the player spawns at after leaving the vehicle.\n",
+    "!comment,2802": "Position associated with the ActionType above. For the InteractActionMouseOverEntity, this is the\nposition relative to the entity moused over over which the player hovered with its mouse/touch. For the\n",
+    "!comment,2804": "InteractActionLeaveVehicle, this is the position that the player spawns at after leaving the vehicle.\n",
     "%switch,position,action_id": {
       "if mouse_over_entity or leave_vehicle": "vec3f"
     }
@@ -2730,17 +2728,17 @@ const toTransform = {
     "runtime_entity_id": "lu64",
     "selected_slot": "u8"
   },
-  "!comment,2824": "PlayerAction is sent by the client when it executes any action, for example starting to sprint, swim,\nstarting the breaking of a block, dropping an item, etc.\n",
+  "!comment,2823": "PlayerAction is sent by the client when it executes any action, for example starting to sprint, swim,\nstarting the breaking of a block, dropping an item, etc.\n",
   "%container,packet_player_action,": {
     "!id": 36,
     "!bound": "server",
-    "!comment,2829": "EntityRuntimeID is the runtime ID of the player. The runtime ID is unique for each world session, and\nentities are generally identified in packets using this runtime ID.\n",
+    "!comment,2828": "EntityRuntimeID is the runtime ID of the player. The runtime ID is unique for each world session, and\nentities are generally identified in packets using this runtime ID.\n",
     "runtime_entity_id": "varint64",
-    "!comment,2832": "ActionType is the ID of the action that was executed by the player. It is one of the constants that may\nbe found above.\n",
+    "!comment,2831": "ActionType is the ID of the action that was executed by the player. It is one of the constants that may\nbe found above.\n",
     "action": "Action",
-    "!comment,2835": "BlockPosition is the position of the target block, if the action with the ActionType set concerned a\nblock. If that is not the case, the block position will be zero.\n",
+    "!comment,2834": "BlockPosition is the position of the target block, if the action with the ActionType set concerned a\nblock. If that is not the case, the block position will be zero.\n",
     "position": "BlockCoordinates",
-    "!comment,2838": "BlockFace is the face of the target block that was touched. If the action with the ActionType set\nconcerned a block. If not, the face is always 0.\n",
+    "!comment,2837": "BlockFace is the face of the target block that was touched. If the action with the ActionType set\nconcerned a block. If not, the face is always 0.\n",
     "face": "zigzag32"
   },
   "%container,packet_hurt_armor,": {
@@ -2755,16 +2753,16 @@ const toTransform = {
     "metadata": "MetadataDictionary",
     "tick": "varint"
   },
-  "!comment,2854": "SetActorMotion is sent by the server to change the client-side velocity of an entity. It is usually used\nin combination with server-side movement calculation.\n",
+  "!comment,2853": "SetActorMotion is sent by the server to change the client-side velocity of an entity. It is usually used\nin combination with server-side movement calculation.\n",
   "%container,packet_set_entity_motion,": {
     "!id": 40,
     "!bound": "both",
-    "!comment,2859": "EntityRuntimeID is the runtime ID of the entity. The runtime ID is unique for each world session, and\nentities are generally identified in packets using this runtime ID.\n",
+    "!comment,2858": "EntityRuntimeID is the runtime ID of the entity. The runtime ID is unique for each world session, and\nentities are generally identified in packets using this runtime ID.\n",
     "runtime_entity_id": "varint64",
-    "!comment,2862": "Velocity is the new velocity the entity gets. This velocity will initiate the client-side movement of\nthe entity.\n",
+    "!comment,2861": "Velocity is the new velocity the entity gets. This velocity will initiate the client-side movement of\nthe entity.\n",
     "velocity": "vec3f"
   },
-  "!comment,2866": "SetActorLink is sent by the server to initiate an entity link client-side, meaning one entity will start\nriding another.\n",
+  "!comment,2865": "SetActorLink is sent by the server to initiate an entity link client-side, meaning one entity will start\nriding another.\n",
   "%container,packet_set_entity_link,": {
     "!id": 41,
     "!bound": "client",
@@ -2801,34 +2799,34 @@ const toTransform = {
     "state": "u8",
     "runtime_entity_id": "varint64"
   },
-  "!comment,2903": "ContainerOpen is sent by the server to open a container client-side. This container must be physically\npresent in the world, for the packet to have any effect. Unlike Java Edition, Bedrock Edition requires that\n",
-  "!comment,2905": "chests for example must be present and in range to open its inventory.\n",
+  "!comment,2902": "ContainerOpen is sent by the server to open a container client-side. This container must be physically\npresent in the world, for the packet to have any effect. Unlike Java Edition, Bedrock Edition requires that\n",
+  "!comment,2904": "chests for example must be present and in range to open its inventory.\n",
   "%container,packet_container_open,": {
     "!id": 46,
     "!bound": "client",
-    "!comment,2909": "WindowID is the ID representing the window that is being opened. It may be used later to close the\ncontainer using a ContainerClose packet.\n",
+    "!comment,2908": "WindowID is the ID representing the window that is being opened. It may be used later to close the\ncontainer using a ContainerClose packet.\n",
     "window_id": "WindowID",
-    "!comment,2912": "ContainerType is the type ID of the container that is being opened when opening the container at the\nposition of the packet. It depends on the block/entity, and could, for example, be the window type of\n",
-    "!comment,2914": "a chest or a hopper, but also a horse inventory.\n",
+    "!comment,2911": "ContainerType is the type ID of the container that is being opened when opening the container at the\nposition of the packet. It depends on the block/entity, and could, for example, be the window type of\n",
+    "!comment,2913": "a chest or a hopper, but also a horse inventory.\n",
     "window_type": "WindowType",
-    "!comment,2916": "ContainerPosition is the position of the container opened. The position must point to a block entity\nthat actually has a container. If that is not the case, the window will not be opened and the packet\n",
-    "!comment,2918": "will be ignored, if a valid ContainerEntityUniqueID has not also been provided.\n",
+    "!comment,2915": "ContainerPosition is the position of the container opened. The position must point to a block entity\nthat actually has a container. If that is not the case, the window will not be opened and the packet\n",
+    "!comment,2917": "will be ignored, if a valid ContainerEntityUniqueID has not also been provided.\n",
     "coordinates": "BlockCoordinates",
-    "!comment,2920": "ContainerEntityUniqueID is the unique ID of the entity container that was opened. It is only used if\nthe ContainerType is one that points to an entity, for example a horse.\n",
+    "!comment,2919": "ContainerEntityUniqueID is the unique ID of the entity container that was opened. It is only used if\nthe ContainerType is one that points to an entity, for example a horse.\n",
     "runtime_entity_id": "zigzag64"
   },
-  "!comment,2924": "ContainerClose is sent by the server to close a container the player currently has opened, which was opened\nusing the ContainerOpen packet, or by the client to tell the server it closed a particular container, such\n",
-  "!comment,2926": "as the crafting grid.\n",
+  "!comment,2923": "ContainerClose is sent by the server to close a container the player currently has opened, which was opened\nusing the ContainerOpen packet, or by the client to tell the server it closed a particular container, such\n",
+  "!comment,2925": "as the crafting grid.\n",
   "%container,packet_container_close,": {
     "!id": 47,
     "!bound": "both",
-    "!comment,2930": "WindowID is the ID representing the window of the container that should be closed. It must be equal to\nthe one sent in the ContainerOpen packet to close the designated window.\n",
+    "!comment,2929": "WindowID is the ID representing the window of the container that should be closed. It must be equal to\nthe one sent in the ContainerOpen packet to close the designated window.\n",
     "window_id": "WindowID",
-    "!comment,2933": "ServerSide determines whether or not the container was force-closed by the server. If this value is\nnot set correctly, the client may ignore the packet and respond with a PacketViolationWarning.\n",
+    "!comment,2932": "ServerSide determines whether or not the container was force-closed by the server. If this value is\nnot set correctly, the client may ignore the packet and respond with a PacketViolationWarning.\n",
     "server": "bool"
   },
-  "!comment,2937": "PlayerHotBar is sent by the server to the client. It used to be used to link hot bar slots of the player to\nactual slots in the inventory, but as of 1.2, this was changed and hot bar slots are no longer a free\n",
-  "!comment,2939": "floating part of the inventory.\nSince 1.2, the packet has been re-purposed, but its new functionality is not clear.\n",
+  "!comment,2936": "PlayerHotBar is sent by the server to the client. It used to be used to link hot bar slots of the player to\nactual slots in the inventory, but as of 1.2, this was changed and hot bar slots are no longer a free\n",
+  "!comment,2938": "floating part of the inventory.\nSince 1.2, the packet has been re-purposed, but its new functionality is not clear.\n",
   "%container,packet_player_hotbar,": {
     "!id": 48,
     "!bound": "both",
@@ -2836,38 +2834,38 @@ const toTransform = {
     "window_id": "WindowID",
     "select_slot": "bool"
   },
-  "!comment,2948": "InventoryContent is sent by the server to update the full content of a particular inventory. It is usually\nsent for the main inventory of the player, but also works for other inventories that are currently opened\n",
-  "!comment,2950": "by the player.\n",
+  "!comment,2947": "InventoryContent is sent by the server to update the full content of a particular inventory. It is usually\nsent for the main inventory of the player, but also works for other inventories that are currently opened\n",
+  "!comment,2949": "by the player.\n",
   "%container,packet_inventory_content,": {
     "!id": 49,
     "!bound": "both",
-    "!comment,2954": "WindowID is the ID that identifies one of the windows that the client currently has opened, or one of\nthe consistent windows such as the main inventory.\n",
+    "!comment,2953": "WindowID is the ID that identifies one of the windows that the client currently has opened, or one of\nthe consistent windows such as the main inventory.\n",
     "window_id": "WindowIDVarint",
-    "!comment,2957": "Content is the new content of the inventory. The length of this slice must be equal to the full size of\nthe inventory window updated.\n",
+    "!comment,2956": "Content is the new content of the inventory. The length of this slice must be equal to the full size of\nthe inventory window updated.\n",
     "input": "ItemStacks"
   },
-  "!comment,2961": "InventorySlot is sent by the server to update a single slot in one of the inventory windows that the client\ncurrently has opened. Usually this is the main inventory, but it may also be the off hand or, for example,\n",
-  "!comment,2963": "a chest inventory.\n",
+  "!comment,2960": "InventorySlot is sent by the server to update a single slot in one of the inventory windows that the client\ncurrently has opened. Usually this is the main inventory, but it may also be the off hand or, for example,\n",
+  "!comment,2962": "a chest inventory.\n",
   "%container,packet_inventory_slot,": {
     "!id": 50,
     "!bound": "both",
-    "!comment,2967": "WindowID is the ID of the window that the packet modifies. It must point to one of the windows that the\nclient currently has opened.\n",
+    "!comment,2966": "WindowID is the ID of the window that the packet modifies. It must point to one of the windows that the\nclient currently has opened.\n",
     "window_id": "WindowIDVarint",
-    "!comment,2970": "Slot is the index of the slot that the packet modifies. The new item will be set to the slot at this\nindex.\n",
+    "!comment,2969": "Slot is the index of the slot that the packet modifies. The new item will be set to the slot at this\nindex.\n",
     "slot": "varint",
-    "!comment,2973": "NewItem is the item to be put in the slot at Slot. It will overwrite any item that may currently\nbe present in that slot.\n",
+    "!comment,2972": "NewItem is the item to be put in the slot at Slot. It will overwrite any item that may currently\nbe present in that slot.\n",
     "item": "Item"
   },
-  "!comment,2977": "ContainerSetData is sent by the server to update specific data of a single container, meaning a block such\nas a furnace or a brewing stand. This data is usually used by the client to display certain features\n",
-  "!comment,2979": "client-side.\n",
+  "!comment,2976": "ContainerSetData is sent by the server to update specific data of a single container, meaning a block such\nas a furnace or a brewing stand. This data is usually used by the client to display certain features\n",
+  "!comment,2978": "client-side.\n",
   "%container,packet_container_set_data,": {
     "!id": 51,
     "!bound": "client",
-    "!comment,2983": "WindowID is the ID of the window that should have its data set. The player must have a window open with\nthe window ID passed, or nothing will happen.\n",
+    "!comment,2982": "WindowID is the ID of the window that should have its data set. The player must have a window open with\nthe window ID passed, or nothing will happen.\n",
     "window_id": "WindowID",
-    "!comment,2986": "Key is the key of the property. It is one of the constants that can be found above. Multiple properties\nshare the same key, but the functionality depends on the type of the container that the data is set to.\n",
+    "!comment,2985": "Key is the key of the property. It is one of the constants that can be found above. Multiple properties\nshare the same key, but the functionality depends on the type of the container that the data is set to.\n",
     "property": "zigzag32",
-    "!comment,2989": "Value is the value of the property. Its use differs per property. \n",
+    "!comment,2988": "Value is the value of the property. Its use differs per property. \n",
     "value": "zigzag32"
   },
   "%container,packet_crafting_data,": {
@@ -2878,45 +2876,45 @@ const toTransform = {
     "potion_container_recipes": "PotionContainerChangeRecipes",
     "is_clean": "bool"
   },
-  "!comment,3000": "CraftingEvent is sent by the client when it crafts a particular item. Note that this packet may be fully\nignored, as the InventoryTransaction packet provides all the information required.\n",
+  "!comment,2999": "CraftingEvent is sent by the client when it crafts a particular item. Note that this packet may be fully\nignored, as the InventoryTransaction packet provides all the information required.\n",
   "%container,packet_crafting_event,": {
     "!id": 53,
     "!bound": "both",
-    "!comment,3005": "WindowID is the ID representing the window that the player crafted in.\n",
+    "!comment,3004": "WindowID is the ID representing the window that the player crafted in.\n",
     "window_id": "WindowID",
-    "!comment,3007": "CraftingType is a type that indicates the way the crafting was done, for example if a crafting table\nwas used.\n",
+    "!comment,3006": "CraftingType is a type that indicates the way the crafting was done, for example if a crafting table\nwas used.\n",
     "%map,recipe_type,zigzag32": {
       "%n,0": "inventory",
       "%n,1": "crafting",
       "%n,2": "workbench"
     },
-    "!comment,3013": "RecipeUUID is the UUID of the recipe that was crafted. It points to the UUID of the recipe that was\nsent earlier in the CraftingData packet.\n",
+    "!comment,3012": "RecipeUUID is the UUID of the recipe that was crafted. It points to the UUID of the recipe that was\nsent earlier in the CraftingData packet.\n",
     "recipe_id": "uuid",
-    "!comment,3016": "Input is a list of items that the player put into the recipe so that it could create the Output items.\nThese items are consumed in the process.\n",
+    "!comment,3015": "Input is a list of items that the player put into the recipe so that it could create the Output items.\nThese items are consumed in the process.\n",
     "%array,input,Item,varint": null,
-    "!comment,3019": "Output is a list of items that were obtained as a result of crafting the recipe.\n",
+    "!comment,3018": "Output is a list of items that were obtained as a result of crafting the recipe.\n",
     "%array,result,Item,varint": null
   },
-  "!comment,3022": "GUIDataPickItem is sent by the server to make the client 'select' a hot bar slot. It currently appears to\nbe broken however, and does not actually set the selected slot to the hot bar slot set in the packet.\n",
+  "!comment,3021": "GUIDataPickItem is sent by the server to make the client 'select' a hot bar slot. It currently appears to\nbe broken however, and does not actually set the selected slot to the hot bar slot set in the packet.\n",
   "%container,packet_gui_data_pick_item,": {
     "!id": 54,
     "!bound": "client",
-    "!comment,3027": "ItemName is the name of the item that shows up in the top part of the popup that shows up when\nselecting an item. It is shown as if an item was selected by the player itself.\n",
+    "!comment,3026": "ItemName is the name of the item that shows up in the top part of the popup that shows up when\nselecting an item. It is shown as if an item was selected by the player itself.\n",
     "item_name": "string",
-    "!comment,3030": "ItemEffects is the line under the ItemName, where the effects of the item are usually situated.\n",
+    "!comment,3029": "ItemEffects is the line under the ItemName, where the effects of the item are usually situated.\n",
     "item_effects": "string",
-    "!comment,3032": "HotBarSlot is the hot bar slot to be selected/picked. This does not currently work, so it does not\nmatter what number this is.\n",
+    "!comment,3031": "HotBarSlot is the hot bar slot to be selected/picked. This does not currently work, so it does not\nmatter what number this is.\n",
     "hotbar_slot": "li32"
   },
-  "!comment,3036": "AdventureSettings is sent by the server to update game-play related features, in particular permissions to\naccess these features for the client. It includes allowing the player to fly, build and mine, and attack\n",
-  "!comment,3038": "entities. Most of these flags should be checked server-side instead of using this packet only.\nThe client may also send this packet to the server when it updates one of these settings through the\n",
-  "!comment,3040": "in-game settings interface. The server should verify if the player actually has permission to update those\nsettings.\n",
+  "!comment,3035": "AdventureSettings is sent by the server to update game-play related features, in particular permissions to\naccess these features for the client. It includes allowing the player to fly, build and mine, and attack\n",
+  "!comment,3037": "entities. Most of these flags should be checked server-side instead of using this packet only.\nThe client may also send this packet to the server when it updates one of these settings through the\n",
+  "!comment,3039": "in-game settings interface. The server should verify if the player actually has permission to update those\nsettings.\n",
   "%container,packet_adventure_settings,": {
     "!id": 55,
     "!bound": "both",
-    "!comment,3045": "Flags is a set of flags that specify certain properties of the player, such as whether or not it can\nfly and/or move through blocks. It is one of the AdventureFlag constants above.\n",
+    "!comment,3044": "Flags is a set of flags that specify certain properties of the player, such as whether or not it can\nfly and/or move through blocks. It is one of the AdventureFlag constants above.\n",
     "flags": "AdventureFlags",
-    "!comment,3048": "CommandPermissionLevel is a permission level that specifies the kind of commands that the player is\nallowed to use.\n",
+    "!comment,3047": "CommandPermissionLevel is a permission level that specifies the kind of commands that the player is\nallowed to use.\n",
     "%map,command_permission,varint32": {
       "%n,0": "normal",
       "%n,1": "operator",
@@ -2924,19 +2922,19 @@ const toTransform = {
       "%n,3": "automation",
       "%n,4": "admin"
     },
-    "!comment,3056": "ActionPermissions is, much like Flags, a set of flags that specify actions that the player is allowed\nto undertake, such as whether it is allowed to edit blocks, open doors etc. It is a combination of the\n",
-    "!comment,3058": "ActionPermission constants above.\n",
+    "!comment,3055": "ActionPermissions is, much like Flags, a set of flags that specify actions that the player is allowed\nto undertake, such as whether it is allowed to edit blocks, open doors etc. It is a combination of the\n",
+    "!comment,3057": "ActionPermission constants above.\n",
     "action_permissions": "ActionPermissions",
-    "!comment,3060": "PermissionLevel is the permission level of the player as it shows up in the player list built up using\nthe PlayerList packet. It is one of the PermissionLevel constants above.\n",
+    "!comment,3059": "PermissionLevel is the permission level of the player as it shows up in the player list built up using\nthe PlayerList packet. It is one of the PermissionLevel constants above.\n",
     "%map,permission_level,varint": {
       "%n,0": "visitor",
       "%n,1": "member",
       "%n,2": "operator",
       "%n,3": "custom"
     },
-    "!comment,3067": "Custom permissions\n",
+    "!comment,3066": "Custom permissions\n",
     "custom_stored_permissions": "varint",
-    "!comment,3069": "PlayerUniqueID is a unique identifier of the player. It appears it is not required to fill this field\nout with a correct value. Simply writing 0 seems to work.\n",
+    "!comment,3068": "PlayerUniqueID is a unique identifier of the player. It appears it is not required to fill this field\nout with a correct value. Simply writing 0 seems to work.\n",
     "user_id": "li64"
   },
   "AdventureFlags": [
@@ -2986,29 +2984,29 @@ const toTransform = {
     "jumping": "bool",
     "sneaking": "bool"
   },
-  "!comment,3121": "LevelChunk is sent by the server to provide the client with a chunk of a world data (16xYx16 blocks).\nTypically a certain amount of chunks is sent to the client before sending it the spawn PlayStatus packet,\n",
-  "!comment,3123": "so that the client spawns in a loaded world.\n",
+  "!comment,3120": "LevelChunk is sent by the server to provide the client with a chunk of a world data (16xYx16 blocks).\nTypically a certain amount of chunks is sent to the client before sending it the spawn PlayStatus packet,\n",
+  "!comment,3122": "so that the client spawns in a loaded world.\n",
   "%container,packet_level_chunk,": {
     "!id": 58,
     "!bound": "client",
-    "!comment,3127": "ChunkX is the X coordinate of the chunk sent. (To translate a block's X to a chunk's X: x >> 4)\n",
+    "!comment,3126": "ChunkX is the X coordinate of the chunk sent. (To translate a block's X to a chunk's X: x >> 4)\n",
     "x": "zigzag32",
-    "!comment,3129": "ChunkZ is the Z coordinate of the chunk sent. (To translate a block's Z to a chunk's Z: z >> 4)\n",
+    "!comment,3128": "ChunkZ is the Z coordinate of the chunk sent. (To translate a block's Z to a chunk's Z: z >> 4)\n",
     "z": "zigzag32",
-    "!comment,3131": "SubChunkCount is the amount of sub chunks that are part of the chunk sent. Depending on if the cache\nis enabled, a list of blob hashes will be sent, or, if disabled, the sub chunk data.\n",
+    "!comment,3130": "SubChunkCount is the amount of sub chunks that are part of the chunk sent. Depending on if the cache\nis enabled, a list of blob hashes will be sent, or, if disabled, the sub chunk data.\n",
     "sub_chunk_count": "varint",
-    "!comment,3134": "CacheEnabled specifies if the client blob cache should be enabled. This system is based on hashes of\nblobs which are consistent and saved by the client in combination with that blob, so that the server\n",
-    "!comment,3136": "does not have to send the same chunk multiple times. If the client does not yet have a blob with the hash sent,\nit will send a ClientCacheBlobStatus packet containing the hashes is does not have the data of.\n",
+    "!comment,3133": "CacheEnabled specifies if the client blob cache should be enabled. This system is based on hashes of\nblobs which are consistent and saved by the client in combination with that blob, so that the server\n",
+    "!comment,3135": "does not have to send the same chunk multiple times. If the client does not yet have a blob with the hash sent,\nit will send a ClientCacheBlobStatus packet containing the hashes is does not have the data of.\n",
     "cache_enabled": "bool",
     "%switch,blobs,cache_enabled": {
       "if true": {
-        "!comment,3141": "BlobHashes is a list of all blob hashes used in the chunk. It is composed of SubChunkCount + 1 hashes,\nwith the first SubChunkCount hashes being those of the sub chunks and the last one that of the biome\n",
-        "!comment,3143": "of the chunk.\nIf CacheEnabled is set to false, BlobHashes can be left empty.\n",
+        "!comment,3140": "BlobHashes is a list of all blob hashes used in the chunk. It is composed of SubChunkCount + 1 hashes,\nwith the first SubChunkCount hashes being those of the sub chunks and the last one that of the biome\n",
+        "!comment,3142": "of the chunk.\nIf CacheEnabled is set to false, BlobHashes can be left empty.\n",
         "%array,hashes,lu64,varint": null
       }
     },
-    "!comment,3146": "RawPayload is a serialised string of chunk data. The data held depends on if CacheEnabled is set to\ntrue. If set to false, the payload is composed of multiple sub-chunks, each of which carry a version\n",
-    "!comment,3148": "which indicates the way they are serialised, followed by biomes, border blocks and tile entities. If\nCacheEnabled is true, the payload consists out of the border blocks and tile entities only.\n",
+    "!comment,3145": "RawPayload is a serialised string of chunk data. The data held depends on if CacheEnabled is set to\ntrue. If set to false, the payload is composed of multiple sub-chunks, each of which carry a version\n",
+    "!comment,3147": "which indicates the way they are serialised, followed by biomes, border blocks and tile entities. If\nCacheEnabled is true, the payload consists out of the border blocks and tile entities only.\n",
     "payload": "ByteArray"
   },
   "%container,packet_set_commands_enabled,": {
@@ -3028,12 +3026,12 @@ const toTransform = {
     "position": "vec3f",
     "respawn": "bool"
   },
-  "!comment,3169": "SetPlayerGameType is sent by the server to update the game type (game mode) of the player\n",
+  "!comment,3168": "SetPlayerGameType is sent by the server to update the game type (game mode) of the player\n",
   "%container,packet_set_player_game_type,": {
     "!id": 62,
     "!bound": "both",
-    "!comment,3173": "The new gamemode for the player. \nSome of these game types require additional flags to be set in an AdventureSettings packet for \n",
-    "!comment,3175": "the game mode to obtain its full functionality.\n",
+    "!comment,3172": "The new gamemode for the player. \nSome of these game types require additional flags to be set in an AdventureSettings packet for \n",
+    "!comment,3174": "the game mode to obtain its full functionality.\n",
     "gamemode": "GameMode"
   },
   "%container,packet_player_list,": {
@@ -3046,7 +3044,7 @@ const toTransform = {
     "!bound": "client",
     "event_type": "lu16"
   },
-  "!comment,3188": "Event is sent by the server to send an event with additional data. It is typically sent to the client for\ntelemetry reasons, much like the SimpleEvent packet.\n",
+  "!comment,3187": "Event is sent by the server to send an event with additional data. It is typically sent to the client for\ntelemetry reasons, much like the SimpleEvent packet.\n",
   "%container,packet_event,": {
     "!id": 65,
     "!bound": "client",
@@ -3099,50 +3097,50 @@ const toTransform = {
       ]
     }
   ],
-  "!comment,3239": "ClientBoundMapItemData is sent by the server to the client to update the data of a map shown to the client.\nIt is sent with a combination of flags that specify what data is updated.\n",
-  "!comment,3241": "The ClientBoundMapItemData packet may be used to update specific parts of the map only. It is not required\nto send the entire map each time when updating one part.\n",
+  "!comment,3238": "ClientBoundMapItemData is sent by the server to the client to update the data of a map shown to the client.\nIt is sent with a combination of flags that specify what data is updated.\n",
+  "!comment,3240": "The ClientBoundMapItemData packet may be used to update specific parts of the map only. It is not required\nto send the entire map each time when updating one part.\n",
   "%container,packet_clientbound_map_item_data,": {
     "!id": 67,
     "!bound": "client",
-    "!comment,3246": "MapID is the unique identifier that represents the map that is updated over network. It remains\nconsistent across sessions.\n",
+    "!comment,3245": "MapID is the unique identifier that represents the map that is updated over network. It remains\nconsistent across sessions.\n",
     "map_id": "zigzag64",
-    "!comment,3249": "UpdateFlags is a combination of flags found above that indicate what parts of the map should be updated\nclient-side.\n",
+    "!comment,3248": "UpdateFlags is a combination of flags found above that indicate what parts of the map should be updated\nclient-side.\n",
     "update_flags": "UpdateMapFlags",
-    "!comment,3252": "Dimension is the dimension of the map that should be updated, for example the overworld (0), the nether\n(1) or the end (2).\n",
+    "!comment,3251": "Dimension is the dimension of the map that should be updated, for example the overworld (0), the nether\n(1) or the end (2).\n",
     "dimension": "u8",
-    "!comment,3255": "LockedMap specifies if the map that was updated was a locked map, which may be done using a cartography\ntable.\n",
+    "!comment,3254": "LockedMap specifies if the map that was updated was a locked map, which may be done using a cartography\ntable.\n",
     "locked": "bool",
-    "!comment,3258": "The following fields apply only for the MapUpdateFlagInitialisation.\nMapsIncludedIn holds an array of map IDs that the map updated is included in. This has to do with the\n",
-    "!comment,3260": "scale of the map: Each map holds its own map ID and all map IDs of maps that include this map and have\na bigger scale. This means that a scale 0 map will have 5 map IDs in this slice, whereas a scale 4 map\n",
-    "!comment,3262": "will have only 1 (its own).\nThe actual use of this field remains unknown.\n",
+    "!comment,3257": "The following fields apply only for the MapUpdateFlagInitialisation.\nMapsIncludedIn holds an array of map IDs that the map updated is included in. This has to do with the\n",
+    "!comment,3259": "scale of the map: Each map holds its own map ID and all map IDs of maps that include this map and have\na bigger scale. This means that a scale 0 map will have 5 map IDs in this slice, whereas a scale 4 map\n",
+    "!comment,3261": "will have only 1 (its own).\nThe actual use of this field remains unknown.\n",
     "%switch,included_in,update_flags.initialisation": {
       "%array,if true,zigzag64,varint": null
     },
-    "!comment,3266": "Scale is the scale of the map as it is shown in-game. It is written when any of the MapUpdateFlags are\nset to the UpdateFlags field.\n",
+    "!comment,3265": "Scale is the scale of the map as it is shown in-game. It is written when any of the MapUpdateFlags are\nset to the UpdateFlags field.\n",
     "%switch,scale,update_flags.initialisation || update_flags.decoration || update_flags.texture": {
       "if true": "u8"
     },
-    "!comment,3270": "The following fields apply only for the MapUpdateFlagDecoration.\nTrackedObjects is a list of tracked objects on the map, which may either be entities or blocks. The\n",
-    "!comment,3272": "client makes sure these tracked objects are actually tracked. (position updated etc.)\n",
+    "!comment,3269": "The following fields apply only for the MapUpdateFlagDecoration.\nTrackedObjects is a list of tracked objects on the map, which may either be entities or blocks. The\n",
+    "!comment,3271": "client makes sure these tracked objects are actually tracked. (position updated etc.)\n",
     "%switch,tracked,update_flags.decoration": {
       "if true": {
         "%array,objects,TrackedObject,varint": null,
         "%array,decorations,MapDecoration,varint": null
       }
     },
-    "!comment,3277": "Updates to the map contents itself (texture)\n",
+    "!comment,3276": "Updates to the map contents itself (texture)\n",
     "%switch,texture,update_flags.texture": {
       "if true": {
-        "!comment,3280": "Width is the width of the texture area that was updated. The width may be a subset of the total width\nof the map.\n",
+        "!comment,3279": "Width is the width of the texture area that was updated. The width may be a subset of the total width\nof the map.\n",
         "width": "zigzag32",
-        "!comment,3283": "Height is the height of the texture area that was updated. The height may be a subset of the total\nheight of the map\n",
+        "!comment,3282": "Height is the height of the texture area that was updated. The height may be a subset of the total\nheight of the map\n",
         "height": "zigzag32",
-        "!comment,3286": "XOffset is the X offset in pixels at which the updated texture area starts. From this X, the updated\ntexture will extend exactly Width pixels to the right.\n",
+        "!comment,3285": "XOffset is the X offset in pixels at which the updated texture area starts. From this X, the updated\ntexture will extend exactly Width pixels to the right.\n",
         "x_offset": "zigzag32",
-        "!comment,3289": "YOffset is the Y offset in pixels at which the updated texture area starts. From this Y, the updated\ntexture will extend exactly Height pixels up.\n",
+        "!comment,3288": "YOffset is the Y offset in pixels at which the updated texture area starts. From this Y, the updated\ntexture will extend exactly Height pixels up.\n",
         "y_offset": "zigzag32",
-        "!comment,3292": "Pixels is a list of pixel colours for the new texture of the map. It is indexed as Pixels[y][x], with\nthe length of the outer slice having to be exactly Height long and the inner slices exactly Width long.\n",
-        "!comment,3294": "To access this array, use $width * y + x\n",
+        "!comment,3291": "Pixels is a list of pixel colours for the new texture of the map. It is indexed as Pixels[y][x], with\nthe length of the outer slice having to be exactly Height long and the inner slices exactly Width long.\n",
+        "!comment,3293": "To access this array, use $width * y + x\n",
         "%array,pixels,varint,varint": null
       }
     }
@@ -3172,14 +3170,14 @@ const toTransform = {
     "!bound": "client",
     "rules": "GameRules"
   },
-  "!comment,3323": "Camera is sent by the server to use an Education Edition camera on a player. It produces an image\nclient-side.\n",
+  "!comment,3322": "Camera is sent by the server to use an Education Edition camera on a player. It produces an image\nclient-side.\n",
   "%container,packet_camera,": {
     "!id": 73,
     "!bound": "client",
-    "!comment,3328": "CameraEntityUniqueID is the unique ID of the camera entity from which the picture was taken.\n",
+    "!comment,3327": "CameraEntityUniqueID is the unique ID of the camera entity from which the picture was taken.\n",
     "camera_entity_unique_id": "zigzag64",
-    "!comment,3330": "TargetPlayerUniqueID is the unique ID of the target player. The unique ID is a value that remains\nconsistent across different sessions of the same world, but most servers simply fill the runtime ID of\n",
-    "!comment,3332": "the player out for this field.\n",
+    "!comment,3329": "TargetPlayerUniqueID is the unique ID of the target player. The unique ID is a value that remains\nconsistent across different sessions of the same world, but most servers simply fill the runtime ID of\n",
+    "!comment,3331": "the player out for this field.\n",
     "target_player_unique_id": "zigzag64"
   },
   "%container,packet_boss_event,": {
@@ -3187,24 +3185,24 @@ const toTransform = {
     "!bound": "both",
     "boss_entity_id": "zigzag64",
     "%map,type,varint": {
-      "!comment,3340": "S2C: Shows the boss-bar to the player.\n",
+      "!comment,3339": "S2C: Shows the boss-bar to the player.\n",
       "%n,0": "show_bar",
-      "!comment,3342": "C2S: Registers a player to a boss fight.\n",
+      "!comment,3341": "C2S: Registers a player to a boss fight.\n",
       "%n,1": "register_player",
-      "!comment,3344": "S2C: Removes the boss-bar from the client.\n",
+      "!comment,3343": "S2C: Removes the boss-bar from the client.\n",
       "%n,2": "hide_bar",
-      "!comment,3346": "C2S: Unregisters a player from a boss fight.\n",
+      "!comment,3345": "C2S: Unregisters a player from a boss fight.\n",
       "%n,3": "unregister_player",
-      "!comment,3348": "S2C: Sets the bar percentage.\n",
+      "!comment,3347": "S2C: Sets the bar percentage.\n",
       "%n,4": "set_bar_progress",
-      "!comment,3350": "S2C: Sets title of the bar.\n",
+      "!comment,3349": "S2C: Sets title of the bar.\n",
       "%n,5": "set_bar_title",
-      "!comment,3352": "S2C: darkens the sky\n",
+      "!comment,3351": "S2C: darkens the sky\n",
       "%n,6": "update_properties",
-      "!comment,3354": "S2C: Not implemented :( Intended to alter bar appearance, but these currently produce no effect on client-side whatsoever.\n",
+      "!comment,3353": "S2C: Not implemented :( Intended to alter bar appearance, but these currently produce no effect on client-side whatsoever.\n",
       "%n,7": "texture"
     },
-    "%switch,__3356,type": {
+    "%switch,__3355,type": {
       "if register_player or unregister_player": {
         "player_id": "zigzag64"
       },
@@ -3233,15 +3231,16 @@ const toTransform = {
     "runtime_entity_id": "varint64",
     "status": "zigzag32"
   },
-  "!comment,3378": "This packet sends a list of commands to the client. Commands can have\narguments, and some of those arguments can have 'enum' values, which are a list of possible\n",
-  "!comment,3380": "values for the argument. The serialization is rather complex and involves palettes like chunks.\n",
+  "!comment,3377": "This packet sends a list of commands to the client. Commands can have\narguments, and some of those arguments can have 'enum' values, which are a list of possible\n",
+  "!comment,3379": "values for the argument. The serialization is rather complex and involves palettes like chunks.\n",
   "%container,packet_available_commands,": {
     "!id": 76,
     "!bound": "client",
-    "!comment,3385": "The length of the enums for all the command paramaters in this packet\n",
+    "!comment,3384": "The length of the enums for all the command paramaters in this packet\n",
     "values_len": "varint",
-    "!comment,3387": "Not read from stream: instead calculated from the `values_len` field\nIf the values_len < 0xff => byte\n",
-    "!comment,3389": "If the values_len < 0xffff => short\nIf the values_len < 0xffffff => int\n",
+    "!comment,3386": "Not read from stream: instead calculated from the `values_len` field\n",
+    "!comment,3388": "If the values_len < 0xff => byte,\nIf the values_len < 0xffff => short,\n",
+    "!comment,3390": "If the values_len < 0xffffff => int\n",
     "_enum_type": "[\"enum_size_based_on_values_len\"]",
     "!comment,3392": "Here all the enum values for all of the possible commands are stored to one array palette\n",
     "%array,enum_values,string,$values_len": null,
@@ -4053,7 +4052,6 @@ const toTransform = {
       }
     }
   },
-  "!comment,4242": "TODO: update to use the new `shift` option in bitflags\n",
   "InputFlag": [
     "bitflags",
     {
@@ -4346,6 +4344,9 @@ tr {
 }
 </style>*/
 let rows = `
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
 <style>
@@ -4395,17 +4396,41 @@ td { vertical-align: middle; text-align: center; }
 table table {
   margin: -8px;
 }
+.table-bordered { border: 1px solid #E0E0E0; }
+thead td { font-weight: bold; background-color: #E0E0E0; }
+a { text-decoration: none; }
+.name { text-transform: capitalize; }
 </style>
+</head>
 `
 
-const tfName = key => {
-  if (key.startsWith('if ') || key == 'default') return `<span class='fake'>${key.replace('if', 'is')}</span>`
-  return key
+var showdown  = require('showdown')
+const converter = new showdown.Converter()
+const md = text => converter.makeHtml(text)
+
+const thead = `<thead><tr><td>Field Name</td><td>Field Type</td><td>Notes</td></tr></thead>`
+
+function toTitleCase(str) {
+  return str.replace(
+    /\w\S*/g,
+    function(txt) {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    }
+  );
 }
+
+const isStatement = key => key.startsWith('if ') || key == 'default'
+const tfName = (key, parent) => {
+  if (isStatement(key) && (parent?.includes('%switch'))) return `<span class='fake'>${key.replace('if', 'is').replace(/_/g, ' ')}</span>`
+  return key.startsWith('_') ? key : key.replace(/_/g, ' ').replace('$', '')
+}
+
+
 
 async function work() {
   let lastComment = ''
-  const nextComment = () => { const c = lastComment; lastComment = null; return c?.replace(/\n/g, '<br/>') || ''; }
+  const nextComment = () => { const c = lastComment; lastComment = null; return md(c?.replace(/\n\n/g, '<br/>\n') || ''); }
+
   function parseContainer(key, val, depth = 1, parent) {
     const pad = str => str.padStart(depth * 2) + '\n'
     // Ignore comments
@@ -4418,7 +4443,7 @@ async function work() {
     if (typeof val === 'object') {
       if (key.startsWith('%switch')) {
         const [_, what, condition] = key.split(',')
-        rows += pad(`<tr><td><b>${what.startsWith('_') ? '🔁' : what}</b><br/><br/> <i><div class='tag tag-switch'>if ${condition}</div></i></td><td colspan=2><table>`)
+        rows += pad(`<tr><td><b class='name'>${what.startsWith('_') ? '🔁' : tfName(what)}</b><br/><br/> <i><div class='tag tag-switch'>if <span class='name'>${tfName(condition)}</span></div></i></td><td colspan=2><table>`)
         for (let k in val) {
           let condition = k.startsWith('%') ? k.split(',')[1] : k
           // rows += pad(`<tr><td>${condition}</td><td><table>`)
@@ -4429,7 +4454,7 @@ async function work() {
         rows += pad(`</table></td></tr>`)
       } else if (key.startsWith('%container') || key.startsWith('if ')) {
         const name = key.startsWith('%') ? key.split(',')[1] : key
-        rows += pad(`<tr><td>${tfName(name, parent)} </td><td colspan=2 class='bordered'><table>`)
+        rows += pad(`<tr><td class='name'>${tfName(name, parent)} </td><td colspan=2 class='bordered'><table>`)
         for (const k in val) {
           let v = val[k]
           parseContainer(k, v, depth + 1, key)
@@ -4437,7 +4462,7 @@ async function work() {
         rows += pad(`</table></td></tr>`)
       } else if (key.startsWith('%map')) {
         const [_, what, type] = key.split(',')
-        rows += pad(`<tr><td class='field-name'>${tfName(what, parent)}</td><td colspan=2>${type} <span class='tag tag-enum'>enum</span><hr/> <table style='width:100%'>`)
+        rows += pad(`<tr><td class='name field-name'>${tfName(what, parent)}</td><td colspan=2>${type} <span class='tag tag-enum'>enum</span><hr/> <table style='width:100%'>`)
         for (const k in val) {
           let v = val[k]
           if (k.startsWith('!')) {
@@ -4445,7 +4470,7 @@ async function work() {
             continue
           }
       
-          rows += pad(`  <tr><td>${k.startsWith('%') ? k.split(',')[1] : k}</td><td>${v}</td><td>${nextComment()}</td></tr>`)
+          rows += pad(`  <tr><td class='name'>${tfName(k.startsWith('%') ? k.split(',')[1] : k)}</td><td class='name'>${tfName(v)}</td><td>${nextComment()}</td></tr>`)
           // parseContainer(k, v, depth + 1)
         }
         rows += pad(`</table></td></tr>`)
@@ -4453,14 +4478,14 @@ async function work() {
         const [_, what, type, prefix] = key.split(',')
         if (prefix) { // Prepend the length prefix
           if (prefix.startsWith('$'))
-            rows += pad(`<tr><td colspan=2><i>Length for ${tfName(what, parent)} below is <b>${prefix}</b> from above</td><td ${ type ? 'rowspan=2' : ''}>${nextComment()}</i></td></tr>`)
+            rows += pad(`<tr><td colspan=2><i>Length for <span class='name'>${tfName(what, parent)}</span> below is <b class='name'>${tfName(prefix)}</b> from above</td><td ${ type ? 'rowspan=2' : ''}>${nextComment()}</i></td></tr>`)
           else
-            rows += pad(`<tr><td class='field-name'>${tfName(what, parent)} length</td><td>${prefix}</td><td ${ type ? 'rowspan=2' : ''}>${nextComment()}</td></tr>`)
+            rows += pad(`<tr><td class='field-name'><span class='name'>${tfName(what, parent)}</span> length</td><td>${prefix}</td><td ${ type ? 'rowspan=2' : ''}>${nextComment()}</td></tr>`)
         }
         if (type) { // Inline array
-          rows += pad(`<tr><td class='field-name'>${tfName(what, parent)} <div class="tag tag-array">array</div></td><td>${type}</td><td>${nextComment()}</td></tr>`)
+          rows += pad(`<tr><td class='field-name'><span class='name'>${tfName(what, parent)}</span> <div class="tag tag-array">array</div></td><td>${type}</td><td>${nextComment()}</td></tr>`)
         } else {
-          rows += pad(`<tr><td class='field-name'>${tfName(what, parent)} <div class="tag tag-array">array</div></td><td colspan=2><table>`)
+          rows += pad(`<tr><td class='field-name'><span class='name'>${tfName(what, parent)}</span> <div class="tag tag-array">array</div></td><td colspan=2><table>`)
           for (const k in val) {
             let v = val[k]
             parseContainer(k, v, depth + 1, key)
@@ -4470,16 +4495,44 @@ async function work() {
       }
       // rows += pad('</td></tr>')
     } else if (typeof val === 'string') {
-      rows += pad(`<tr><td class='field-name'>${tfName(key, parent)}</td><td>${val}</td><td>${nextComment()}</td></tr>`)
+      rows += pad(`<tr><td class='field-name name'>${tfName(key, parent)}</td><td>${tfType(val)}</td><td>${nextComment()}</td></tr>`)
     }
   }
 
   rows += `<div class='container'>`
 
+  // Build the TOC
+
+  let listOfTypes = []
+  const tfType = type => {
+    return listOfTypes.includes(type) ? `<a href="#${type}">${type}</a>` : type
+  }
+
+  rows += `<h3>Table of Contents</h3>
+  <table class='table table-bordered table-striped' style='width:50%'>
+  <thead><tr><td>Key</td><td>Name</td></tr></thead>
+  <tbody>
+    ${Object.entries(toTransform).map(([k,v]) => { 
+      if (k.startsWith('!') && !k.startsWith('%')) return ''
+      const [ type, name ] = k.split(',')
+      if (!name) return ''
+      listOfTypes.push(name)
+      return name.startsWith('packet_') ? `<tr><td><a href="#${name}">0x${v['!id'].toString(16)}</a></td><td><a href="#${name}">${name}</a></td></tr>`: `<tr><td><a href="#${name}">Type</a><td class='name'>${tfType(name)}</td></tr>` 
+    }).join('\n')}
+  </tbody>
+  </table><br/><hr/>`
+
+
+  // Iterate through all the types
+
   for (const containerId in toTransform) {
     const container = toTransform[containerId]
     if (containerId.startsWith('!')) {
-      if (containerId.startsWith('!comment')) lastComment = lastComment ? lastComment + container : container
+      // Write out the comments not associated with types
+      if (containerId.startsWith('!comment')) {
+        if (container.trim().startsWith('===')) rows += `<p>${nextComment()}</p>`
+        else lastComment = lastComment ? lastComment + container : container
+      }
       continue
     }
 
@@ -4491,13 +4544,18 @@ async function work() {
     const type = { server: 'Serverbound', client: 'Clientbound', both: 'Bidirectional', datatype: 'Datatype' }[bound]
     
     rows += `
-    <div class="packet-header">
-      <div class='packet-id ${bound}'>${packetId}</div><div class='packet-name'>${name}</div>
+    <div class="packet-header" id="${name}">
+    <a href="#${name}"><div class='packet-id ${bound}'>${packetId}</div><div class='packet-name name'>${tfName(name)}</div></a>
       <small style='vertical-align:middle;float:right'>${type}</small>
     </div><br/>
-    \n<p>${nextComment()}</p>\n<table class='table table-bordered'>\n`
+    \n<p>${nextComment()}</p>\n<table class='table-bordered'>${thead}\n`
 
-    parseContainer(containerId, container)
+    if (containerId.startsWith('%container')) { // Inline the container
+      Object.entries(container).forEach(([k,v]) => parseContainer(k, v))
+    } else {
+      parseContainer(containerId, container)
+    }
+
     rows += '</table><br/><hr/><br/>'
   }
 
