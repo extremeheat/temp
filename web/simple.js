@@ -11,7 +11,7 @@ class Game {
 
   drawHorizontalCenteredText(msg, yOffset) {
     const txSize = this.ctx.measureText(msg)
-    const centerOffsetX = (this.canvas.height / 2) - (txSize.width / 2)
+    const centerOffsetX = (this.canvas.width / 2) - (txSize.width / 2)
     const centerOffsetY = this.canvas.height / 3
     this.ctx.fillText(msg, centerOffsetX, centerOffsetY + yOffset)
   }
