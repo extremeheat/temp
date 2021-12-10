@@ -1,0 +1,57 @@
+<head>
+  <style>
+    @font-face {
+      font-family: 'minecraftfont';
+      src: url('minecraftfont.woff') format('woff');
+    }
+
+    body {
+      font-family: minecraftfont, Verdana;
+      background: url('https://i.ytimg.com/vi/nTdHjPOAK3g/maxresdefault.jpg');
+      background-size: cover;
+      user-select: none; 
+    }
+
+    .bottom {
+      position: absolute;
+      color: white;
+      padding: 2px;
+      bottom: 2%;
+    }
+
+    .btn {
+      background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+        linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+        linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+        linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+        linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+        linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+      background-color: #131313;
+      background-size: 20px 20px;
+      color: white;
+      text-align: center;
+      padding: 16px;
+    }
+
+    .btn:hover {
+      filter: invert();
+      cursor: pointer;
+      transition: 0.25s filter;
+    }
+  </style>
+</head>
+<body>
+  <div id='top' style='position: static; padding-top: 5vh; text-align: center;'>"无人爱苦，亦无人寻之欲之，乃因其苦..."</div>
+  <div id='options' style='position: absolute; margin: auto; width: 50%; height: 50%; left: 0; right: 0; top: 0; bottom: 0;'>
+    <div style='display: grid; grid-gap: 20px;'>
+      <div class='btn'>Play</div>
+      <div class='btn'>Options</div>
+      <div style="display: grid; grid-gap: 20px; grid-template-columns: 1fr 1fr">
+        <div class='btn'>GitHub</div>
+        <div class='btn'>Discord</div>
+      </div>
+    </div>
+  </div>
+  <div class='bottom' style='left:1%'>Prismarine Web Client</div>
+  <div class='bottom' style='right: 1%'>A minecraft client in the browser!</div>
+</body>
