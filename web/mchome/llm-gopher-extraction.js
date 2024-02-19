@@ -36,7 +36,7 @@
       <pre id="pusr">USR PROMPT</pre>
     </div>
     <div><h3>GPT-3.5 Turbo 16k</h3><pre id="presp3516turbo">MODEL OUTPUT</pre></div>
-<div><h3>GPT-4 Turbo Preview</h3><pre id="prespgpt4turbo">MODEL OUTPUT</pre></div>
+<div class="correct"><h3>GPT-4 Turbo Preview</h3><pre id="prespgpt4turbo">MODEL OUTPUT</pre></div>
 <div><h3>Gemini 1.0 Pro</h3><pre id="prespgemini">MODEL OUTPUT</pre></div>
   </div>
 
