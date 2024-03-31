@@ -13,9 +13,8 @@ jobs:
       - name: Install LLVM and Clang
         uses: KyleMayes/install-llvm-action@v1
         with:
-          version: "18.0"
+          version: "14.0"
       - run: clang --version
       - run: which clang
-      - run: ls /usr/lib/llvm/
-
+      - run: cat /usr/lib/llvm/include/llvm/Demangle/Demangle.h
 
