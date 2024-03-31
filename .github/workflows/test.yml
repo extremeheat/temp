@@ -11,7 +11,7 @@ jobs:
       - name: Say hello
         run: echo "Hello world"
       #- run: sudo apt-get install llvm-dev
-      - run: llvm-config --cxxflags --ldflags --libs
+      - run: llvm-config-14 --cxxflags --ldflags --libs
       - run: clang --version
       - run: which clang
       - run: cat /usr/lib/llvm-14/include/llvm/Demangle/Demangle.h
