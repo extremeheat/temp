@@ -13,5 +13,5 @@ jobs:
       - run: sudo apt-get install llvm-dev
       - run: clang --version
       - run: which clang
-      - run: cat /usr/lib/llvm/include/llvm/Demangle/Demangle.h
+      - run: cat /usr/lib/llvm-14/include/llvm/Demangle/Demangle.h
 
