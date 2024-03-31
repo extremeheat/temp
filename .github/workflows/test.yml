@@ -10,6 +10,12 @@ jobs:
         uses: actions/checkout@v2
       - name: Say hello
         run: echo "Hello world"
+      - name: Install LLVM and Clang
+        uses: KyleMayes/install-llvm-action@v1
+        with:
+          version: "18.0"
       - run: clang --version
       - run: which clang
       - run: ls /usr/lib/llvm/
+
+
