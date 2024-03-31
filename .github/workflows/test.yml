@@ -12,3 +12,4 @@ jobs:
         run: echo "Hello world"
       - run: clang --version
       - run: which clang
+      - run: cat /usr/lib/llvm/include/llvm/Demangle/Demangle.h
