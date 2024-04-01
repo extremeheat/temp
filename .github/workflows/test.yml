@@ -11,6 +11,7 @@ jobs:
       - name: Say hello
         run: echo "Hello world"
       #- run: sudo apt-get install llvm-dev
+      - run: apt get install radare2 r2
       - run: llvm-config-14 --cxxflags --ldflags --libs
       - run: clang --version
       - run: which clang
