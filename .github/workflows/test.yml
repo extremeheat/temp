@@ -13,7 +13,7 @@ jobs:
       #- run: sudo apt-get install llvm-dev
       #- run: sudo add-apt-repository "deb http://deb.debian.org/debian buster main"
       #- run: sudo apt-get update
-      - run: sudo snap install radare2 --channel=edge --devmode --classic
+      - run: sudo snap install radare2 --channel=edge --classic
       - run: ls /snap/bin/r* && which radare2
       - run: radare2
       - run: /snap/bin/radare2.rabin2
