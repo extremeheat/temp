@@ -14,7 +14,7 @@ jobs:
       #- run: sudo add-apt-repository "deb http://deb.debian.org/debian buster main"
       #- run: sudo apt-get update
       - run: sudo snap install radare2 --classic
-      - run: ls /usr/bin/r* && which radare2
+      - run: ls /snap/bin/r* && which radare2
       - run: radare2
       - run: rabin2
       - run: llvm-config-14 --cxxflags --ldflags --libs
