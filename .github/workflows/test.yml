@@ -11,7 +11,7 @@ jobs:
       - name: Say hello
         run: echo "Hello world"
       #- run: sudo apt-get install llvm-dev
-      - run: wget -O r2.deb https://ubuntu.pkgs.org/20.04/ubuntu-universe-amd64/radare2_4.2.1+dfsg-2_amd64.deb.html
+      - run: wget -O r2.deb http://archive.ubuntu.com/ubuntu/pool/universe/r/radare2/radare2_4.2.1+dfsg-2_amd64.deb
       - run: sudo dpkg -i r2.deb && sudo apt-get install -f
       - run: llvm-config-14 --cxxflags --ldflags --libs
       - run: clang --version
