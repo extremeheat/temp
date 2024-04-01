@@ -16,7 +16,7 @@ jobs:
       - run: sudo snap install radare2 --channel=edge --classic
       - run: ls /snap/bin/r* && which radare2
       - run: radare2
-      - run: /snap/bin/radare2.rabin2
+      - run: /snap/bin/radare2.rabin2 -N 1 -z /snap/bin/radare2.rabin2
       - run: llvm-config-14 --cxxflags --ldflags --libs
       - run: clang --version
       - run: which clang
