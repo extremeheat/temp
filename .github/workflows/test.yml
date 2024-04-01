@@ -15,7 +15,7 @@ jobs:
       - run: sudo apt-get update
       - run: sudo apt-cache search radare2
       - run: sudo snap install radare2 --classic
-      - run: radare2.rabin2
+      - run: radare2
       - run: rabin2
       - run: llvm-config-14 --cxxflags --ldflags --libs
       - run: clang --version
