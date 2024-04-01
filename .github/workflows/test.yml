@@ -11,7 +11,7 @@ jobs:
       - name: Say hello
         run: echo "Hello world"
       #- run: sudo apt-get install llvm-dev
-      - run: sudo add-apt-repository "deb http://deb.debian.org/debian buster main"
+      #- run: sudo add-apt-repository "deb http://deb.debian.org/debian buster main"
       - run: sudo apt-get update
       - run: sudo apt-cache search radare2
       - run: sudo snap install radare2 --classic
