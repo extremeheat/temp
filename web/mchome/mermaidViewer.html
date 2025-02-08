@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <pre class="mermaid">
+      LOADING...
+    </pre>
+
+    <script>
+      "INJECT HERE"
+      const query = new URLSearchParams(window.location.search)
+      const nodes = query.get("executionFlow").split(",")
+      window.nodes = nodes
+      window.mermaidConfig = query.get("mermaidConfig")
+      document.querySelector("pre").textContent = window.mermaidConfig
+    </script>
+
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs"
+      mermaid.parseError = (error, hash) => {
+        console.log("Mermaid errors:", error)
+      }
+    </script>
+
+    <script>
+      // Function to highlight nodes with specific inner text in an SVG
+      function highlightNodes(svgElement, searchString) {
+        console.log('highlighting', searchString)
+        // Get all text elements within the SVG
+        const textElements = svgElement.querySelectorAll("p")
+        textElements.forEach((textElement) => {
+          textElement.style.fontWeight = "unset"
+          textElement.style.color = "unset"
+        })
+
+        // Iterate over each text element
+        textElements.forEach((textElement) => {
+          // Check if the inner text matches the search string
+          if (textElement.textContent.trim() === searchString) {
+            // Highlight the node by changing its style
+            textElement.style.color = "red" // Change color to red
+            textElement.style.fontWeight = "bold" // Make text bold
+          }
+        })
+      }
+
+      const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+      async function main() {
+        await sleep(1000)
+        for (var node of window.nodes) {
+          highlightNodes(document.querySelector("svg"), node)
+          await sleep(1000)
+        }
+      }
+      main()
+    </script>
+  </body>
+</html>
