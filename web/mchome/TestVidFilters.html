@@ -1,0 +1,172 @@
+<!-- https://codepen.io/ygjack/pen/xrqQjR -->
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    display: box;
+    box-orient: horizontal;
+    background: #333;
+  }
+
+  aside {
+    width: 20%;
+    position: fixed;
+  }
+
+  aside div {
+    padding: 10px;
+    border-bottom: 1px solid #888;
+    border-top: 1px solid #bbb;
+    transition: background 0.3s ease;
+    background: #aaa;
+  }
+
+  aside div:first-child {
+    padding-top: 20px;
+  }
+
+  aside div:last-child {
+    border-radius: 0 0 4px 0;
+  }
+
+  aside div:hover {
+    background: #bbb;
+  }
+
+  label {
+    display: block;
+    font: 13px "Helvetica", sans-serif;
+    color: #222;
+  }
+
+  strong {
+    font-weight: bold;
+    padding: 0 3px;
+    user-select: none;
+  }
+
+  code {
+    display: inline-block;
+    font: 12px "Courier new";
+    float: right;
+    color: #444;
+  }
+
+  input {
+    appearance: none !important;
+    background: #777;
+    width: 100%;
+    border-radius: 3px;
+    height: 20px;
+  }
+
+  input::-webkit-slider-thumb {
+    appearance: none !important;
+    width: 32px;
+    height: 20px;
+    background: #111;
+    border-radius: 3px;
+  }
+
+  section {
+    box-flex: 1;
+    padding: 20px;
+    background: #333;
+  }
+
+  video {
+    width: 80%;
+    float: right;
+    height: auto;
+    background: #ccc;
+  }
+
+  .twitter {
+    display: block;
+    font: italic 15px "Helvetica" italic;
+    text-align: center;
+    padding: 20px 0 40px;
+    color: #777;
+    text-decoration: none;
+    border-top: 1px solid #111;
+  }
+
+  .twitter:hover {
+    color: #4099FF;
+  }
+</style>
+<aside>
+  <div>
+    <label>
+      <strong>Blur</strong><code>-webkit-filter:blur(<span id="blur-val">0</span>px);</code>
+    </label>
+    <input id="blur" type="range" min="0" max="20" step="1" value="0" />
+  </div>
+  <div>
+    <label><strong>Saturation</strong><code>-webkit-filter:saturate(<span id="saturate-val">1</span>);</code></label>
+    <input id="saturate" type="range" min="0" max="5" step="0.1" value="1" />
+  </div>
+  <div>
+    <label><strong>Hue</strong><code>-webkit-filter:hue-rotate(<span id="hue-val">0</span>deg);</code></label>
+    <input id="hue" type="range" min="0" max="360" step="1" value="0" />
+  </div>
+  <div>
+    <label><strong>Brightness</strong><code>-webkit-filter:brightness(<span id="brightness-val">0</span>);</code></label>
+    <input id="brightness" type="range" min="0" max="1" step="0.05" value="0" />
+  </div>
+  <div>
+    <label><strong>Contrast</strong><code>-webkit-filter:contrast(<span id="contrast-val">0</span>);</code></label>
+    <input id="contrast" type="range" min="0" max="5" step="0.05" value="1" />
+  </div>
+  <div>
+    <label><strong>Invert</strong><code>-webkit-filter:invert(<span id="invert-val">0</span>);</code></label>
+    <input id="invert" type="range" min="0" max="1" step="0.05" value="0" />
+  </div>
+  <div>
+    <label><strong>Sepia</strong><code>-webkit-filter:sepia(<span id="sepia-val">0</span>);</code></label>
+    <input id="sepia" type="range" min="0" max="1" step="0.05" value="0" />
+  </div>
+
+  <a class="twitter" href="https://twitter.com/bennettfeely">@bennettfeely</a>
+
+</aside>
+
+
+<section>
+
+  <video id="video" width="640" height="480" preload="auto" controls loop autoplay>
+    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4?1"
+      type="video/mp4" />
+    Your not cool and I won't let you watch this awesome video of cows.
+  </video>
+</section>
+
+<script>
+  // Feel free to fork and improve on this if you'd like
+  const $ = document.querySelector.bind(document);
+
+  document.querySelectorAll("input").forEach(function (input) {
+    input.addEventListener('input', function () {
+      var blur = $("#blur").value;
+      var saturate = $("#saturate").value;
+      var hue = $("#hue").value;
+      var brightness = $("#brightness").value;
+      var contrast = $("#contrast").value;
+      var invert = $("#invert").value;
+      var sepia = $("#sepia").value;
+
+      var filters = "blur(" + blur + "px) saturate(" + saturate + ") hue-rotate(" + hue + "deg) brightness(" + brightness + ") contrast(" + contrast + ") invert(" + invert + ") sepia(" + sepia + ")";
+
+      $("#video").style.webkitFilter = filters;
+      $("#blur-val").textContent = blur;
+      $("#saturate-val").textContent = saturate;
+      $("#hue-val").textContent = hue;
+      $("#brightness-val").textContent = brightness;
+      $("#contrast-val").textContent = contrast;
+      $("#invert-val").textContent = invert;
+      $("#sepia-val").textContent = sepia;
+    });
+  });
+</script>
